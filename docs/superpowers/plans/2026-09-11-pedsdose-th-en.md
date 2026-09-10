@@ -38,7 +38,7 @@
 | 6 Translations | 22–25 | drugs.th/en, algorithms.th/en, coverage report green |
 | 7 Finish | 26–28 | docs, integration tests, build + deploy config |
 
-Tasks 14–21 and 22–25 may run in parallel across subagents once Phase 4 is pushed. Every parallel task prompt must include the **Interfaces** block of Tasks 5, 10, 11 and 12 verbatim.
+Tasks 15–20 and 22–25 may run in parallel across subagents once Task 14 (Phase 5) or Phase 4 respectively is pushed. Parallel implementers work in their own git worktree/branch; the controller merges each branch into `main` and reviews the merged range. Every parallel task prompt must include the **Interfaces** block of Tasks 5, 10, 11, 12 and 14 verbatim. Parallel UI tasks use `tests/utils.tsx` (`renderWithProviders`) from Task 14 and never modify it.
 
 ---
 
@@ -268,6 +268,7 @@ dist
 coverage
 .DS_Store
 *.log
+.superpowers/
 ```
 
 `.prettierrc`: `{ "singleQuote": true, "semi": true, "printWidth": 100, "trailingComma": "all" }`
@@ -327,6 +328,8 @@ git add -A && git commit -m "chore: scaffold Vite + React + TS + Tailwind + Vite
 - Produces: `UPSTREAM_JSON_SHA256` constant recorded in `UPSTREAM.md` and `tests/data-integrity.test.ts`.
 
 - [ ] **Step 1: Fetch upstream at the pinned SHA and copy files**
+
+If network access is blocked, a clone of upstream at the same SHA exists at `/private/tmp/claude-501/-Users-codex074-Desktop-My-Web-App-ped-dose/8cd4feb1-d064-4775-86e3-3482fff31ecd/scratchpad/upstream/` — copy `peds_drugs.json`, `index.html`, `LICENSE` from there instead (verify `git -C <that dir> rev-parse HEAD` is `3939f62d…`).
 
 ```bash
 mkdir -p public/data tests/upstream
@@ -616,7 +619,9 @@ Expected: prints `cases=` roughly 16,000 and `energy=80`; file about 2–4 MB.
 
 `tests/golden-fixture.test.ts`:
 ```ts
-import golden from './fixtures/upstream-golden.json';
+import { readFileSync } from 'node:fs';
+import type { GoldenFile } from '../scripts/golden-types';   // create scripts/golden-types.ts exporting the GoldenFile/GoldenCase/GoldenEnergy interfaces from the Interfaces block above
+const golden = JSON.parse(readFileSync('tests/fixtures/upstream-golden.json', 'utf8')) as GoldenFile;
 
 test('golden fixture covers every drug and indication', () => {
   const ids = new Set(golden.cases.map((c) => c.drugId));
@@ -1197,9 +1202,11 @@ export function ruleToUpstreamText(r: RuleDescriptor): string {
 - [ ] **Step 1: Write the parity test**
 
 ```ts
-import golden from './fixtures/upstream-golden.json';
+import { readFileSync } from 'node:fs';
+import type { GoldenFile } from '../scripts/golden-types';
 import dataset from '../public/data/peds_drugs.json';
 import { calcDose } from '@/clinical/calcDose';
+const golden = JSON.parse(readFileSync('tests/fixtures/upstream-golden.json', 'utf8')) as GoldenFile;
 import { formatRange, formatNumber } from '@/clinical/formatNumber';
 import { checkContraindication } from '@/clinical/contraindications';
 import { energyJoules } from '@/clinical/energy';
@@ -1233,10 +1240,10 @@ test('every golden case matches the TypeScript engine', () => {
     const r = calcDose(drug, calc, c.weight, c.age);
     const mine = toUpstreamShape(r, c.weight, c.age);
     const theirs = c.raw;
-    if (JSON.stringify(mine) !== JSON.stringify(theirs)) failures.push(`${c.drugId}[${c.indicationIndex}] w=${c.weight} a=${c.age}\n  mine=${JSON.stringify(mine)}\n  gold=${JSON.stringify(theirs)}`);
+    if (!deepEqual(mine, theirs)) failures.push(`${c.drugId}[${c.indicationIndex}] w=${c.weight} a=${c.age}\n  mine=${JSON.stringify(mine)}\n  gold=${JSON.stringify(theirs)}`);
     const hit = checkContraindication(drug, c.weight, c.age);
     const mineC = hit ? { index: hit.index, type: hit.contraindication.type, severityClass: hit.severity } : null;
-    if (JSON.stringify(mineC) !== JSON.stringify(c.contra)) failures.push(`contra ${c.drugId} w=${c.weight} a=${c.age}: ${JSON.stringify(mineC)} vs ${JSON.stringify(c.contra)}`);
+    if (!deepEqual(mineC, c.contra)) failures.push(`contra ${c.drugId} w=${c.weight} a=${c.age}: ${JSON.stringify(mineC)} vs ${JSON.stringify(c.contra)}`);
     if (r.kind === 'dose') {
       if (r.mgRange && formatRange(...r.mgRange) !== c.formatted.mg) failures.push(`fmt mg ${c.drugId} w=${c.weight}`);
       if (r.mlRange && formatRange(...r.mlRange) !== c.formatted.ml) failures.push(`fmt ml ${c.drugId} w=${c.weight}`);
@@ -1256,7 +1263,7 @@ test('PALS energy matches golden', () => {
 });
 ```
 
-Key-order note: `JSON.stringify` comparison depends on key order. Upstream builds `{type, mgRange, rule}` then adds `mlRange`/`unitRange`. Build `mine` in the same order: `type`, then `mgRange`/`mcgRange`/`mlRange`/`unitRange`/`packsPerDose` in upstream order, then `rule` — check the golden `raw` key order for one `dose` case and match it. If order differs, compare with a deep-equal (`expect(mine).toEqual(theirs)`) inside a try/catch instead of string equality.
+`deepEqual` is a key-order-independent structural comparison (write a small recursive helper in the test file or use `node:util`'s `isDeepStrictEqual`). Never compare via `JSON.stringify` — key order differs between upstream and the port. For the contraindication comparison use `isDeepStrictEqual` as well.
 
 - [ ] **Step 2: Run → fix engine until PASS.** Any mismatch is an engine bug, never a fixture edit.
 - [ ] **Step 3: Barrel + commit + push Phase 3**
@@ -1511,7 +1518,7 @@ test('unknown calc type fails with drug id', () => {
 ### Task 13: Translation skeletons and translation report script
 
 **Files:**
-- Create: `scripts/gen-translation-skeleton.ts`, `scripts/translation-report.ts`, `src/i18n/clinicalKeys.ts`, `src/i18n/drugs.th.json`, `src/i18n/drugs.en.json`, `src/i18n/algorithms.th.json`, `src/i18n/algorithms.en.json`, `src/i18n/searchAliases.th.json`, `src/i18n/useDrugText.ts`, `src/i18n/useAlgorithmText.ts`
+- Create: `scripts/gen-translation-skeleton.ts`, `scripts/translation-report.ts` (thin CLI only), `src/i18n/numericPreservation.ts` (the checker; imported by tests and the CLI), `src/i18n/clinicalKeys.ts`, `src/i18n/drugs/index.ts` (merges every `src/i18n/drugs/th/*.json` into one TH map and every `src/i18n/drugs/en/*.json` into one EN map via `import.meta.glob('./th/*.json', { eager: true })`), `src/i18n/drugs/th/.gitkeep`, `src/i18n/drugs/en/.gitkeep`, `src/i18n/algorithms/index.ts` (same merge for `src/i18n/algorithms/{th,en}/*.json`), `src/i18n/searchAliases.th.json`, `src/i18n/useDrugText.ts`, `src/i18n/useAlgorithmText.ts`
 - Test: `tests/i18n/translation-integrity.test.ts`
 
 **Interfaces:**
@@ -1537,16 +1544,17 @@ export function localizeDrug(drug: Drug, lang: Lang, th: DrugsFile, en: DrugsFil
 // useAlgorithmText.ts
 export function localizePals(algo: PalsAlgorithm, lang: Lang): PalsAlgorithm; export function localizeSe(se: SeAlgorithm, lang: Lang): SeAlgorithm;
 ```
-- `scripts/gen-translation-skeleton.ts` writes `src/i18n/drugs.skeleton.json` and `src/i18n/algorithms.skeleton.json` containing every translatable leaf with its canonical source string. Translation agents copy the skeleton and replace values.
-- `scripts/translation-report.ts` prints coverage (drugs total / translated th / en / missing / orphan keys) and runs the numeric-preservation check; exits 1 on any violation. Checker: extract from source and translation the multiset of tokens matching `/\d+(?:\.\d+)?/g`, unit tokens `/\b(mg|mcg|g|mL|L|kg|J|min|hr|h|sec|%|PE)\b/g`, operators `[<>≤≥÷]`, route/frequency tokens `/\b(PO|IV|IO|IM|PR|IN|SC|SL|Q\d+(?:-\d+)?H|QD|BID|TID|QID|PRN|STAT|HS|AC|PC)\b/g`; numbers and operators must match exactly; units and route tokens must match as multisets (case-insensitive for units). Severity: if source severity is `禁用`, translated severity must equal `ui.contra.severe` text of that language; `不建議` → `contra.moderate`.
+- Translation files: `src/i18n/drugs/th/<range>.json` and `src/i18n/drugs/en/<range>.json` (e.g. `01-23.json`, `24-45.json`, `46-67.json`), each `{ "_meta": {...}, "<drugId>": DrugTranslation, ... }`; `src/i18n/algorithms/th/pals.json`, `.../se.json` and the EN equivalents. `src/i18n/drugs/index.ts` exports `drugsTh: Record<string, DrugTranslation>` and `drugsEn` (merged; duplicate ids across files are a test failure). Vitest and Vite both support `import.meta.glob` with `eager: true`.
+- `scripts/gen-translation-skeleton.ts` writes `src/i18n/drugs.skeleton.json` and `src/i18n/algorithms.skeleton.json` containing every translatable leaf with its canonical source string. Translation agents copy their id range from the skeleton into their own range file and replace values.
+- `src/i18n/numericPreservation.ts` exports `checkNumericPreservation(source: string, translated: string): { ok: boolean; problems: string[] }`. `scripts/translation-report.ts` imports it and prints coverage (drugs total / translated th / en / missing / orphan keys) and runs the numeric-preservation check; exits 1 on any violation. Checker: extract from source and translation the multiset of tokens matching `/\d+(?:\.\d+)?/g`, unit tokens `/\b(mg|mcg|g|mL|L|kg|J|min|hr|h|sec|%|PE)\b/g`, operators `[<>≤≥÷]`, route/frequency tokens `/\b(PO|IV|IO|IM|PR|IN|SC|SL|Q\d+(?:-\d+)?H|QD|BID|TID|QID|PRN|STAT|HS|AC|PC)\b/g`; numbers and operators must match exactly; units and route tokens must match as multisets (case-insensitive for units). Severity: if source severity is `禁用`, translated severity must equal `ui.contra.severe` text of that language; `不建議` → `contra.moderate`.
 
 - [ ] **Step 1: Failing test**
 
 ```ts
 // translation-integrity.test.ts
-import th from '@/i18n/drugs.th.json'; import en from '@/i18n/drugs.en.json';
+import { drugsTh as th, drugsEn as en } from '@/i18n/drugs';
 import dataset from '../../public/data/peds_drugs.json';
-import { checkNumericPreservation } from '../../scripts/translation-report';
+import { checkNumericPreservation } from '@/i18n/numericPreservation';
 test('every translated drug id exists canonically and arrays align', () => {
   const ids = new Set(dataset.drugs.map((d) => d.id));
   for (const file of [th, en]) for (const [id, tr] of Object.entries(file)) {
@@ -1561,7 +1569,7 @@ test('numbers, units, operators survive translation', () => {
 });
 ```
 
-- [ ] **Step 2: Implement scripts and hooks; run `pnpm gen-translation-skeleton`; create `drugs.th.json`/`drugs.en.json`/`algorithms.*.json` as `{ "_meta": { "generatedFrom": "3939f62", "status": "draft" } }` (empty; filled in Phase 6).**
+- [ ] **Step 2: Implement scripts, hooks, and the merge indexes; run `pnpm gen-translation-skeleton`; leave the range directories empty except `.gitkeep` (filled in Phase 6). With no files present the merged maps are `{}` and every field falls back to the canonical string.**
 - [ ] **Step 3: Run → PASS. Commit and push Phase 4**
 
 ```bash
@@ -1577,11 +1585,12 @@ All UI tasks: use `superpowers:frontend-design` guidance and DESIGN.md. Every co
 ### Task 14: App shell, data loading, header, language switcher
 
 **Files:**
-- Create: `src/App.tsx` (replace), `src/components/AppHeader.tsx`, `src/components/LanguageSwitcher.tsx`, `src/components/ErrorCard.tsx`, `src/components/SkeletonCard.tsx`, `src/hooks/useDoseResult.ts`, `src/state/DatasetProvider.tsx`
+- Create: `src/App.tsx` (replace), `src/components/AppHeader.tsx`, `src/components/LanguageSwitcher.tsx`, `src/components/ErrorCard.tsx`, `src/components/SkeletonCard.tsx`, `src/hooks/useDoseResult.ts`, `src/state/DatasetProvider.tsx`, `tests/utils.tsx`
+- Modify: `vite.config.ts` (add `define: { 'import.meta.env.VITE_APP_VERSION': JSON.stringify(pkg.version) }` reading `package.json`)
 - Test: `tests/components/AppHeader.test.tsx`, `tests/components/LanguageSwitcher.test.tsx`
 
 **Interfaces:**
-- Produces: `DatasetProvider` (loads via `loadDrugs`, exposes `useDataset(): { status: 'loading' } | { status: 'error'; errors } | { status: 'ready'; data: DrugDataset }`), `useDoseResult(drug: Drug, calc: Calc): DoseResult` (reads weight/age from `useCalculator`), `AppHeader` (logo mark 💊 in a soft-sky rounded tile, `app.name`, `app.subtitle`, version badge from `_meta.version`, `LanguageSwitcher`), `LanguageSwitcher` (segmented control `ไทย | EN`, `role="radiogroup"`, `aria-label` = `lang.switchLabel`).
+- Produces: `DatasetProvider(props: { children; initialData?: DrugDataset })` (when `initialData` is given it skips fetch and is immediately `ready`; otherwise loads via `loadDrugs`), `useDataset(): { status: 'loading' } | { status: 'error'; errors } | { status: 'ready'; data: DrugDataset }`, `useDoseResult(drug: Drug, calc: Calc): DoseResult` (reads weight/age from `useCalculator`), `tests/utils.tsx` exporting `renderWithProviders(ui: ReactElement, opts?: { lang?: Lang; dataset?: DrugDataset; calculator?: Partial<CalculatorState> }): RenderResult` which wraps in `LanguageProvider initial={lang ?? 'th'}` > `DatasetProvider initialData={dataset ?? realDataset}` > `CalculatorProvider initial={calculator}` (add an optional `initial` prop to `CalculatorProvider` if Task 12 did not; `realDataset` is `public/data/peds_drugs.json` imported statically in the test util), `AppHeader` (logo mark 💊 in a soft-sky rounded tile, `app.name`, `app.subtitle`, version badge from `_meta.version`, `LanguageSwitcher`), `LanguageSwitcher` (segmented control `ไทย | EN`, `role="radiogroup"`, `aria-label` = `lang.switchLabel`).
 - `App` layout: `LanguageProvider > DatasetProvider > CalculatorProvider > Layout`. Layout: header sticky; `<main>` with `max-w-6xl mx-auto px-4`; grid `lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]` with left column (PatientInput, DrugSearch, CategoryChips, list/PALS/SE) and right column (`SelectedDrugPanel`, sticky on lg). On mobile the right column renders below the list. Footer with `Disclaimer` short text + About button.
 
 - [ ] **Step 1: Tests**: header renders name/subtitle/version; switcher toggles `document.documentElement.lang`; loading shows 3 `SkeletonCard`s; validation error shows `ErrorCard` with `error.dataLoad`.
@@ -1625,11 +1634,11 @@ All UI tasks: use `superpowers:frontend-design` guidance and DESIGN.md. Every co
 
 **Interfaces:**
 - `DrugList`: uses `filterByView` → `searchDrugs` → `groupForDisplay`; renders starred section header (`card.starredGroup`) then category sections with count `(n)`; empty → `EmptyState` (`search.empty`, small smiling illustration via inline SVG cloud + sparkle). Returns nothing for views `se`/`pals` (those render `SEView`/`PALSView` instead, handled by `App`).
-- `DrugCard` (single) and `DrugGroupCard` (members share `group_id`): header = generic name (from canonical, never translated), `TagPills` (emergency/rsi/common), `StarButton` per member; body per form = `DrugFormSection` containing `MetaRow` (route, concentration string, package — dedupe against brand exactly like upstream `buildMetaParts`), urgency badge, `ContraindicationAlert` if hit, dose rows (via `doseRows` + `useDoseResult`), per-indication blocks, notes, warnings, `ClinicalInfoAccordion`, source line.
-- Clicking a card sets `selectDrug(id)`; selected card gets `ring-2 ring-sky border-sky bg-sky-soft/40` and a small ✓ badge (`card.selected`). Starred → `border-l-4 border-l-butter`; emergency/RSI → `border-l-4 border-l-peach`.
+- `DrugCard` (single) and `DrugGroupCard` (members share `group_id`) are **compact** per DESIGN.md §15.2: header = generic name (canonical, never translated), `TagPills` (emergency/rsi/common), `StarButton` per member; per form = `DrugFormSection` containing translated brand, urgency badge, `MetaRow` (route, concentration string, package — dedupe against brand exactly like upstream `buildMetaParts`), a compact contraindication marker (icon + severity label only, when hit), and ONE mini dose line per calc/indication (upstream `miniDoseLine`: `mg (mL)` via `formatRange`; `needs_weight` → `dose.needsWeight`; `needs_age` → `dose.needsAge`; band → band text; rate → `x mL/hr`). Full dose rows, notes, warnings, clinical info and reference are NOT rendered in list cards; they live in `SelectedDrugPanel` (Task 18). Export `MiniDoseLine({ drug, calc })` from `src/components/MiniDoseLine.tsx` for reuse by PALS/SE.
+- Clicking a card sets `selectDrug(id)` (whole card is a `button`-like `div role="button" tabIndex=0` with Enter/Space handling; star buttons stop propagation). Selected card gets `ring-2 ring-sky border-sky bg-sky-soft/40` and a small ✓ badge (`card.selected`). Starred → `border-l-4 border-l-butter`; emergency/RSI → `border-l-4 border-l-peach`.
 - Cards animate in with `animate-fade-up`.
 
-- [ ] **Step 1: Tests** (render with real dataset + providers): antipyretic view shows Acetaminophen group card with 2 star buttons; entering weight 10 shows `100-150` mg row inside; selecting a card marks it `aria-selected`; empty search shows `EmptyState`.
+- [ ] **Step 1: Tests** (use `renderWithProviders` from `tests/utils.tsx`): antipyretic view shows Acetaminophen group card with 2 star buttons; with weight 10 the mini dose line shows `100-150 mg (4.17-6.25 mL)`; selecting a card marks it `aria-pressed`/selected; empty search shows `EmptyState`; list cards do not render the warnings panel or clinical accordion.
 - [ ] **Step 2: Implement. Step 3: Commit** `feat(ui): drug list and cards with grouped forms`
 
 ### Task 18: Dose result card, alerts, clinical info, reference
@@ -1639,7 +1648,7 @@ All UI tasks: use `superpowers:frontend-design` guidance and DESIGN.md. Every co
 - Test: `tests/components/DoseResultCard.test.tsx`, `tests/components/ContraindicationAlert.test.tsx`
 
 **Interfaces:**
-- `SelectedDrugPanel`: reads `selectedDrugId`; if none → friendly empty card ("เลือกยาจากรายการ / Pick a medicine from the list"); else renders `DoseResultCard` for that drug (all forms if grouped), then `WarningPanel`, `ClinicalInfoAccordion`, `ReferenceInfo`. Sticky top on `lg`. On mobile, selecting a drug smooth-scrolls to this panel (`scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })`).
+- `SelectedDrugPanel`: reads `selectedDrugId`; if none → friendly empty card (`panel.empty`: "เลือกยาจากรายการ / Pick a medicine from the list" — add this key to both UI files); else renders, for the selected drug and every other member of its `group_id`: `DoseResultCard` (full dose rows via `doseRows`, per-indication blocks with translated label/route/frequency/onset/duration/notes), `ContraindicationAlert` when hit, translated notes, `WarningPanel`, `ClinicalInfoAccordion`, `ReferenceInfo`. This panel is the only place full clinical content renders. Sticky top on `lg`. On mobile, selecting a drug smooth-scrolls to this panel (`scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })`).
 - `DoseResultCard`: hierarchy per DESIGN.md §16: drug generic name → brand → each `DoseRowView` (value in `font-num text-3xl md:text-4xl font-bold` for emphasized rows, `text-2xl` otherwise; unit in `text-base text-ink-muted`) → frequency/route chips → rule sub-text → max/min notice (from rule.maxMg/minMg via `rule.max`/`rule.min`). Decoration minimal (no blobs inside).
 - `ContraindicationAlert`: props `{ hit: ContraindicationHit; severityLabel: string; reason: string }`; severe = `bg-status-dangerSoft border-status-danger text-status-dangerText` + 🚫 + `contra.severe`; moderate = caution colors + ⚠️ + `contra.moderate`; mild = info colors + ℹ️ + translated raw severity. `role="alert"` for severe.
 - `WarningPanel`: list of translated warnings, caution styling, ⚠️ icon, `warnings.title`.
@@ -1656,7 +1665,7 @@ All UI tasks: use `superpowers:frontend-design` guidance and DESIGN.md. Every co
 - Test: `tests/components/PALSView.test.tsx`
 
 **Interfaces:**
-- `PALSView`: 3 `AlgorithmCard`s in dataset order using `localizePals`. Sections and order exactly as `docs/upstream-analysis/ui-and-strings.md` §8. `DrugMiniRow(drugId)`: generic (split on `—`, first part), route, and mini dose line `mg (mL)` via `calcDose` + `formatRange` (upstream `miniDoseLine`; `needs_weight` → `dose.needsWeight`, `needs_age` → empty). `EnergyRow`: no weight → `{j}-{high} J/kg`; with weight → `{low}-{high} J` from `energyJoules` + `formatNumber`, note below.
+- `PALSView`: 3 `AlgorithmCard`s in dataset order using `localizePals`. Sections and order exactly as `docs/upstream-analysis/ui-and-strings.md` §8. `DrugMiniRow(drugId)`: generic (split on `—`, first part), route, and `MiniDoseLine` from Task 17 (upstream `miniDoseLine`; `needs_weight` → `dose.needsWeight`, `needs_age` → empty); for multi-indication drugs one row per indication with the translated indication label (upstream shows ALL indications). Below the rows, when the drug's top-level `calc.max_dose_mg` exists, render the upstream rule note: `{low}-{high} mg/kg, max {max} mg` + (`; min {min} mg` if present) + (`; {frequency}` translated if present) — build it from `RuleDescriptor` fields via `formatRule` plus `rule.max`/`rule.min` strings; never omit it. `EnergyRow`: no weight → `{j}-{high} J/kg`; with weight → `{low}-{high} J` from `energyJoules` + `formatNumber`, note below.
 - Decision tree: question box `❓`, YES/NO columns; nodes with `branches` render QRS cards; nodes with `actions` render lists.
 
 - [ ] **Step 1: Tests**: with weight 20, cardiac arrest card shows epinephrine row containing `0.2` mg and energy row `40 J` for 2 J/kg; without weight shows `2 J/kg`.
@@ -1693,12 +1702,12 @@ All UI tasks: use `superpowers:frontend-design` guidance and DESIGN.md. Every co
 
 ## Phase 6 — Translations (parallelizable: 4 agents)
 
-Each translation task: copy entries from `src/i18n/drugs.skeleton.json` for the assigned ids into `drugs.th.json` / `drugs.en.json`, translate per AGENTS.md §9–10 and §19 (never soften/strengthen severity; numbers/units/operators untouched; keep PO/IV/BID etc.; brand names not translated, institution-specific Chinese brand suffixes may be dropped from `brand` only if the Latin brand + strength remain), set `_meta.status: "draft"`, then run `pnpm translation-report` and `pnpm test tests/i18n` until green. Unclear source strings: keep the canonical string and add `"_review": "reason"` next to the field instead of guessing.
+Each translation task: copy entries from `src/i18n/drugs.skeleton.json` for the assigned ids into its own range files `src/i18n/drugs/th/<range>.json` and `src/i18n/drugs/en/<range>.json` (never touch another range's file), translate per AGENTS.md §9–10 and §19 (never soften/strengthen severity; numbers/units/operators untouched; keep PO/IV/BID etc.; brand names not translated, institution-specific Chinese brand suffixes may be dropped from `brand` only if the Latin brand + strength remain), set `_meta.status: "draft"`, then run `pnpm translation-report` and `pnpm test tests/i18n` until green. Unclear source strings: keep the canonical string and add `"_review": "reason"` next to the field instead of guessing.
 
-### Task 22: Drug text TH+EN — drugs 1–23 (dataset order)
-### Task 23: Drug text TH+EN — drugs 24–45
-### Task 24: Drug text TH+EN — drugs 46–67
-### Task 25: PALS + SE algorithm text TH+EN (`algorithms.th.json`, `algorithms.en.json`) and `searchAliases.th.json` (Thai synonyms for common generics only where a standard Thai spelling is well established, e.g. พาราเซตามอล → acetaminophen ids, อะม็อกซีซิลลิน → amoxicillin ids; keep the list short and mark `_meta.status: draft`)
+### Task 22: Drug text TH+EN — drugs 1–23 (dataset order) → `src/i18n/drugs/{th,en}/01-23.json`
+### Task 23: Drug text TH+EN — drugs 24–45 → `src/i18n/drugs/{th,en}/24-45.json`
+### Task 24: Drug text TH+EN — drugs 46–67 → `src/i18n/drugs/{th,en}/46-67.json`
+### Task 25: PALS + SE algorithm text TH+EN (`src/i18n/algorithms/{th,en}/pals.json`, `.../se.json`) and `searchAliases.th.json` (Thai synonyms for common generics only where a standard Thai spelling is well established, e.g. พาราเซตามอล → acetaminophen ids, อะม็อกซีซิลลิน → amoxicillin ids; keep the list short and mark `_meta.status: draft`)
 
 - [ ] For each: fill translations → `pnpm translation-report` → `pnpm test` → commit `i18n: translate drugs N–M (draft)`; after all four merge: `git push origin main`.
 
@@ -1725,7 +1734,7 @@ Each translation task: copy entries from `src/i18n/drugs.skeleton.json` for the 
 
 **Files:** `.github/workflows/deploy.yml`, `vite.config.ts` (define `VITE_APP_VERSION`), `public/404.html` (copy of index for SPA fallback not needed; no routing — skip), `CHANGELOG.md`
 
-- Workflow: on push to `main`: `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm test`, `pnpm build`, upload `dist` with `actions/upload-pages-artifact@v3`, deploy with `actions/deploy-pages@v4`.
+- Workflow: on push to `main`: `pnpm install --frozen-lockfile`, `pnpm lint`, `pnpm test`, `pnpm build`, upload `dist` with `actions/upload-pages-artifact@v3`, deploy with `actions/deploy-pages@v4`. Note for the owner: GitHub Pages must be set to "Source: GitHub Actions" in the repository settings; only the owner can do that.
 - Grep `dist/` for `eval(`, `docs.google.com`, `fetch(` targets other than `data/peds_drugs.json`: must be none.
 - [ ] Run full suite: `pnpm lint && pnpm typecheck && pnpm test && pnpm build`. Commit `ci: GitHub Pages deploy workflow` and `git push origin main`.
 - [ ] Verify the Definition of Done checklist in AGENTS.md §44 line by line and record it in `CHANGELOG.md`.
