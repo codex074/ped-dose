@@ -32,7 +32,11 @@ function toUpstreamShape(r: ReturnType<typeof calcDose>): Record<string, unknown
     case 'band':
       return {
         type: 'band',
-        bandText: r.matched ? r.bandText || '無資料' : '無相符區間',
+        bandText: r.matched
+          ? r.rule.kind === 'weight_band'
+            ? r.bandText
+            : r.bandText || '無資料'
+          : '無相符區間',
         rule: ruleToUpstreamText(r.rule),
       };
     case 'rate':
@@ -75,11 +79,17 @@ test('every golden case matches the TypeScript engine', () => {
     if (r.kind === 'dose') {
       if (r.mgRange && formatRange(...r.mgRange) !== c.formatted.mg)
         failures.push(`fmt mg ${c.drugId} w=${c.weight}`);
+      if (r.mcgRange && formatRange(...r.mcgRange) !== c.formatted.mcg)
+        failures.push(`fmt mcg ${c.drugId} w=${c.weight}`);
       if (r.mlRange && formatRange(...r.mlRange) !== c.formatted.ml)
         failures.push(`fmt ml ${c.drugId} w=${c.weight}`);
       if (r.unitRange && formatRange(...r.unitRange) !== c.formatted.unit)
         failures.push(`fmt unit ${c.drugId} w=${c.weight}`);
+      if (r.packsPerDose !== undefined && formatNumber(r.packsPerDose) !== c.formatted.packs)
+        failures.push(`fmt packs ${c.drugId} w=${c.weight}`);
     }
+    if (r.kind === 'rate' && formatNumber(r.rate) !== c.formatted.rate)
+      failures.push(`fmt rate ${c.drugId} w=${c.weight}`);
   }
   expect(failures.slice(0, 20)).toEqual([]);
   expect(failures.length).toBe(0);
