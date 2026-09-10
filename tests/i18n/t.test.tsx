@@ -37,3 +37,10 @@ test('translate interpolates params', () => {
   expect(translate('en', 'dose.unitCount', { unit: 'tab' })).toBe('tab count');
   expect(translate('th', 'dose.unitCount', { unit: 'tab' })).toBe('จำนวน tab');
 });
+
+test('language-switch labels are invariant across the active language', () => {
+  expect(translate('en', 'lang.th')).toBe('ไทย');
+  expect(translate('th', 'lang.th')).toBe('ไทย');
+  expect(translate('en', 'lang.en')).toBe('EN');
+  expect(translate('th', 'lang.en')).toBe('EN');
+});

@@ -3,7 +3,7 @@
   "app.subtitle": "Pediatric Dose Calculator",
   "app.version": "Version {version}",
   "app.dataReviewed": "Data reviewed: {date}",
-  "lang.th": "EN",
+  "lang.th": "ไทย",
   "lang.en": "EN",
   "lang.switchLabel": "Switch language",
   "patient.title": "Patient information",
