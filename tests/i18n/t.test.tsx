@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { render, screen, act } from '@testing-library/react';
 import { LanguageProvider, useLang, useT, translate } from '@/i18n';
 
@@ -29,8 +30,13 @@ test('defaults to Thai and switches to English, persisting the choice', () => {
 });
 
 test('translate is pure and returns the key itself for a missing key', () => {
-  expect(translate('th', 'this.key.does.not.exist')).toBe('this.key.does.not.exist');
-  expect(translate('en', 'this.key.does.not.exist')).toBe('this.key.does.not.exist');
+  const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+  try {
+    expect(translate('th', 'this.key.does.not.exist')).toBe('this.key.does.not.exist');
+    expect(translate('en', 'this.key.does.not.exist')).toBe('this.key.does.not.exist');
+  } finally {
+    warnSpy.mockRestore();
+  }
 });
 
 test('translate interpolates params', () => {

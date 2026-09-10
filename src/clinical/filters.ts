@@ -167,9 +167,7 @@ export function groupForDisplay(
 
   const order = new Map<string, number>();
   categories.forEach((c, i) => order.set(c.id, c.order ?? i));
-  const catIds = [...byCat.keys()].sort(
-    (a, b) => (order.get(a) ?? 999) - (order.get(b) ?? 999),
-  );
+  const catIds = [...byCat.keys()].sort((a, b) => (order.get(a) ?? 999) - (order.get(b) ?? 999));
 
   return {
     starred: mergeConsecutiveGroups(starredDrugs),

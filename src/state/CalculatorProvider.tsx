@@ -106,9 +106,10 @@ export function CalculatorProvider(props: {
     initial?.expandedDetails ?? new Set(),
   );
 
-  const { value: weight, error: weightError } = useMemo(() => parseWeight(weightInput), [
-    weightInput,
-  ]);
+  const { value: weight, error: weightError } = useMemo(
+    () => parseWeight(weightInput),
+    [weightInput],
+  );
   const { value: age, error: ageError } = useMemo(() => parseAge(ageInput), [ageInput]);
 
   useEffect(() => {

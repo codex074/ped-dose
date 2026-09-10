@@ -122,9 +122,7 @@ export function doseRows(
 
     case 'band': {
       const label = formatRule(result.rule, t);
-      const value = result.matched
-        ? opts?.bandText ?? result.bandText
-        : t('dose.noMatchingBand');
+      const value = result.matched ? (opts?.bandText ?? result.bandText) : t('dose.noMatchingBand');
       rows.push({ id: 'band', label, value, unit: '', emphasis: false });
       return rows;
     }

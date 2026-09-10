@@ -1,0 +1,1703 @@
+{
+  "_meta": {
+    "status": "draft",
+    "generatedFrom": "2.5"
+  },
+  "antiphen_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Anti-phen syrup 24 mg/mL · 安佳熱糖漿",
+    "notes": "速算: BW÷4 ~ BW÷2 mL/dose；間隔 ≥4 小時；可與 Ibuprofen 半小時錯開使用",
+    "frequency": "Q4-6H PRN",
+    "source": "Lexicomp + 高醫速算表",
+    "package": "60 mL/bot",
+    "clinical": {
+      "use": "發燒、輕度疼痛",
+      "contraindications": "嚴重肝功能不全、過敏",
+      "adverseEffects": "肝毒性（過量）、罕見過敏皮疹",
+      "warnings": "Max 75 mg/kg/day；間隔 ≥4 hr；勿與其他含 acetaminophen 製品併用",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "acetaminophen_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Panadol / Acetaminophen 500mg tab",
+    "notes": "Max 1#/dose；通常 ≥30 kg 才開錠劑",
+    "frequency": "Q4-6H PRN",
+    "source": "Lexicomp + 高醫速算表",
+    "unit": "tab",
+    "clinical": {
+      "use": "發燒、輕度疼痛",
+      "contraindications": "嚴重肝功能不全",
+      "adverseEffects": "肝毒性（過量）、皮疹",
+      "warnings": "通常 ≥30 kg 才開錠劑；max 4 g/day（兒童 75 mg/kg/day）",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "idefen_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Idofen syrup 20 mg/mL · 舒抑痛口服懸液",
+    "notes": "速算: BW÷4 ~ BW÷2 mL/dose；< 6 月禁用；≥ 6 月-12 歲適用",
+    "frequency": "Q6-8H PRN",
+    "source": "Lexicomp + 高醫速算表",
+    "package": "60 mL/bot",
+    "contraindications": [
+      {
+        "severity": "禁用",
+        "reason": "NSAID — GI bleeding / 腎毒性風險"
+      }
+    ],
+    "clinical": {
+      "use": "發燒、發炎性疼痛",
+      "contraindications": "<6 月、消化道潰瘍、aspirin 三聯（asthma+rhinitis+nasal polyp）、嚴重腎/肝衰竭",
+      "adverseEffects": "GI upset、消化道出血、急性腎損傷、血小板功能↓",
+      "warnings": "<6 月禁用；脫水/腎前性低灌流期間慎用；max 40 mg/kg/day",
+      "pregnancy": "AU TGA: C（第 3 trimester D）",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "voren_supp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Voren supp 12.5 mg · 非炎栓劑",
+    "notes": "速算: BW÷25 ~ BW÷12.5 顆；Max 2 顆/日；嬰幼兒退燒備用",
+    "frequency": "Q6H PRN",
+    "source": "高醫速算表",
+    "unit": "supp",
+    "contraindications": [
+      {
+        "severity": "不建議",
+        "reason": "NSAID — GI bleeding / 腎毒性；嬰幼兒限退燒備用"
+      }
+    ],
+    "clinical": {
+      "use": "嬰幼兒退燒備用",
+      "contraindications": "活動性消化道出血、嚴重腎衰、aspirin 三聯",
+      "adverseEffects": "GI upset、肛門刺激、罕見肝功能異常",
+      "warnings": "Max 2 supp/day；發燒未退時勿短時內重複 PR + PO NSAID",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "peace_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Peace syrup",
+    "frequency": "TID PC",
+    "source": "高醫速算表",
+    "concentration_note": "Triprolidine 0.25 mg + Pseudoephedrine 6 mg/mL",
+    "clinical": {
+      "use": "感冒鼻塞流鼻水（複方）",
+      "contraindications": "MAOI 治療中、嚴重 HTN、CAD、甲亢",
+      "adverseEffects": "嗜睡、口乾、興奮（pseudoephedrine 部分）",
+      "warnings": "<2 歲不建議；含 pseudoephedrine 注意 BP/HR",
+      "pregnancy": "—",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "cypromin_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cypromin syrup 0.4 mg/mL · 希普利敏液",
+    "notes": "First-gen antihistamine，年紀大可改 cetirizine",
+    "frequency": "TID PC",
+    "source": "高醫速算表",
+    "package": "60 mL/bot",
+    "clinical": {
+      "use": "過敏、流鼻水、止癢；亦用於食慾不振",
+      "contraindications": "Glaucoma、BPH、MAOI、新生兒",
+      "adverseEffects": "嗜睡、口乾、體重增加（食慾↑）",
+      "warnings": "First-gen 抗組織胺，鎮靜效果明顯",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "短期可（可能↓奶量）",
+      "controlledDrug": "—"
+    }
+  },
+  "cetirizine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cetirizine syrup 1 mg/mL · 勝克敏液",
+    "notes": "依仿單分齡：<3y 由醫師指示（一般 0.25 mg/kg/dose）；3–6y 5 mg QD 或 2.5 mg BID；≥6y 10 mg QD。腎功能不全劑量減半。",
+    "frequency": "QD（晚餐時服用）",
+    "source": "勝克敏液仿單 + 院內 藥典",
+    "package": "60 mL/bot",
+    "bands": [
+      {
+        "label": "<3y · 0.25 mg/kg QD-BID（依醫師指示）"
+      },
+      {
+        "label": "3-6y · 5 mg QD（或 2.5 mg BID）"
+      },
+      {
+        "label": "≥6y / 成人 · 10 mg QD"
+      }
+    ],
+    "clinical": {
+      "use": "過敏性鼻炎、蕁麻疹、皮膚癢",
+      "contraindications": "對 cetirizine / hydroxyzine 過敏；嚴重腎功能不全（CrCl <10）需調整",
+      "adverseEffects": "嗜睡（較第一代輕）、口乾、頭痛",
+      "warnings": "腎功能不全需調整劑量；2 歲以下使用前先評估",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "可進入乳汁，建議避免長期使用",
+      "controlledDrug": "—"
+    }
+  },
+  "cypromin_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cypromin 4mg tab",
+    "notes": "由 syrup 0.4 mg/mL × 0.6 mL/kg/day 換算為 0.24 mg/kg/day；max 16 mg/day",
+    "frequency": "TID PC",
+    "source": "高醫速算表",
+    "unit": "tab",
+    "clinical": {
+      "use": "過敏、流鼻水、止癢",
+      "contraindications": "Glaucoma、BPH、MAOI、新生兒",
+      "adverseEffects": "嗜睡、口乾",
+      "warnings": "First-gen 抗組織胺，注意嗜睡",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "secorine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Secorine syrup 息咳寧糖漿",
+    "frequency": "TID PC",
+    "source": "高醫速算表",
+    "clinical": {
+      "use": "感冒症狀緩解（複方）",
+      "contraindications": "MAOI、嚴重 HTN",
+      "adverseEffects": "嗜睡、口乾、興奮",
+      "warnings": "<2 歲不建議；含 methylephedrine 注意 BP/HR",
+      "pregnancy": "—",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "glyo_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "甘草止咳水 · Compound Glycyrrhiza Mixture",
+    "notes": "<1 歲避免使用（含複方甘草，禁用於小嬰兒）",
+    "frequency": "TID PC",
+    "source": "高醫速算表",
+    "warnings": [
+      "<1 歲禁用"
+    ],
+    "contraindications": [
+      {
+        "severity": "不建議",
+        "reason": "< 1 歲避免使用（複方甘草成分）"
+      }
+    ],
+    "clinical": {
+      "use": "止咳",
+      "contraindications": "<1 歲、低鉀血症、嚴重高血壓",
+      "adverseEffects": "假性高醛固酮症（長期 / 大量）：高血壓、低鉀、水腫",
+      "warnings": "<1 歲避免（含複方甘草）；勿長期大量使用",
+      "pregnancy": "—",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "actein_granule": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Actein granule 200 mg/3g/sac · 愛克痰",
+    "frequency": "TID PC",
+    "source": "高醫速算表",
+    "unit": "包",
+    "clinical": {
+      "use": "化痰（mucolytic）",
+      "contraindications": "Acetylcysteine 過敏",
+      "adverseEffects": "GI upset、罕見支氣管痙攣（吸入劑型）",
+      "warnings": "氣喘患者慎用；與抗生素間隔 1-2 hr 服用",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "資料不足",
+      "controlledDrug": "—"
+    }
+  },
+  "acc_effervescent": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "ACC600 Effervescent Tab · 袪痰寧發泡錠",
+    "notes": "袪痰寧發泡錠 600mg；化學溶於水後喝；< 6 歲建議用 Actein granule 200mg/包",
+    "frequency": "BID-TID PC",
+    "source": "高醫藥品庫 + Lexicomp",
+    "unit": "粒",
+    "bands": [
+      {
+        "dose": "不建議 (<6 歲改用 Actein granule)"
+      },
+      {
+        "dose": "0.5 # BID PC"
+      },
+      {
+        "dose": "1 # BID-TID PC"
+      }
+    ],
+    "clinical": {
+      "use": "化痰（mucolytic）",
+      "contraindications": "Acetylcysteine 過敏",
+      "adverseEffects": "GI upset、口腔黏膜刺激",
+      "warnings": "<6 歲建議改用 granule 劑型；溶於水後立即服用",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "資料不足",
+      "controlledDrug": "—"
+    }
+  },
+  "soltan_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Mucosolvan syrup · 平痰息（院內主用 Mubroxol tab）",
+    "frequency": "TID PC",
+    "source": "高醫速算表",
+    "clinical": {
+      "use": "化痰（mucolytic）",
+      "contraindications": "Ambroxol 過敏",
+      "adverseEffects": "GI upset、罕見過敏",
+      "warnings": "罕見嚴重皮膚反應（Stevens-Johnson）",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "zithromax_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Zithromax syrup 40 mg/mL · 日舒懸液",
+    "notes": "速算: 0.25 mL/kg QD；須先加水 9mL 稀釋成 15mL，搖勻；稀釋後室溫安定 7 天",
+    "frequency": "QD",
+    "source": "Lexicomp + 高醫速算表 + 中榮 PDF",
+    "package": "15 mL/bot",
+    "concentration_note": "200 mg/5 mL = 40 mg/mL",
+    "duration_note": "Mycoplasma: 3 天；中耳炎: 5 天",
+    "clinical": {
+      "use": "Mycoplasma、中耳炎、咽炎、CAP",
+      "contraindications": "Macrolide 過敏、肝功能異常",
+      "adverseEffects": "GI upset、味覺異常、QT 延長（高劑量）",
+      "warnings": "QT 延長風險（注意 baseline ECG）；mycoplasma 3 天即可",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "zithromax_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Zithromax 250 mg tab · 日舒",
+    "frequency": "QD",
+    "source": "Lexicomp",
+    "unit": "粒",
+    "clinical": {
+      "use": "Mycoplasma、中耳炎、咽炎、CAP",
+      "contraindications": "Macrolide 過敏",
+      "adverseEffects": "GI upset、QT 延長（高劑量）",
+      "warnings": "QT 延長風險；max 500 mg/day",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "amoxicillin_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Amoxicillin susp 25 mg/mL · 安默西林",
+    "notes": "中耳炎/CAP 高劑量；單純 URI 可改 50 mg/kg/day。較大孩子請改錠劑",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp + 高醫速算表",
+    "package": "60 mL/bot",
+    "concentration_note": "1500 mg / 60 mL = 25 mg/mL",
+    "contraindications": [
+      {
+        "severity": "建議改膠囊",
+        "reason": "≥ 30 kg 改 Amoxicillin 500 mg cap"
+      }
+    ],
+    "clinical": {
+      "use": "中耳炎、咽炎、CAP、URI",
+      "contraindications": "Penicillin 過敏",
+      "adverseEffects": "GI upset、皮疹（特別是 EBV 感染時）、罕見過敏性休克",
+      "warnings": "EBV / IM 感染時皮疹率高；中耳炎/CAP 用高劑量 80-90 mg/kg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "amoxicillin_cap": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Amoxicillin 500 mg cap · 愛默士黴素",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp",
+    "unit": "粒",
+    "clinical": {
+      "use": "中耳炎、咽炎、CAP、URI",
+      "contraindications": "Penicillin 過敏",
+      "adverseEffects": "GI upset、皮疹",
+      "warnings": "通常 ≥30 kg 才開膠囊；高劑量 80-90 mg/kg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "curam_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Curam Powder for Oral Susp · 諾快寧口服懸液",
+    "notes": "中耳炎/CAP 高劑量；7:1 配方降低拉肚子；較大孩子請改錠劑",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp + 高醫速算表",
+    "package": "60 mL/bot",
+    "concentration_note": "60 mL/bot 配水後使用；Amox 400 mg + Clav 57 mg / 5 mL（7:1 ratio）",
+    "contraindications": [
+      {
+        "severity": "建議改錠劑",
+        "reason": "≥ 30 kg 改 Curam 875/125 tab"
+      }
+    ],
+    "clinical": {
+      "use": "中耳炎、CAP、複雜 URI（amoxicillin/clavulanate 7:1）",
+      "contraindications": "Penicillin 過敏、cholestatic jaundice 病史",
+      "adverseEffects": "GI upset（特別腹瀉）、皮疹、罕見肝功能異常",
+      "warnings": "Clavulanate 部分易拉肚子；中耳炎/CAP 80-90 mg/kg/day（amox 計）",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "curam_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Curam 875/125 tab · 諾快寧",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp",
+    "unit": "粒",
+    "concentration_note": "Amoxicillin 875 mg + Clav 125 mg",
+    "clinical": {
+      "use": "中耳炎、CAP、複雜 URI（875/125 tab）",
+      "contraindications": "Penicillin 過敏、cholestatic jaundice 病史",
+      "adverseEffects": "GI upset、皮疹",
+      "warnings": "≥30 kg 適用；max 3 g/day amox",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "tamiflu": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Tamiflu / Eraflu (Oseltamivir 30/45/75 mg cap) · 克流感 / 易剋冒",
+    "notes": "症狀 48 小時內開始最有效；參考台灣兒科醫學會抗病毒藥物使用建議",
+    "frequency": "BID × 5 days",
+    "source": "Lexicomp / Taiwan Pediatric Society",
+    "package": "cap 30/45/75 mg / 60 mg/mL susp",
+    "concentration_note": "依年齡/體重不同 cap 規格 (30/45/75 mg)",
+    "contraindications": [
+      {
+        "severity": "不建議",
+        "reason": "< 2 週新生兒安全性資料不足"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "30 mg BID × 5 days"
+      },
+      {
+        "dose": "45 mg BID × 5 days"
+      },
+      {
+        "dose": "60 mg BID × 5 days"
+      },
+      {
+        "dose": "75 mg BID × 5 days"
+      }
+    ],
+    "clinical": {
+      "use": "Influenza A/B 治療與預防",
+      "contraindications": "Oseltamivir 過敏",
+      "adverseEffects": "N/V（最常見）、頭痛、罕見神經精神症狀",
+      "warnings": "症狀 48 hr 內最有效；neuropsychiatric event 罕見但需衛教家屬",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "rapiacta_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Rapiacta · 瑞貝塔點滴靜脈注射液",
+    "notes": "≥6 月：10-12 mg/kg single dose；成人 600 mg。流感住院 / 不耐口服可選；疾管署疫情期間有公費（2RAPIA），平時用 2RAPI3 自費版。",
+    "frequency": "Single dose × 1（IV over 15-30 min）",
+    "source": "Lexicomp + 高醫藥品庫",
+    "package": "300 mg / 60 mL/Bag",
+    "warnings": [
+      "稀釋至 30-100 mL N/S，IV over 15-30 min"
+    ],
+    "contraindications": [
+      {
+        "severity": "不建議",
+        "reason": "< 6 月安全性資料不足"
+      }
+    ],
+    "clinical": {
+      "use": "Influenza A/B 治療（無法口服 / 重症）",
+      "contraindications": "Peramivir 過敏",
+      "adverseEffects": "腹瀉、罕見過敏、嗜中性球↓",
+      "warnings": "≥6 月適用；Single IV 15-30 min；嚴重肝腎功能異常需調量",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "資料不足",
+      "controlledDrug": "—"
+    }
+  },
+  "xofluza_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Xofluza 20 mg tab · 紓伏效膜衣錠",
+    "notes": "≥1 歲適用；單次口服即可（療程結束）；勿與 dairy/calcium 同服（吸收下降）",
+    "frequency": "Single dose × 1",
+    "source": "Lexicomp + 高醫藥品庫",
+    "unit": "粒",
+    "warnings": [
+      "症狀 48 小時內服用最有效"
+    ],
+    "contraindications": [
+      {
+        "severity": "不建議",
+        "reason": "< 1 歲安全性資料不足"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "≥1 歲 + <20 kg：2 mg/kg PO single dose"
+      },
+      {
+        "dose": "40 mg (2 #) PO single dose"
+      },
+      {
+        "dose": "80 mg (4 #) PO single dose"
+      }
+    ],
+    "clinical": {
+      "use": "Influenza A/B 治療（單次口服）",
+      "contraindications": "Baloxavir 過敏",
+      "adverseEffects": "腹瀉、頭痛（少見）",
+      "warnings": "≥1 歲適用；勿與含鈣 / 鎂 / 鐵製品併服（吸收↓）",
+      "pregnancy": "—（資料不足）",
+      "breastfeeding": "資料不足",
+      "controlledDrug": "—"
+    }
+  },
+  "relenza_inh": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Relenza rotadisk · 瑞樂沙旋達碟",
+    "notes": "≥7 歲適用；使用 Diskhaler 吸入器；氣喘 / COPD 患者慎用（可能誘發支氣管痙攣）",
+    "frequency": "BID × 5 days",
+    "source": "Lexicomp + 高醫藥品庫",
+    "unit": "blister",
+    "warnings": [
+      "氣喘 / COPD 慎用 — 誘發支氣管痙攣風險"
+    ],
+    "contraindications": [
+      {
+        "severity": "不建議",
+        "reason": "< 7 歲不建議使用 Diskhaler 吸入劑型"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "<7 歲不建議"
+      },
+      {
+        "dose": "10 mg (2 blisters) BID × 5 days"
+      }
+    ],
+    "clinical": {
+      "use": "Influenza A/B 治療（吸入）",
+      "contraindications": "氣喘、COPD、乳糖過敏",
+      "adverseEffects": "支氣管痙攣（氣喘患者）、頭痛、咳嗽",
+      "warnings": "≥7 歲適用；氣喘患者誘發 bronchospasm，使用前先用 bronchodilator",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "epinephrine_inh_croup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bosmin / Adrenalin 1 mg/mL/Amp",
+    "notes": "Croup: 0.5 mL/kg of 1:1000 (1 mg/mL)；≤4 歲 max 2.5 mL，>4 歲 max 5 mL；觀察 2-4 小時看反彈",
+    "frequency": "ST (一次)",
+    "source": "高醫速算表 + Lexicomp",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Croup（中重度氣道阻塞）",
+      "contraindications": "—（緊急情況下無絕對禁忌）",
+      "adverseEffects": "心跳↑、震顫、HTN（短暫）",
+      "warnings": "用後觀察 2-4 hr 看是否反彈（rebound）；類固醇併用降低 admit 機率",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "terbutaline_neb": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bricanyl 2.5 mg/mL/Amp",
+    "frequency": "ST",
+    "source": "高醫速算表",
+    "package": "2 mL/Amp",
+    "bands": [
+      {
+        "dose": "0.5 amp/dose"
+      },
+      {
+        "dose": "1 amp/dose"
+      }
+    ],
+    "clinical": {
+      "use": "氣喘、bronchiolitis bronchodilation",
+      "contraindications": "Tachyarrhythmia 嚴重者",
+      "adverseEffects": "心跳↑、震顫、低鉀（高劑量）",
+      "warnings": "重複使用注意 K+；急性 asthma 與 ipratropium 併用",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "ipratropium_neb": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Atrovent 0.25 mg/mL",
+    "frequency": "ST",
+    "source": "高醫速算表",
+    "package": "2 mL/Amp",
+    "bands": [
+      {
+        "dose": "0.5 amp/dose"
+      },
+      {
+        "dose": "1 amp/dose"
+      }
+    ],
+    "clinical": {
+      "use": "氣喘急性發作（與 β-agonist 併用）",
+      "contraindications": "Atropine 過敏、glaucoma",
+      "adverseEffects": "口乾、咳嗽、罕見急性 angle-closure glaucoma（眼睛接觸）",
+      "warnings": "與 β-agonist 併用發作前 24 hr；勿單獨用於急性發作",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "資料不足",
+      "controlledDrug": "—"
+    }
+  },
+  "exdila_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Exdila / Meptin liquid 5 mcg/mL · 滅喘淨液",
+    "frequency": "BID PC",
+    "source": "高醫速算表",
+    "package": "60 mL/bot",
+    "clinical": {
+      "use": "氣喘 maintenance / mild bronchoconstriction",
+      "contraindications": "Tachyarrhythmia",
+      "adverseEffects": "心悸、震顫、口乾",
+      "warnings": "≥6 歲建議；急性發作不適合（onset 慢）",
+      "pregnancy": "—",
+      "breastfeeding": "資料不足",
+      "controlledDrug": "—"
+    }
+  },
+  "meptin_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Meptin 25 mcg tab · 滅喘淨微",
+    "notes": "依體重分組；< 6 歲建議用 Meptin liquid",
+    "frequency": "BID PC",
+    "source": "Lexicomp + 高醫藥品庫",
+    "unit": "粒",
+    "bands": [
+      {
+        "dose": "0.5 # BID"
+      },
+      {
+        "dose": "1 # BID"
+      },
+      {
+        "dose": "1-2 # BID"
+      }
+    ],
+    "clinical": {
+      "use": "氣喘 maintenance",
+      "contraindications": "Tachyarrhythmia 嚴重者",
+      "adverseEffects": "心悸、震顫",
+      "warnings": "Long-acting 形式；急性 asthma 用 nebulization",
+      "pregnancy": "—",
+      "breastfeeding": "資料不足",
+      "controlledDrug": "—"
+    }
+  },
+  "prednisolone_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Prednisolone 5 mg tab",
+    "source": "高醫速算表 + Lexicomp",
+    "unit": "粒",
+    "indications": [
+      {
+        "label": "Croup (single dose)",
+        "frequency": "ST × 1 dose"
+      },
+      {
+        "label": "Asthma loading",
+        "frequency": "Loading × 1，maintain 2 mg/kg/day（在院 loading，回家帶 3 天藥）"
+      }
+    ],
+    "clinical": {
+      "use": "Croup、Asthma、皮膚過敏、自體免疫",
+      "contraindications": "活動性感染（系統性）、live vaccine 24 hr 內",
+      "adverseEffects": "短期：高血糖、情緒；長期：腎上腺抑制、Cushing 樣外觀、骨質疏鬆",
+      "warnings": "Croup / Asthma 短療程通常 3 天；無需 taper（療程 <14 天）",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "methylpred_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Solu-Medrol 40 mg/Vial",
+    "notes": "等效劑量：methylpred ≈ 4× dexamethasone",
+    "source": "高醫速算表 + Lexicomp",
+    "unit": "Vial",
+    "indications": [
+      {
+        "label": "Croup (single dose, equiv. dex 0.6 mg/kg)",
+        "frequency": "ST × 1 dose"
+      },
+      {
+        "label": "Asthma loading",
+        "frequency": "ST，maintain 同等量分次 q6h"
+      }
+    ],
+    "clinical": {
+      "use": "Croup、Asthma 急性發作、anaphylaxis",
+      "contraindications": "Live vaccine 24 hr 內、systemic fungal infection",
+      "adverseEffects": "短期：高血糖、HTN；長期同 corticosteroid 全身副作用",
+      "warnings": "急性發作首選 IV/IM；通常 single dose 或 ≤72 hr",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "aswell_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Aswell syrup · 安適胃寧液",
+    "notes": "注意 EPS 副作用，可與 diphenhydramine 並用預防",
+    "frequency": "TID PC PRN",
+    "source": "高醫速算表",
+    "warnings": [
+      "EPS"
+    ],
+    "contraindications": [
+      {
+        "severity": "慎用",
+        "reason": "< 1 歲 EPS 風險高"
+      }
+    ],
+    "clinical": {
+      "use": "Nausea / vomiting / GERD",
+      "contraindications": "GI 阻塞 / 穿孔、pheochromocytoma、tardive dyskinesia 病史",
+      "adverseEffects": "嗜睡、躁動、EPS（年紀小風險高）",
+      "warnings": "<1 歲 EPS 風險高；併 diphenhydramine 預防 EPS；max 5 day 療程",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "可（少量）",
+      "controlledDrug": "—"
+    }
+  },
+  "promeran_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Promeran 3.84 mg tab · 胃明朗膜衣錠",
+    "frequency": "TID PC PRN",
+    "source": "Lexicomp + 高醫藥品庫",
+    "unit": "粒",
+    "warnings": [
+      "EPS 副作用 — 兒童風險高，可與 diphenhydramine 並用預防"
+    ],
+    "clinical": {
+      "use": "Nausea / vomiting",
+      "contraindications": "GI 阻塞 / 穿孔、tardive dyskinesia 病史",
+      "adverseEffects": "嗜睡、EPS、罕見 NMS",
+      "warnings": "Max 5 day 療程；急性 EPS 用 diphenhydramine 治療",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "可",
+      "controlledDrug": "—"
+    }
+  },
+  "primperan_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Primperan 5 mg/mL/Amp · 腹寧朗",
+    "frequency": "Q6-8H PRN",
+    "source": "高醫速算表",
+    "package": "2 mL/Amp",
+    "warnings": [
+      "EPS — 常與 diphenhydramine (Vena) 並用"
+    ],
+    "contraindications": [
+      {
+        "severity": "慎用",
+        "reason": "< 1 歲 EPS 風險高"
+      }
+    ],
+    "clinical": {
+      "use": "Nausea / vomiting（急救快速）",
+      "contraindications": "GI 阻塞 / 穿孔、pheochromocytoma",
+      "adverseEffects": "EPS（特別年紀小）、嗜睡、罕見 NMS",
+      "warnings": "Slow IV push（<2 min）；併 diphenhydramine 預防 EPS",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "可",
+      "controlledDrug": "—"
+    }
+  },
+  "novamin_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Novamin 5 mg/Amp",
+    "notes": "較不易 EPS",
+    "frequency": "Q6-8H PRN",
+    "source": "高醫速算表",
+    "unit": "Amp",
+    "contraindications": [
+      {
+        "severity": "禁用",
+        "reason": "< 2 歲禁用（呼吸抑制 + EPS）"
+      }
+    ],
+    "clinical": {
+      "use": "Nausea / vomiting（IM 強效）",
+      "contraindications": "<2 歲、嚴重 CNS depression、GI 阻塞",
+      "adverseEffects": "EPS、鎮靜、姿勢性低血壓",
+      "warnings": "<2 歲禁用；EPS 風險比 metoclopramide 低",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "kascoal_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Kascoal 40 mg tab · 卡舒考",
+    "frequency": "QID PC",
+    "source": "高醫速算表",
+    "unit": "粒",
+    "bands": [
+      {
+        "dose": "0.5 # QID"
+      },
+      {
+        "dose": "1 # QID"
+      },
+      {
+        "dose": "1-3 # QID"
+      }
+    ],
+    "clinical": {
+      "use": "脹氣、消化不良",
+      "contraindications": "—",
+      "adverseEffects": "罕見過敏",
+      "warnings": "Simethicone 不吸收，安全性極高",
+      "pregnancy": "—",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "lgg_pack": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "LGG 10 mg/g/sac",
+    "source": "高醫速算表",
+    "bands": [
+      {
+        "dose": "0.3-0.5 包 TID"
+      },
+      {
+        "dose": "0.5-1 包 TID"
+      },
+      {
+        "dose": "成人劑量"
+      }
+    ],
+    "clinical": {
+      "use": "急性腸胃炎輔助、antibiotic-associated diarrhea 預防",
+      "contraindications": "免疫低下 / 中央靜脈導管（罕見 sepsis 風險）",
+      "adverseEffects": "脹氣（短暫）",
+      "warnings": "免疫不全患者罕見 bacteremia；早產兒慎用",
+      "pregnancy": "—",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "mgo_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "MgO 250 mg tab · 氧化鎂",
+    "frequency": "TID-QID PC",
+    "source": "高醫速算表",
+    "unit": "粒",
+    "max_per_day_note": "Max 2.1 g/day",
+    "bands": [
+      {
+        "dose": "BW÷20 # TID-QID"
+      },
+      {
+        "dose": "0.5-1 # TID-QID"
+      },
+      {
+        "dose": "1-2 # TID-QID"
+      },
+      {
+        "dose": "2 # TID-QID"
+      }
+    ],
+    "clinical": {
+      "use": "便秘、消化不良（制酸）",
+      "contraindications": "嚴重腎衰、腸阻塞",
+      "adverseEffects": "腹瀉、罕見高鎂血症（腎衰患者）",
+      "warnings": "腎衰患者勿用；max 2.1 g/day",
+      "pregnancy": "—",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "glycerin_supp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "甘油球久仁浣腸液",
+    "frequency": "ST PRN",
+    "source": "高醫速算表",
+    "clinical": {
+      "use": "便秘（PR）",
+      "contraindications": "肛門撕裂 / 嚴重痔瘡",
+      "adverseEffects": "肛門刺激",
+      "warnings": "短期使用；勿與其他刺激性 laxative 併用",
+      "pregnancy": "—",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "smecta": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Smecta 3 g/sac · 思蜜達",
+    "notes": "1 歲以下 1 pack/day, 1-2 歲 2 pack/day, >2 歲 3 pack/day。如有服用其他藥物需間隔 1 小時",
+    "frequency": "TID PC",
+    "source": "高醫速算表 + 藥丹",
+    "clinical": {
+      "use": "急性腹瀉（吸附型）",
+      "contraindications": "腸阻塞",
+      "adverseEffects": "便秘",
+      "warnings": "與其他口服藥物間隔 1-2 hr 服用（吸附其他藥物）",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "相容",
+      "controlledDrug": "—"
+    }
+  },
+  "taita1": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.1 · 台大1號注射液（D5W）",
+    "notes": "D5W 等滲；新生兒/嬰兒常用補水基底",
+    "source": "高醫藥品庫",
+    "package": "500 mL/Bag",
+    "clinical": {
+      "use": "新生兒 / 嬰兒水分基底（D5W）",
+      "contraindications": "高血糖、嚴重低鈉",
+      "adverseEffects": "輸液過量：水腫、稀釋性低鈉",
+      "warnings": "依 4-2-1 rule 計算 maintenance；嬰兒監測血糖",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "taita2": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.2 · 台大二號注射液",
+    "source": "高醫速算表",
+    "clinical": {
+      "use": "兒童 maintenance（D5 1/3 saline）",
+      "contraindications": "嚴重高/低鈉",
+      "adverseEffects": "輸液過量水腫；長時間使用 hypotonic 注意低鈉血症",
+      "warnings": "近年指南建議 isotonic（如 D5NS）；hypotonic 監測 Na",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "taita5": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.5 · 台大5號注射液",
+    "notes": "糖份較高，容易疼痛",
+    "source": "高醫速算表",
+    "clinical": {
+      "use": "兒童 maintenance（含較多葡萄糖）",
+      "contraindications": "高血糖、嚴重高/低鈉",
+      "adverseEffects": "高血糖、靜脈炎（糖份高）",
+      "warnings": "糖份較高，IV 注入處易疼痛；糖尿病或 stress hyperglycemia 慎用",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "morphine_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Morphine 10 mg/mL/Amp 嗎啡注射劑",
+    "notes": "管制藥；注意呼吸抑制；新生兒減半",
+    "frequency": "Q4-8H PRN",
+    "source": "高醫速算表 + Lexicomp",
+    "package": "1 mL/Amp",
+    "warnings": [
+      "呼吸抑制",
+      "管制藥"
+    ],
+    "contraindications": [
+      {
+        "severity": "慎用",
+        "reason": "新生兒呼吸抑制風險高，劑量減半"
+      }
+    ],
+    "clinical": {
+      "use": "中重度疼痛",
+      "contraindications": "呼吸抑制中、paralytic ileus、嚴重 asthma 急性期",
+      "adverseEffects": "呼吸抑制、嗜睡、N/V、便秘、瘙癢、histamine release",
+      "warnings": "新生兒劑量減半；呼吸抑制備 naloxone；緩慢 IV push",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可（小心嬰兒嗜睡）",
+      "controlledDrug": "管 1"
+    }
+  },
+  "fentanyl_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Fentanyl 50 mcg/mL",
+    "notes": "管制藥；快速 push 注意 chest wall rigidity；通常 procedural sedation 用 1 mcg/kg",
+    "frequency": "Q1-2H PRN",
+    "source": "Lexicomp + 高醫速算表",
+    "package": "2 mL/Amp = 100 mcg",
+    "warnings": [
+      "呼吸抑制",
+      "胸壁僵硬",
+      "管制藥"
+    ],
+    "clinical": {
+      "use": "急性疼痛、procedural sedation analgesia",
+      "contraindications": "呼吸抑制中、severe asthma",
+      "adverseEffects": "呼吸抑制、嗜睡、chest wall rigidity（快速 push）、低 BP",
+      "warnings": "Push 過快可能 chest wall rigidity；備 naloxone；slow IV over 1-2 min",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "管 1"
+    }
+  },
+  "succinylcholine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Relaxin 50 mg/mL",
+    "source": "Lexicomp + 高醫速算表",
+    "package": "10 mL/vial",
+    "warnings": [
+      "高鉀血症（燒傷/外傷/神經肌肉疾病禁用）",
+      "Malignant hyperthermia"
+    ],
+    "indications": [
+      {
+        "label": "RSI IV",
+        "frequency": "ST"
+      },
+      {
+        "label": "RSI IM",
+        "frequency": "ST"
+      }
+    ],
+    "clinical": {
+      "use": "RSI（快速肌肉鬆弛）",
+      "contraindications": "燒傷 24 hr 後、上 / 下運動神經元損傷、嚴重高鉀、家族 malignant hyperthermia",
+      "adverseEffects": "高鉀血症、bradycardia（兒童特別）、myalgia、罕見 malignant hyperthermia",
+      "warnings": "兒童 IV 1-2 mg/kg / IM 3-4 mg/kg；備 atropine 預防 brady、dantrolene 處理 MH",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "midazolam_dormicum": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Dormicum 5 mg/mL",
+    "source": "Lexicomp + 高醫速算表 + 藥丹",
+    "package": "3 mL/Amp = 15 mg/Amp",
+    "warnings": [
+      "呼吸抑制（與 opioid 共用尤其）",
+      "稀有 paradoxical agitation"
+    ],
+    "indications": [
+      {
+        "label": "IM (status epilepticus)",
+        "notes": "RAMPART trial: IM midaz ≥ IV lorazepam in efficacy",
+        "onset": "5-10 min",
+        "route": "IM"
+      },
+      {
+        "label": "Procedural sedation (IV)",
+        "frequency": "Slow IV push，可 2-3 min 後 repeat",
+        "onset": "1-3 min",
+        "duration": "30-60 min",
+        "route": "IV"
+      },
+      {
+        "label": "Intranasal (anxiolysis/seizure)",
+        "notes": "用 5 mg/mL 濃度，分兩鼻孔；癲癇現場可用",
+        "onset": "5-10 min",
+        "route": "IN"
+      }
+    ],
+    "clinical": {
+      "use": "Procedural sedation、anxiolysis、status epilepticus",
+      "contraindications": "重症肌無力、acute angle-closure glaucoma、呼吸衰竭",
+      "adverseEffects": "呼吸抑制（與 opioid 共用尤其）、嗜睡、罕見 paradoxical agitation",
+      "warnings": "備 flumazenil；新生兒癲癇現場 IM/IN 是好選擇（RAMPART）",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "管 4"
+    }
+  },
+  "lorazepam_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Anxicam (Lorazepam) 2 mg/mL",
+    "notes": "速記：20 kg 打一支（2 mg）；first-line for status epilepticus",
+    "frequency": "Slow IV push (over 2-5 min)，5-10 min 可 repeat",
+    "source": "Lexicomp + 藥丹",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Status epilepticus first-line、anxiolysis",
+      "contraindications": "重症肌無力、acute angle-closure glaucoma",
+      "adverseEffects": "呼吸抑制、嗜睡、罕見 paradoxical agitation",
+      "warnings": "Slow IV push over 2-5 min；備 flumazenil；max 4 mg/dose",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "管 4"
+    }
+  },
+  "diazepam_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Diazepam 5 mg/mL",
+    "notes": "Status epilepticus 替代藥（首選 lorazepam）",
+    "frequency": "Slow IV push (over 2-3 min)，5 min 可 repeat",
+    "source": "Lexicomp",
+    "package": "2 mL/Amp = 10 mg/Amp",
+    "clinical": {
+      "use": "Status epilepticus second-line、anxiolysis、muscle spasm",
+      "contraindications": "重症肌無力、嚴重呼吸衰竭",
+      "adverseEffects": "呼吸抑制、嗜睡、靜脈炎（IV）",
+      "warnings": "Slow IV push over 2-3 min；max 10 mg/dose；first-line 仍是 lorazepam",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "管 4"
+    }
+  },
+  "diazepam_pr": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Stesolid 直腸用 10 mg/2.5 mL/Tube · 疏痙",
+    "notes": "院前/居家熱痙攣常用；無 IV 路時方便。臨床多按管數給藥（一管 10 mg），mL 換算供參考",
+    "frequency": "ST，可在 5-10 min 後 repeat 一次",
+    "source": "Lexicomp + 藥丹",
+    "package": "10 mg / 2.5 mL/Tube",
+    "concentration_note": "5 mg/2.5 mL/管 或 10 mg/2.5 mL/管（依年齡選用）",
+    "clinical": {
+      "use": "院前 / 居家熱痙攣、status epilepticus（無 IV access）",
+      "contraindications": "重症肌無力、肛門撕裂",
+      "adverseEffects": "呼吸抑制、嗜睡",
+      "warnings": "0.5 mg/kg PR；max 20 mg/dose；可 5-10 min 後再給一次",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "管 4"
+    }
+  },
+  "keppra_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra Oral Solution · 優閒內服液劑",
+    "notes": "小孩或無法吞錠者用",
+    "frequency": "BID（口服維持劑量）",
+    "source": "Lexicomp",
+    "package": "300 mL/Bot",
+    "urgency_label": "💊 口服維持",
+    "clinical": {
+      "use": "Epilepsy maintenance（口服）",
+      "contraindications": "Levetiracetam 過敏",
+      "adverseEffects": "嗜睡、躁動、行為改變（兒童）",
+      "warnings": "Initial 20 mg/kg/day → titrate 至 40-60 mg/kg/day；BID",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "keppra_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra 500 mg tab · 優閒膜衣錠",
+    "notes": "急性 status 用 IV loading；ROSC 後或門診維持改口服。Initial 20 mg/kg/day → 視 seizure 控制 titrate 至 40-60 mg/kg/day",
+    "frequency": "BID（口服維持劑量）",
+    "source": "Lexicomp",
+    "unit": "粒",
+    "urgency_label": "💊 口服維持",
+    "clinical": {
+      "use": "Epilepsy maintenance（口服）",
+      "contraindications": "Levetiracetam 過敏",
+      "adverseEffects": "嗜睡、躁動",
+      "warnings": "Max 3000 mg/day；renal 調量",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "keppra_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra 500 mg/5 mL/Vial · 優閒注射液",
+    "notes": "ESETT 2019: 60 mg/kg over 10 min，效果與 fosphenytoin、valproate 相當；1 vial (500 mg) 稀釋至 50-100 mL N/S",
+    "frequency": "IV loading over 5-15 min × 1（status epilepticus）",
+    "source": "Lexicomp / ESETT trial 2019",
+    "package": "500 mg / 5 mL/Vial",
+    "unit": "Vial",
+    "urgency_label": "🚨 急性 loading",
+    "clinical": {
+      "use": "Status epilepticus second-line（loading）",
+      "contraindications": "Levetiracetam 過敏",
+      "adverseEffects": "嗜睡、躁動、罕見精神症狀（aggression / depression）",
+      "warnings": "ESETT 2019: 60 mg/kg over 10 min；Renal impairment 需減量",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine syrup 200 mg/mL · 帝拔癲液",
+    "notes": "Initial 10-15 mg/kg/day → 視 seizure 控制 titrate；目標血清 50-100 µg/mL",
+    "frequency": "BID（維持劑量；可 titrate 至 60 mg/kg/day）",
+    "source": "Lexicomp",
+    "package": "40 mL/Bot",
+    "urgency_label": "💊 口服維持",
+    "warnings": [
+      "肝病、線粒體疾病禁用",
+      "POMC encephalopathy"
+    ],
+    "clinical": {
+      "use": "Epilepsy maintenance（口服）",
+      "contraindications": "肝病、線粒體疾病、urea cycle disorder",
+      "adverseEffects": "肝毒性、體重↑、震顫、脫髮",
+      "warnings": "監測 LFT、CBC；目標血清 50-100 µg/mL；< 2 歲 hepatotoxicity 風險高",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine 200 mg tab · 帝拔癲",
+    "notes": "≥ 30 kg 適合錠劑；< 30 kg 用 syrup",
+    "frequency": "BID（維持劑量）",
+    "source": "Lexicomp",
+    "unit": "粒",
+    "urgency_label": "💊 口服維持",
+    "warnings": [
+      "肝病、線粒體疾病禁用"
+    ],
+    "clinical": {
+      "use": "Epilepsy maintenance（口服）",
+      "contraindications": "肝病、線粒體疾病、urea cycle disorder",
+      "adverseEffects": "肝毒性、體重↑、震顫",
+      "warnings": "≥30 kg 適合錠劑；< 2 歲 hepatotoxicity 風險高",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine 400 mg/Vial · 帝拔癲注射劑（復溶 100 mg/mL）",
+    "notes": "ESETT 2019: 40 mg/kg over 10 min；1 vial (400 mg) 稀釋至 50 mL N/S；rate 1.5-3 mg/kg/min",
+    "frequency": "IV loading over 10 min（status epilepticus）",
+    "source": "Lexicomp / ESETT trial 2019",
+    "package": "400 mg/Vial（復溶後 100 mg/mL）",
+    "unit": "vial",
+    "urgency_label": "🚨 急性 loading",
+    "warnings": [
+      "肝病、線粒體疾病禁用",
+      "POMC encephalopathy"
+    ],
+    "clinical": {
+      "use": "Status epilepticus second-line（loading）",
+      "contraindications": "肝病、線粒體疾病、urea cycle disorder、孕婦",
+      "adverseEffects": "肝毒性、胰臟炎、血小板↓、高血氨",
+      "warnings": "ESETT 2019: 40 mg/kg over 10 min；rate 1.5-3 mg/kg/min",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "phenobarbital_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Phenobital 100 mg/mL/Amp · 惠腦必達（大豐）",
+    "notes": "SE loading dose；IV rate ≤ 30 mg/min（兒童 ≤ 1 mg/kg/min）；BZD 後給易呼吸抑制",
+    "frequency": "Single dose（SE loading）",
+    "source": "AES 2016 + 院內 藥典",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Status Epilepticus 第一線替代（無 BZD 時）/ 第二線（其他 ASM 不可得時）；新生兒 seizure 首選",
+      "contraindications": "嚴重肝功能不全、急性間歇性 porphyria、對 barbiturate 過敏",
+      "adverseEffects": "呼吸抑制（與 BZD 合用尤甚）、低血壓、過度鎮靜、行為改變",
+      "warnings": "緩慢 IV ≤ 30 mg/min；ready 插管 / 升壓藥；新生兒劑量 20 mg/kg",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "可能進入乳汁、嗜睡 — 短期可，長期評估",
+      "controlledDrug": "第 4 級"
+    }
+  },
+  "phenytoin_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Aleviatin 250 mg/5mL/Amp · 阿雷彼阿慶（瑞士）",
+    "notes": "SE loading（替代 Fosphenytoin，院內無 fosphenytoin）；IV rate ≤ 1 mg/kg/min（兒童 max 50 mg/min）；NS 稀釋（D5W 會沉澱），filter 給藥",
+    "frequency": "Single dose（SE loading）",
+    "source": "AES 2016 + 院內 藥典",
+    "package": "5 mL/Amp",
+    "clinical": {
+      "use": "Status Epilepticus 第二線；癲癇 long-term control",
+      "contraindications": "Sinus bradycardia、SA block、AV block、Adams-Stokes、對 hydantoin 過敏",
+      "adverseEffects": "心律不整、低血壓、purple glove syndrome（外滲）、Stevens-Johnson、齒齦增生（長期）",
+      "warnings": "心電圖 + BP 監測；NS 稀釋勿用 D5W（會沉澱）；in-line filter；外滲 → 紫手套症候群可致組織壞死",
+      "pregnancy": "AU TGA: D（teratogenic — fetal hydantoin syndrome）",
+      "breastfeeding": "進入乳汁少量，多數可授乳",
+      "controlledDrug": "—"
+    }
+  },
+  "ketamine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Ketalar 50 mg/mL",
+    "source": "院內 藥典 + Lexicomp + ACEP 2011",
+    "package": "10 mL/vial = 500 mg/Vial",
+    "monitoring": "SpO2、ETCO2、HR、BP；備好 O2、Ambu、suction、atropine、midazolam",
+    "warnings": [
+      "副作用：BP↑、ICP↑、IOP↑、arrhythmias、apnea、laryngospasm、delirium、N/V、nystagmus",
+      "Barbiturates 與 ketamine 不可同 syringe（會 precipitate）",
+      "ICP 升高傳統說法 — 近年文獻挑戰（多數 TBI 病人安全）",
+      "Hypersalivation — atropine 0.01 mg/kg 預給藥不再常規（ACEP 2011）",
+      "Emergence reactions — 預先給 midazolam 0.05 mg/kg；學齡兒童風險高",
+      "禁忌：<3 月（喉痙攣風險）、active psychosis、未控制 HTN、thyrotoxicosis、global eyeball injury"
+    ],
+    "contraindications": [
+      {
+        "severity": "禁用",
+        "reason": "< 3 月喉痙攣風險高"
+      }
+    ],
+    "indications": [
+      {
+        "label": "IM (induction / procedural sedation)",
+        "notes": "Anesthesia induction 4-6 mg/kg；procedural sedation 4-5 mg/kg",
+        "frequency": "ST × 1（induction）；procedural sedation 必要時 5-10 min 後 repeat 2-5 mg/kg",
+        "onset": "3-5 min",
+        "duration": "12-25 min（recovery 90-150 min）",
+        "route": "IM"
+      },
+      {
+        "label": "IV (induction / procedural sedation)",
+        "notes": "Induction 0.5-2 mg/kg；procedural sedation 1-2 mg/kg。Hemodynamic-stable，適合 hypotension/shock",
+        "frequency": "Slow push 30-60 sec；procedural sedation 必要時 q5-10 min repeat 0.5-1 mg/kg",
+        "onset": "30-60 sec",
+        "duration": "5-10 min",
+        "route": "IV"
+      },
+      {
+        "label": "IV maintenance (anesthesia)",
+        "notes": "全身麻醉 maintenance（OR 用，ED 較少）",
+        "frequency": "Bolus 後接 continuous infusion up to 1 mg/kg/hr",
+        "route": "IV"
+      },
+      {
+        "label": "IV sub-dissociative analgesia",
+        "notes": "急性疼痛，opioid-sparing；可 IV drip 0.1-0.3 mg/kg/hr",
+        "frequency": "Slow IV over 10 min；可 q15-30 min repeat",
+        "onset": "1-2 min",
+        "duration": "5-15 min",
+        "route": "IV"
+      }
+    ],
+    "clinical": {
+      "use": "Procedural sedation、RSI induction、急性疼痛 sub-dissociative",
+      "contraindications": "<3 月、active psychosis、未控制 HTN、global eyeball injury、thyrotoxicosis",
+      "adverseEffects": "BP↑、ICP↑、IOP↑、laryngospasm（罕見 ~0.4%）、emergence reaction、N/V、nystagmus、hypersalivation",
+      "warnings": "Barbiturates 不可同 syringe（precipitate）；備 atropine + midaz 處理 emergence；hemodynamic-stable，適合 hypotension/shock",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "短期可",
+      "controlledDrug": "管 3"
+    }
+  },
+  "citosol": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Citosol",
+    "notes": "影像檢查鎮靜（CT/MRI）；可重複到睡著為止；總量不超過體重 mL 數",
+    "source": "藥丹",
+    "concentration_note": "0.5 amp 加 N/S 至 20 mL；1/3-1/4 體重 mL 起始",
+    "warnings": [
+      "呼吸抑制",
+      "低血壓"
+    ],
+    "clinical": {
+      "use": "Anesthesia induction、procedural sedation",
+      "contraindications": "Porphyria、嚴重 asthma、status asthmaticus",
+      "adverseEffects": "呼吸抑制、低血壓、myocardial depression",
+      "warnings": "Slow IV titrate；備 airway equipment；老人 / 心衰減量",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "短期可",
+      "controlledDrug": "管 4"
+    }
+  },
+  "chloral_hydrate": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Clodrin 10% solution",
+    "notes": "Procedural sedation（影像、EEG、AS）；onset 30-60 min，duration 1-2 hr。10% solution = 100 mg/mL，故 0.5 mL/kg = 50 mg/kg",
+    "frequency": "ST，必要時 30 min 後 repeat",
+    "source": "Lexicomp + 中榮 PDF",
+    "package": "30 mL/bot",
+    "warnings": [
+      "呼吸抑制",
+      "心律不整（高劑量）",
+      "舊版指南止於 50 mg/kg；新版 Lexicomp 接受 25-100 mg/kg/dose"
+    ],
+    "clinical": {
+      "use": "Procedural sedation（影像 / EEG）",
+      "contraindications": "嚴重肝腎衰竭、嚴重心律不整",
+      "adverseEffects": "呼吸抑制（高劑量）、GI upset、罕見 arrhythmia",
+      "warnings": "近年因安全考量歐美已停產；單次 procedure max 100 mg/kg or 2 g",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "vena_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Vena 10 mg tab · 柏那",
+    "notes": "口服過敏 / 鎮靜；max 5 mg/kg/day 或 300 mg/day",
+    "frequency": "Q6H PRN",
+    "source": "Lexicomp + 高醫藥品庫",
+    "unit": "粒",
+    "warnings": [
+      "3 歲以下慎用"
+    ],
+    "clinical": {
+      "use": "過敏、止癢、輕度鎮靜",
+      "contraindications": "<3 月、glaucoma、BPH",
+      "adverseEffects": "嗜睡、口乾",
+      "warnings": "<3 歲慎用；max 5 mg/kg/day or 300 mg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "vena_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Vena 30 mg/mL/Amp",
+    "notes": "First-line for allergic reaction；常與 metoclopramide 合用預防 EPS",
+    "frequency": "Q6H PRN",
+    "source": "高醫速算表 + Lexicomp",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "急性過敏、anaphylaxis 輔助、EPS reversal",
+      "contraindications": "<3 月、acute asthma 急性期",
+      "adverseEffects": "嗜睡、口乾、尿滯留、罕見 paradoxical agitation",
+      "warnings": "Anaphylaxis 仍以 epinephrine 為主；EPS 用 1-2 mg/kg IV",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "epinephrine_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bosmin / Adrenalin（arrest 用 1:10000 = 0.1 mg/mL）",
+    "notes": "Cardiac arrest / 嚴重 bradycardia；mL 數 = 0.1 mL/kg of 0.1 mg/mL（1:10000）。Push 後 follow flush 5 mL N/S",
+    "frequency": "Q3-5 min during arrest",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "原液 1 mg/mL/Amp",
+    "concentration_note": "Arrest 用 0.1 mg/mL = 1:10000（原液 1 mg/mL × 1 amp 加 9 mL N/S 稀釋成 10 mL）",
+    "warnings": [
+      "勿與 NaHCO3 同 IV line 推（會 inactivate）"
+    ],
+    "clinical": {
+      "use": "Cardiac arrest、anaphylaxis、severe bradycardia、croup（IH）",
+      "contraindications": "—（緊急情況下無絕對禁忌）",
+      "adverseEffects": "心跳↑、HTN、震顫、肺水腫（過量）",
+      "warnings": "Arrest 用 1:10000（0.1 mg/mL）IV/IO 0.01 mg/kg；勿與 NaHCO3 同 IV line（inactivate）",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "amiodarone_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cordarone 50 mg/mL",
+    "notes": "Refractory VF/pVT；arrest 時 push (rapid)；非 arrest 的 wide-QRS tachy 應 IV over 20-60 min",
+    "frequency": "Bolus during arrest，最多 repeat 3 次（subsequent max 150 mg/dose）",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "150 mg / 3 mL/Amp",
+    "warnings": [
+      "非 arrest 時勿 rapid push（hypotension）"
+    ],
+    "clinical": {
+      "use": "Refractory VF/pVT、wide-QRS tachy",
+      "contraindications": "嚴重 sinus brady、SA/AV block（無 pacemaker）、iodine 過敏",
+      "adverseEffects": "Hypotension（rapid push）、QT 延長、肺纖維化（長期）、肝/甲狀腺異常",
+      "warnings": "Arrest 時可 rapid push；非 arrest 用 IV over 20-60 min；max 300 mg first dose, 150 mg subsequent",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "避免",
+      "controlledDrug": "—"
+    }
+  },
+  "lidocaine_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Xylocaine 2% (20 mg/mL)",
+    "notes": "Amiodarone 替代藥；refractory VF/pVT 第二線選擇之一",
+    "frequency": "Bolus during arrest；ROSC 後 maintenance 20-50 mcg/kg/min",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "5 mL/Amp",
+    "clinical": {
+      "use": "Refractory VF/pVT 替代藥（無 amiodarone 時）",
+      "contraindications": "嚴重 SA/AV block、Adams-Stokes",
+      "adverseEffects": "CNS（drowsiness、seizure 高劑量）、bradycardia、低 BP",
+      "warnings": "Bolus 1 mg/kg；ROSC 後 maintenance 20-50 µg/kg/min；max total 3 mg/kg",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "atropine_brady": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Atropine 0.5 mg/mL/Amp",
+    "notes": "Symptomatic bradycardia 由 increased vagal tone 或 primary AV block 造成時用。一般 brady 首選還是 epinephrine。Min dose 0.1 mg（避免 paradoxical bradycardia）",
+    "frequency": "可重複 1 次（單劑 max 0.5 mg）",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "1 mL/Amp = 0.5 mg",
+    "warnings": [
+      "Min 0.1 mg 否則可能反向心搏更慢"
+    ],
+    "clinical": {
+      "use": "Symptomatic bradycardia（vagal tone↑或 primary AV block）、organophosphate poisoning",
+      "contraindications": "Glaucoma（angle-closure）、myasthenia gravis、tachyarrhythmia",
+      "adverseEffects": "口乾、視力模糊、心跳↑、尿滯留",
+      "warnings": "Min 0.1 mg（避免 paradoxical brady）；max 0.5 mg single；可 repeat 1 次",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  },
+  "adenosine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Adenosine (Adenocor) 3 mg/mL",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "2 mL/Vial = 6 mg",
+    "warnings": [
+      "注意短暫 asystole / heart block 是預期反應（半衰期 <10 秒）",
+      "氣喘患者可能誘發支氣管痙攣"
+    ],
+    "indications": [
+      {
+        "label": "1st dose (SVT)",
+        "notes": "用最近 IV line（越近心臟越好）；給藥後 print rhythm strip",
+        "frequency": "Rapid push + immediate 5-10 mL N/S flush（用 stopcock 雙針同時推）",
+        "route": "IV/IO"
+      },
+      {
+        "label": "2nd dose (if no response in 1-2 min)",
+        "notes": "可再 repeat 一次（max single 12 mg）",
+        "frequency": "Rapid push + flush",
+        "route": "IV/IO"
+      }
+    ],
+    "clinical": {
+      "use": "SVT 終止",
+      "contraindications": "2nd/3rd degree AV block（無 pacemaker）、sick sinus syndrome、嚴重 asthma",
+      "adverseEffects": "短暫 asystole / heart block（預期反應）、flushing、胸悶、罕見 bronchospasm",
+      "warnings": "Rapid push + immediate flush（用 stopcock 雙針或最近 IV line）；半衰期 <10 sec；給藥前打開 ECG print",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "短期可",
+      "controlledDrug": "—"
+    }
+  }
+}

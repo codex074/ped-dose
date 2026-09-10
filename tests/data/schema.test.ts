@@ -23,7 +23,9 @@ describe('validateDataset', () => {
   });
 
   test('unknown indication calc type fails with drug id', () => {
-    const bad = structuredClone(dataset) as { drugs: { id: string; indications?: { calc: { type: string } }[] }[] };
+    const bad = structuredClone(dataset) as {
+      drugs: { id: string; indications?: { calc: { type: string } }[] }[];
+    };
     const withIndication = bad.drugs.find((d) => d.indications && d.indications.length > 0)!;
     withIndication.indications![0]!.calc.type = 'nope';
     const r = validateDataset(bad);
@@ -41,7 +43,9 @@ describe('validateDataset', () => {
 
   test('low > high fails', () => {
     const bad = structuredClone(dataset) as { drugs: { calc?: { low?: number; high?: number } }[] };
-    const withRange = bad.drugs.find((d) => d.calc && d.calc.low !== undefined && d.calc.high !== undefined)!;
+    const withRange = bad.drugs.find(
+      (d) => d.calc && d.calc.low !== undefined && d.calc.high !== undefined,
+    )!;
     const tmp = withRange.calc!.low;
     withRange.calc!.low = withRange.calc!.high;
     withRange.calc!.high = tmp;
@@ -64,7 +68,9 @@ describe('validateDataset', () => {
     const bad = structuredClone(dataset) as {
       drugs: { contraindications?: { type: string }[] }[];
     };
-    const withContra = bad.drugs.find((d) => d.contraindications && d.contraindications.length > 0)!;
+    const withContra = bad.drugs.find(
+      (d) => d.contraindications && d.contraindications.length > 0,
+    )!;
     withContra.contraindications![0]!.type = 'nope';
     const r = validateDataset(bad);
     expect(r.ok).toBe(false);

@@ -7,3 +7,5 @@ public/data
 tests/upstream
 tests/fixtures
 *.md
+src/i18n/drugs.skeleton.json
+src/i18n/algorithms.skeleton.json

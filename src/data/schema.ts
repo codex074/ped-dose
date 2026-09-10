@@ -103,8 +103,7 @@ const datasetShapeSchema = z
 
 export type ValidationError = { drugId: string | null; message: string };
 export type ValidationResult =
-  | { ok: true; data: DrugDataset }
-  | { ok: false; errors: ValidationError[] };
+  { ok: true; data: DrugDataset } | { ok: false; errors: ValidationError[] };
 
 function issuesToErrors(issues: z.ZodIssue[], drugId: string | null): ValidationError[] {
   return issues.map((issue) => ({
@@ -114,7 +113,12 @@ function issuesToErrors(issues: z.ZodIssue[], drugId: string | null): Validation
 }
 
 /** Cross-field business rules that zod's structural pass can't express. Pushes into `errors`. */
-function checkCalcBusinessRules(calc: Calc | undefined, where: string, drugId: string, errors: ValidationError[]): void {
+function checkCalcBusinessRules(
+  calc: Calc | undefined,
+  where: string,
+  drugId: string,
+  errors: ValidationError[],
+): void {
   if (!calc) return;
   const push = (message: string) => errors.push({ drugId, message: `${where}.${message}` });
 
@@ -122,11 +126,7 @@ function checkCalcBusinessRules(calc: Calc | undefined, where: string, drugId: s
 
   if (calc.low !== undefined && typeof calc.low !== 'number') push('low: not numeric');
   if (calc.high !== undefined && typeof calc.high !== 'number') push('high: not numeric');
-  if (
-    typeof calc.low === 'number' &&
-    typeof calc.high === 'number' &&
-    calc.low > calc.high
-  ) {
+  if (typeof calc.low === 'number' && typeof calc.high === 'number' && calc.low > calc.high) {
     push(`low (${calc.low}) > high (${calc.high})`);
   }
 
@@ -194,7 +194,7 @@ export function validateDataset(json: unknown): ValidationResult {
     const parsedDrug = drugSchema.safeParse(raw);
     const rawId =
       typeof raw === 'object' && raw !== null && 'id' in raw
-        ? ((raw as { id?: unknown }).id as string | undefined) ?? null
+        ? (((raw as { id?: unknown }).id as string | undefined) ?? null)
         : null;
     if (!parsedDrug.success) {
       errors.push(...issuesToErrors(parsedDrug.error.issues, rawId));

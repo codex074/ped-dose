@@ -48,13 +48,7 @@ function readStored(): Lang | null {
 
 const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void } | null>(null);
 
-export function LanguageProvider({
-  children,
-  initial,
-}: {
-  children: ReactNode;
-  initial?: Lang;
-}) {
+export function LanguageProvider({ children, initial }: { children: ReactNode; initial?: Lang }) {
   const [lang, setLangState] = useState<Lang>(() => initial ?? readStored() ?? 'th');
   const setLang = useCallback((l: Lang) => {
     setLangState(l);

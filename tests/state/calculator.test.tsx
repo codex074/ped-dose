@@ -20,7 +20,9 @@ describe('parseWeight', () => {
     ['120.1', null, true],
     ['17.5', 17.5, false],
     ['abc', null, true],
-  ])('parseWeight(%s)', (s, v, e) => expect(parseWeight(s as string)).toEqual({ value: v, error: e }));
+  ])('parseWeight(%s)', (s, v, e) =>
+    expect(parseWeight(s as string)).toEqual({ value: v, error: e }),
+  );
 });
 
 describe('parseAge', () => {

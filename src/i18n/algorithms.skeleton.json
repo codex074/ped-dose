@@ -1,0 +1,256 @@
+{
+  "_meta": {
+    "status": "draft",
+    "generatedFrom": "2.5"
+  },
+  "pals": {
+    "cardiac_arrest": {
+      "title": "兒科心臟停止 Cardiac Arrest",
+      "subtitle": "AHA/AAP 2025 PALS Figure 2",
+      "steps_initial": [
+        "Start CPR + BMV + O2",
+        "Attach monitor / defibrillator"
+      ],
+      "decision_tree": {
+        "question": "Rhythm shockable？",
+        "yes": {
+          "label": "VF / pulseless VT",
+          "actions": [
+            "Shock (1st 2 J/kg)",
+            "CPR 2 min + IV/IO access",
+            "Rhythm shockable？ YES → Shock (2nd 4 J/kg)",
+            "CPR 2 min + Epinephrine q3-5 min + 考慮 advanced airway + capnography",
+            "Rhythm shockable？ YES → Shock (≥4 J/kg, max 10 J/kg or adult)",
+            "CPR 2 min + Amiodarone OR Lidocaine + treat reversible causes",
+            "ROSC？ → Post-Cardiac Arrest Care；無 ROSC → 重複 shock-CPR-drug cycle"
+          ]
+        },
+        "no": {
+          "label": "Asystole / PEA",
+          "actions": [
+            "Epinephrine ASAP",
+            "CPR 2 min + IV/IO access + Epi q3-5 min + 考慮 advanced airway + capnography",
+            "Rhythm shockable？ YES → 接 shockable pathway (Shock ASAP)",
+            "Rhythm 仍非 shockable → CPR 2 min + treat reversible causes",
+            "再次 Rhythm shockable？ YES → Shock ASAP；NO → 繼續 nonshockable cycle",
+            "ROSC？ → Post-Cardiac Arrest Care；無 ROSC → 重複"
+          ]
+        }
+      },
+      "energy_doses": [
+        {
+          "label": "Defibrillation 1st"
+        },
+        {
+          "label": "Defibrillation 2nd"
+        },
+        {
+          "label": "Defibrillation 3rd+",
+          "note": "≥4 J/kg, max 10 J/kg or adult dose"
+        }
+      ],
+      "high_quality_cpr": [
+        "Push hard：≥1/3 AP diameter",
+        "Push fast：100-120/min",
+        "Allow complete chest recoil",
+        "Minimize interruptions",
+        "Change compressor q2 min",
+        "C:V ratio：15:2（2 救者 prepuberty）；30:2（2 救者 postpuberty 或 1 救者任何年齡）",
+        "Advanced airway → continuous compressions + 1 breath q2-3 sec",
+        "Monitor ETCO2、invasive diastolic BP（若可）"
+      ],
+      "reversible_causes": {
+        "title": "Reversible Causes — 6H + 5T",
+        "h": [
+          "Hypovolemia",
+          "Hypoxia",
+          "Hydrogen ion (acidosis)",
+          "Hypoglycemia",
+          "Hypo-/Hyper-kalemia",
+          "Hypothermia"
+        ],
+        "t": [
+          "Tension pneumothorax",
+          "Tamponade (cardiac)",
+          "Toxins",
+          "Thrombosis (pulmonary)",
+          "Thrombosis (coronary)"
+        ]
+      },
+      "figure_label": "查看原始 AHA Figure 2 →"
+    },
+    "tachy_pulse": {
+      "title": "兒科心搏過速（有脈搏） Tachyarrhythmia With Pulse",
+      "subtitle": "AHA/AAP 2025 PALS Figure 7",
+      "steps_initial": [
+        "Maintain airway；PPV + O2 PRN",
+        "Cardiopulmonary monitor + IV/IO",
+        "12-lead ECG if available"
+      ],
+      "decision_tree": {
+        "question": "Cardiopulmonary compromise？（altered MS / shock / hypotension）",
+        "yes": {
+          "label": "YES — 緊急處置",
+          "branches": [
+            {
+              "qrs": "Narrow (≤0.09 sec)",
+              "label": "Probable SVT",
+              "action": "IV/IO Adenosine（若 access 已建立）OR Synchronized cardioversion"
+            },
+            {
+              "qrs": "Wide (>0.09 sec)",
+              "label": "Possible VT",
+              "action": "Synchronized cardioversion；後續藥物前 expert consult"
+            }
+          ]
+        },
+        "no": {
+          "label": "NO — 從容處理",
+          "branches": [
+            {
+              "qrs": "Narrow (≤0.09 sec)",
+              "label": "Probable SVT",
+              "action": "Vagal maneuvers → IV/IO Adenosine"
+            },
+            {
+              "qrs": "Wide (>0.09 sec)",
+              "label": "Possible VT 或 SVT with aberrancy",
+              "action": "Expert consultation 建議；若 regular + monomorphic 可考慮 Adenosine"
+            }
+          ]
+        }
+      },
+      "energy_doses": [
+        {
+          "label": "Synchronized cardioversion 1st"
+        },
+        {
+          "label": "Synchronized cardioversion 2nd",
+          "note": "若 0.5-1 J/kg 無效升至 2 J/kg；需要時鎮靜，不可延誤 cardioversion"
+        }
+      ],
+      "differentiation": {
+        "title": "Sinus Tach vs SVT",
+        "sinus_tach": {
+          "label": "Probable Sinus Tach",
+          "criteria": [
+            "P waves present / normal",
+            "RR variable",
+            "Infant <220/min",
+            "Child <180/min"
+          ],
+          "action": "Search for and treat cause"
+        },
+        "svt": {
+          "label": "Probable SVT",
+          "criteria": [
+            "P waves absent / abnormal",
+            "RR not variable",
+            "Infant ≥220/min",
+            "Child ≥180/min",
+            "Abrupt onset"
+          ]
+        }
+      },
+      "refractory_note": "Refractory SVT（cardiopulmonary compromise + vagal / adenosine / synchronized cardioversion 皆無效）且 **expert consultation 不可用** 時，may consider IV procainamide、amiodarone 或 sotalol",
+      "figure_label": "查看原始 AHA Figure 7 →"
+    },
+    "brady_pulse": {
+      "title": "兒科心搏過慢（有脈搏） Bradycardia With Pulse",
+      "subtitle": "AHA/AAP 2025 PALS Figure 6",
+      "steps_initial": [
+        "評估 cardiopulmonary compromise（altered MS / shock / hypotension）"
+      ],
+      "decision_tree": {
+        "question": "Cardiopulmonary compromise？",
+        "yes": {
+          "label": "YES",
+          "actions": [
+            "Maintain airway + O2；PPV PRN",
+            "Cardiopulmonary monitor；持續 monitor pulse",
+            "Bradycardia 持續且仍有 compromise？",
+            "↳ NO → Identify and treat underlying causes；support ABCs；consider O2 / 12-lead；observe",
+            "↳ YES：HR <60 → Start CPR；IV/IO + Epinephrine；Atropine（vagal tone↑或 primary AV block 才用）",
+            "Identify and treat underlying causes；考慮 transthoracic / transvenous pacing",
+            "每 2 min check pulse",
+            "↳ Pulse present → 回「Bradycardia 持續且仍有 compromise？」",
+            "↳ No pulse → 跳 Cardiac Arrest Algorithm"
+          ]
+        },
+        "no": {
+          "label": "NO",
+          "actions": [
+            "Identify and treat underlying causes",
+            "Support ABCs；考慮 O2、12-lead ECG",
+            "Observe"
+          ]
+        }
+      },
+      "possible_causes": [
+        "Hypothermia",
+        "Hypoxia",
+        "Toxins / medications",
+        "Increased ICP",
+        "Increased vagal tone",
+        "Heart block",
+        "Physiologic / appropriate"
+      ],
+      "figure_label": "查看原始 AHA Figure 6 →"
+    }
+  },
+  "se": {
+    "title": "兒科癲癇重積 Convulsive Status Epilepticus",
+    "subtitle": "AES 2016 · Glauser et al · Epilepsy Currents 16(1):48-61",
+    "time_stages": [
+      {
+        "minutes": "0–5",
+        "phase": "Stabilization 穩定期",
+        "actions": [
+          "ABCD：airway / breathing / circulation / disability（含 neurologic exam）",
+          "計時 seizure onset + 監測 vital signs",
+          "氧氣 NC / mask；呼吸不穩考慮插管",
+          "Initiate ECG monitoring",
+          "Fingerstick glucose；< 60 mg/dL → ≥2 yr：2 mL/kg D25W IV｜<2 yr：4 mL/kg D12.5W IV",
+          "IV access + electrolytes / CBC / tox screen / ASM levels"
+        ]
+      },
+      {
+        "minutes": "5–20",
+        "phase": "Initial Therapy 第一線 BZD",
+        "level": "Level A",
+        "subtitle": "三選一（IM midazolam / IV lorazepam / IV diazepam）",
+        "actions": [
+          "IM Midazolam（無 IV 時首選）：13–40 kg → 5 mg；>40 kg → 10 mg（single dose）",
+          "IV Lorazepam：0.1 mg/kg/dose（max 4 mg/dose；可重複 1 次）",
+          "IV Diazepam：0.15–0.2 mg/kg/dose（max 10 mg/dose；可重複 1 次）",
+          "若以上皆不可用：IV Phenobarbital 15 mg/kg（Level A，院內 2PHENO）／ Rectal Diazepam 0.2–0.5 mg/kg, max 20 mg（Level B）／ IN 或 buccal Midazolam（Level B）"
+        ]
+      },
+      {
+        "minutes": "20–40",
+        "phase": "Second Therapy 第二線 ASM",
+        "level": "Level U（三藥等效）",
+        "subtitle": "三選一，single dose",
+        "actions": [
+          "IV Fosphenytoin 20 mg PE/kg（max 1500 mg PE）— 院內無 fosphenytoin，以 IV Phenytoin 20 mg/kg 替代（Aleviatin 2DPH，rate ≤ 1 mg/kg/min）",
+          "IV Valproic acid 40 mg/kg（max 3000 mg/dose）",
+          "IV Levetiracetam 60 mg/kg（max 4500 mg/dose）",
+          "若以上皆不可用且未給過：IV Phenobarbital 15 mg/kg（Level B）"
+        ]
+      },
+      {
+        "minutes": "40–60",
+        "phase": "Third Therapy 難治性 SE",
+        "level": "Level U（無明確證據）",
+        "actions": [
+          "重複 second line therapy；或",
+          "麻醉劑量：thiopental / midazolam / pentobarbital / propofol",
+          "皆需 continuous EEG monitoring + 插管 + ICU"
+        ]
+      }
+    ],
+    "decision_label": "Does Seizure Continue? — 若仍持續 → 進下一階段；若已停 → symptomatic care",
+    "citation": "Glauser T, Shinnar S, Gloss D, et al. Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults. Epilepsy Currents 2016;16(1):48-61.",
+    "figure_label": "AES 流程圖"
+  }
+}

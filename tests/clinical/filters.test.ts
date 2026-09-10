@@ -146,7 +146,8 @@ describe('search index / searchDrugs', () => {
       drugs,
       'th',
       () => '',
-      (id) => (id === target.id ? { brand: 'ยาน้ำมหัศจรรย์', indicationLabels: ['ลดไข้พิเศษ'] } : {}),
+      (id) =>
+        id === target.id ? { brand: 'ยาน้ำมหัศจรรย์', indicationLabels: ['ลดไข้พิเศษ'] } : {},
       {},
     );
     expect(searchDrugs(drugs, 'มหัศจรรย์', idx).map((d) => d.id)).toContain(target.id);
