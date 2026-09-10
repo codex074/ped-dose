@@ -1753,6 +1753,8 @@ test('PALS energy matches golden', () => {
 });
 ```
 
+Upstream's `mg_per_kg_per_dose` branch (and only that branch) sets a dead field `display: []` on its result object that nothing reads. Before comparing, delete `raw.display` when it is an empty array: `const theirs = { ...c.raw }; if (Array.isArray(theirs.display) && theirs.display.length === 0) delete theirs.display;`. Keep `display` when it is a string (the `rate` branch uses it).
+
 `deepEqual` is a key-order-independent structural comparison (write a small recursive helper in the test file or use `node:util`'s `isDeepStrictEqual`). Never compare via `JSON.stringify` — key order differs between upstream and the port. For the contraindication comparison use `isDeepStrictEqual` as well.
 
 - [ ] **Step 2: Run → fix engine until PASS.** Any mismatch is an engine bug, never a fixture edit.

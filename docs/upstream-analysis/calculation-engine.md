@@ -219,6 +219,8 @@ if (t === 'ml_by_weight_after_dilution') {
 | `fluid_421_rule`              | n/a                          | inclusive `<=` at 10 and 20                                                            | n/a                                              | n/a                                    | 3     |
 | `ml_by_weight_after_dilution` | n/a                          | n/a                                                                                    | n/a                                              | n/a                                    | 1     |
 
+**Dead field**: the `mg_per_kg_per_dose` branch also sets `display: []` on its result (visible in the golden `raw` objects); nothing reads it. The port omits it and the parity test strips it.
+
 **Caps mutate the value itself** (used downstream for mL/unit conversion), not just display. No "capped" flag/message exists — the only trace is `mg_per_kg_per_dose` appending `(max X mg/dose)`/`(min X mg)` text to `rule`.
 
 **Band boundaries**: `find(b => x >= low && x < high)` — inclusive-low/exclusive-high, first match wins. **Bands are NOT gap-free**: `mgo_tab` has gaps at age [5,6) and [11,12) → `無相符區間`; `lgg_pack` starts at `age_low:3` (ages 0–3 unmatched). Free-text band values (e.g. `"BW÷20 # TID-QID"`) are displayed verbatim, **never parsed/evaluated**.
