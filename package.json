@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint src tests scripts --ext .ts,.tsx",
+    "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\" \"tests/**/*.ts*\" \"scripts/**/*.{ts,mjs}\"",
     "capture-golden": "node scripts/capture-golden.mjs",
