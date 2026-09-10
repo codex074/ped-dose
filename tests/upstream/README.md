@@ -1,0 +1,1 @@
+`index.html` here is the upstream `xyzKIWI/peds-dose` page at the pinned baseline commit, vendored only so the golden-capture script has a fixed reference to screenshot/diff against — it is not shipped as part of this app.
