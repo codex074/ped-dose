@@ -6,15 +6,16 @@ File: `upstream/peds_drugs.json`, 99,934 bytes, single JSON object (UTF-8, Chine
 
 Top-level dict with 5 keys:
 
-| Key | Type | Count / size |
-|---|---|---|
-| `_meta` | object | 4 fields + nested `schema_notes` |
-| `categories` | array of objects | 17 |
-| `drugs` | array of objects | **67** |
-| `pals_algorithms` | array of objects | 3 |
-| `se_algorithm` | object (singular) | 1 |
+| Key               | Type              | Count / size                     |
+| ----------------- | ----------------- | -------------------------------- |
+| `_meta`           | object            | 4 fields + nested `schema_notes` |
+| `categories`      | array of objects  | 17                               |
+| `drugs`           | array of objects  | **67**                           |
+| `pals_algorithms` | array of objects  | 3                                |
+| `se_algorithm`    | object (singular) | 1                                |
 
 `_meta`:
+
 ```json
 {
   "version": "2.5",
@@ -28,41 +29,42 @@ Top-level dict with 5 keys:
   }
 }
 ```
+
 **Note:** `schema_notes.calc.type` is **stale/incomplete** — the enumerated types (`tab_per_kg_per_day`, `fixed_age_band`, `dilution`) do not literally match any `calc.type` actually used in the data (see §3); the real type strings are different (`age_band`, `weight_band`, `fluid_421_rule`, `supp_by_weight`, `pack_per_10kg_per_day`, `pack_per_30kg_per_dose`, `mcg_per_kg_per_dose`, `ml_by_weight_after_dilution`). Documentation drift — do not rely on `_meta` to enumerate calc types for the port.
 
 ## 2. Field inventory of a drug record (across all 67 records)
 
-| Field | n (of 67) | Type(s) | Example values |
-|---|---|---|---|
-| `id` | 67 | str | `"antiphen_syrup"`, `"amoxicillin_susp"`, `"epinephrine_arrest"` |
-| `generic` | 67 | str | `"Acetaminophen"`, `"Amoxicillin"`, `"Epinephrine — Cardiac Arrest"` |
-| `brand` | 67 | str | `"Amoxicillin susp 25 mg/mL · 安默西林"`, `"Bosmin / Adrenalin（arrest 用 1:10000 = 0.1 mg/mL）"` |
-| `kmuh_code` | 67 (64 str, 3 `null`) | str/null | `"1AMKIN"`, `"3BO500"`, `null` |
-| `category` | 67 | str | `"antibiotic"`, `"seizure"`, `"pals_arrest"` |
-| `form` | 67 | str | `"susp"`, `"amp"`, `"tab"` |
-| `route` | 67 | str | `"PO"`, `"IV/IO"`, `"IM/IV"` |
-| `source` | 67 | str | `"高醫速算表"`, `"Lexicomp + 高醫速算表"`, `"AHA/AAP 2025 PALS"` |
-| `kmuh_detail` | 67 | dict | see §7 |
-| `calc` | 61 (6 missing) | dict | see §3 |
-| `tags` | 60 (7 missing/empty-omitted) | list[str] | `["common","uri"]`, `["emergency","pals","starred_default"]` |
-| `frequency` | 56 | str | `"Q12H PC"`, `"Q6H PRN"`, `"ST × 1 dose"` |
-| `notes` | 45 | str | free-text Chinese/mixed clinical notes |
-| `package` | 36 | str | `"60 mL/bot"`, `"原液 1 mg/mL/Amp"` |
-| `concentration_mg_per_ml` | 34 (29 int, 5 float) | number | `25`, `0.1`, `2.5` |
-| `group_id` | 33 | str | `"amoxicillin"`, `"levetiracetam"` (links brand-variant records) |
-| `unit` | 22 | str | `"粒"`, `"tab"`, `"Vial"`, `"包"`, `"blister"`, `"Amp"` |
-| `warnings` | 22 | list[str] | `["<1 歲禁用"]`, `["呼吸抑制","管制藥"]` |
-| `concentration_mg_per_unit` | 21 (19 int, 2 float) | number | `600`, `12.5`, `250` |
-| `contraindications` | 14 | list[dict] | see §8 |
-| `concentration_note` | 9 | str | `"1500 mg / 60 mL = 25 mg/mL"` |
-| `indications` | 6 | list[dict] | see §3 (multi-indication drugs) |
-| `urgency` | 6 | str | `"maintenance"`, `"acute"` |
-| `urgency_label` | 6 | str | `"💊 口服維持"`, `"🚨 急性 loading"` |
-| `concentration_mcg_per_ml` | 2 | int | (fentanyl-type) |
-| `concentration_mcg_per_unit` | 1 | int | |
-| `duration_note` | 1 | str | |
-| `max_per_day_note` | 1 | str | `"Max 2.1 g/day"` (mgo_tab) |
-| `monitoring` | 1 | str | |
+| Field                        | n (of 67)                    | Type(s)    | Example values                                                                                    |
+| ---------------------------- | ---------------------------- | ---------- | ------------------------------------------------------------------------------------------------- |
+| `id`                         | 67                           | str        | `"antiphen_syrup"`, `"amoxicillin_susp"`, `"epinephrine_arrest"`                                  |
+| `generic`                    | 67                           | str        | `"Acetaminophen"`, `"Amoxicillin"`, `"Epinephrine — Cardiac Arrest"`                              |
+| `brand`                      | 67                           | str        | `"Amoxicillin susp 25 mg/mL · 安默西林"`, `"Bosmin / Adrenalin（arrest 用 1:10000 = 0.1 mg/mL）"` |
+| `kmuh_code`                  | 67 (64 str, 3 `null`)        | str/null   | `"1AMKIN"`, `"3BO500"`, `null`                                                                    |
+| `category`                   | 67                           | str        | `"antibiotic"`, `"seizure"`, `"pals_arrest"`                                                      |
+| `form`                       | 67                           | str        | `"susp"`, `"amp"`, `"tab"`                                                                        |
+| `route`                      | 67                           | str        | `"PO"`, `"IV/IO"`, `"IM/IV"`                                                                      |
+| `source`                     | 67                           | str        | `"高醫速算表"`, `"Lexicomp + 高醫速算表"`, `"AHA/AAP 2025 PALS"`                                  |
+| `kmuh_detail`                | 67                           | dict       | see §7                                                                                            |
+| `calc`                       | 61 (6 missing)               | dict       | see §3                                                                                            |
+| `tags`                       | 60 (7 missing/empty-omitted) | list[str]  | `["common","uri"]`, `["emergency","pals","starred_default"]`                                      |
+| `frequency`                  | 56                           | str        | `"Q12H PC"`, `"Q6H PRN"`, `"ST × 1 dose"`                                                         |
+| `notes`                      | 45                           | str        | free-text Chinese/mixed clinical notes                                                            |
+| `package`                    | 36                           | str        | `"60 mL/bot"`, `"原液 1 mg/mL/Amp"`                                                               |
+| `concentration_mg_per_ml`    | 34 (29 int, 5 float)         | number     | `25`, `0.1`, `2.5`                                                                                |
+| `group_id`                   | 33                           | str        | `"amoxicillin"`, `"levetiracetam"` (links brand-variant records)                                  |
+| `unit`                       | 22                           | str        | `"粒"`, `"tab"`, `"Vial"`, `"包"`, `"blister"`, `"Amp"`                                           |
+| `warnings`                   | 22                           | list[str]  | `["<1 歲禁用"]`, `["呼吸抑制","管制藥"]`                                                          |
+| `concentration_mg_per_unit`  | 21 (19 int, 2 float)         | number     | `600`, `12.5`, `250`                                                                              |
+| `contraindications`          | 14                           | list[dict] | see §8                                                                                            |
+| `concentration_note`         | 9                            | str        | `"1500 mg / 60 mL = 25 mg/mL"`                                                                    |
+| `indications`                | 6                            | list[dict] | see §3 (multi-indication drugs)                                                                   |
+| `urgency`                    | 6                            | str        | `"maintenance"`, `"acute"`                                                                        |
+| `urgency_label`              | 6                            | str        | `"💊 口服維持"`, `"🚨 急性 loading"`                                                              |
+| `concentration_mcg_per_ml`   | 2                            | int        | (fentanyl-type)                                                                                   |
+| `concentration_mcg_per_unit` | 1                            | int        |                                                                                                   |
+| `duration_note`              | 1                            | str        |                                                                                                   |
+| `max_per_day_note`           | 1                            | str        | `"Max 2.1 g/day"` (mgo_tab)                                                                       |
+| `monitoring`                 | 1                            | str        |                                                                                                   |
 
 No record has every field — only `id, generic, brand, kmuh_code(nullable), category, form, route, source, kmuh_detail` are effectively universal (kmuh_code has 3 nulls). `calc` is missing on 6 records (see §3/§10) because dosing lives in `indications[].calc` instead.
 
@@ -70,77 +72,112 @@ No record has every field — only `id, generic, brand, kmuh_code(nullable), cat
 
 Distinct `calc.type` values (top-level, n=61 records with a top-level `calc`):
 
-| type | count |
-|---|---|
-| `mg_per_kg_per_dose` | 23 |
-| `mg_per_kg_per_day` | 11 |
-| `age_band` | 6 |
-| `ml_per_kg_per_day` | 5 |
-| `weight_band` | 5 |
-| `ml_per_kg_per_dose` | 3 |
-| `fluid_421_rule` | 3 |
-| `supp_by_weight` | 1 |
-| `pack_per_10kg_per_day` | 1 |
-| `pack_per_30kg_per_dose` | 1 |
-| `mcg_per_kg_per_dose` | 1 |
-| `ml_by_weight_after_dilution` | 1 |
+| type                          | count |
+| ----------------------------- | ----- |
+| `mg_per_kg_per_dose`          | 23    |
+| `mg_per_kg_per_day`           | 11    |
+| `age_band`                    | 6     |
+| `ml_per_kg_per_day`           | 5     |
+| `weight_band`                 | 5     |
+| `ml_per_kg_per_dose`          | 3     |
+| `fluid_421_rule`              | 3     |
+| `supp_by_weight`              | 1     |
+| `pack_per_10kg_per_day`       | 1     |
+| `pack_per_30kg_per_dose`      | 1     |
+| `mcg_per_kg_per_dose`         | 1     |
+| `ml_by_weight_after_dilution` | 1     |
 
 Additionally, 15 nested `indications[].calc` entries (across the 6 top-level-`calc`-less drugs plus a few multi-indication drugs) are **all** `mg_per_kg_per_dose`.
 
 ### 3.1 `mg_per_kg_per_dose` (n=23, + 15 nested = 38 total)
+
 Sub-fields seen: `type, low, high, max_dose_mg, max_doses_per_day, max_mg_per_day, max_ml_per_day, doses_per_day, doses_per_day_freq, max_total_mg, min_dose_mg, note`.
 
 Full example (`antiphen_syrup`):
+
 ```json
-{"type": "mg_per_kg_per_dose", "low": 10, "high": 15, "max_dose_mg": 1000, "max_doses_per_day": 5, "max_mg_per_day": 4000}
+{
+  "type": "mg_per_kg_per_dose",
+  "low": 10,
+  "high": 15,
+  "max_dose_mg": 1000,
+  "max_doses_per_day": 5,
+  "max_mg_per_day": 4000
+}
 ```
+
 Rare-field examples:
+
 - `idefen_syrup`: `{"max_mg_per_day": 1200, "max_ml_per_day": 60}`
 - `morphine_inj`: `{"doses_per_day_freq": "Q4H"}`
 - `chloral_hydrate`: `{"max_total_mg": 2000, "note": "可在 30 min 後再給 25-50 mg/kg；總量 max 100 mg/kg/procedure 或 2000 mg/procedure"}`
 - `atropine_brady`: `{"min_dose_mg": 0.1}`
 
 ### 3.2 `mg_per_kg_per_day` (n=11)
+
 Sub-fields: `type, low, high, doses_per_day, max_mg_per_day, calc_basis` (calc_basis n=2).
 Example (`cypromin_tab`):
+
 ```json
-{"type": "mg_per_kg_per_day", "low": 0.24, "high": 0.24, "doses_per_day": 3, "max_mg_per_day": 16}
+{ "type": "mg_per_kg_per_day", "low": 0.24, "high": 0.24, "doses_per_day": 3, "max_mg_per_day": 16 }
 ```
+
 Example (`amoxicillin_susp`, real full record):
+
 ```json
-{"type": "mg_per_kg_per_day", "low": 80, "high": 90, "doses_per_day": 2, "max_mg_per_day": 3000}
+{ "type": "mg_per_kg_per_day", "low": 80, "high": 90, "doses_per_day": 2, "max_mg_per_day": 3000 }
 ```
 
 ### 3.3 `ml_per_kg_per_day` (n=5)
+
 Sub-fields: `type, low, high, doses_per_day`.
 Example (`peace_syrup`): `{"type": "ml_per_kg_per_day", "low": 0.6, "high": 0.6, "doses_per_day": 3}`
 
 ### 3.4 `ml_per_kg_per_dose` (n=3)
+
 Sub-fields: `type, low, high, max_ml_per_dose (n=2), doses_per_day (n=1)`.
 Example (`epinephrine_inh_croup`): `{"type": "ml_per_kg_per_dose", "low": 0.5, "high": 0.5, "max_ml_per_dose": 5}`
 
 ### 3.5 `age_band` (n=6) and `weight_band` (n=5) — band structure
+
 Both share shape `{"type": <str>, "bands": [ {...}, ... ]}`. Band objects use `age_low`/`age_high` (years, `age_high` capped at sentinel `999` for "no upper bound") or `weight_low`/`weight_high` (kg, same `999` sentinel). Each band then EITHER:
+
 - carries **structured numeric dosing** (`mg_per_kg_per_dose` and/or `mg_per_dose`, plus optional `max_mg_per_dose`, plus a human `label` string), e.g. `cetirizine_syrup`'s youngest band, or
 - carries **only a free-text `dose` string** embedding numbers, units, comparators and Chinese dosing-frequency abbreviations (no structured numeric fields at all).
 
 Full example, mixed style (`cetirizine_syrup`, `age_band`):
+
 ```json
-{"type": "age_band", "bands": [
-  {"age_low": 0, "age_high": 3, "mg_per_kg_per_dose": 0.25, "max_mg_per_dose": 5, "label": "<3y · 0.25 mg/kg QD-BID（依醫師指示）"},
-  {"age_low": 3, "age_high": 6, "mg_per_dose": 5, "label": "3-6y · 5 mg QD（或 2.5 mg BID）"},
-  {"age_low": 6, "age_high": 999, "mg_per_dose": 10, "label": "≥6y / 成人 · 10 mg QD"}
-]}
+{
+  "type": "age_band",
+  "bands": [
+    {
+      "age_low": 0,
+      "age_high": 3,
+      "mg_per_kg_per_dose": 0.25,
+      "max_mg_per_dose": 5,
+      "label": "<3y · 0.25 mg/kg QD-BID（依醫師指示）"
+    },
+    { "age_low": 3, "age_high": 6, "mg_per_dose": 5, "label": "3-6y · 5 mg QD（或 2.5 mg BID）" },
+    { "age_low": 6, "age_high": 999, "mg_per_dose": 10, "label": "≥6y / 成人 · 10 mg QD" }
+  ]
+}
 ```
+
 Full example, free-text-only style (`tamiflu`, `weight_band`):
+
 ```json
-{"type": "weight_band", "bands": [
-  {"weight_low": 0, "weight_high": 15, "dose": "30 mg BID × 5 days"},
-  {"weight_low": 15, "weight_high": 23, "dose": "45 mg BID × 5 days"},
-  {"weight_low": 23, "weight_high": 40, "dose": "60 mg BID × 5 days"},
-  {"weight_low": 40, "weight_high": 999, "dose": "75 mg BID × 5 days"}
-]}
+{
+  "type": "weight_band",
+  "bands": [
+    { "weight_low": 0, "weight_high": 15, "dose": "30 mg BID × 5 days" },
+    { "weight_low": 15, "weight_high": 23, "dose": "45 mg BID × 5 days" },
+    { "weight_low": 23, "weight_high": 40, "dose": "60 mg BID × 5 days" },
+    { "weight_low": 40, "weight_high": 999, "dose": "75 mg BID × 5 days" }
+  ]
+}
 ```
+
 **All 11 age/weight-band drugs and every one of their bands, verbatim** (fewer than 60 distinct strings, so listing exhaustively):
 
 - `cetirizine_syrup` (age_band): `<3y · 0.25 mg/kg QD-BID（依醫師指示）` / `3-6y · 5 mg QD（或 2.5 mg BID）` / `≥6y / 成人 · 10 mg QD` — structured, has `label` only as display text.
@@ -158,6 +195,7 @@ Full example, free-text-only style (`tamiflu`, `weight_band`):
 Free-text `dose`/`label` strings mix: numbers, mg/mL/kg units, `#` (= tablet/capsule count — a Taiwan clinical shorthand), Chinese dosing-frequency letters embedded in Chinese sentences (QD/BID/TID/QID, PC = after meal), comparators (`<`, `≥`, `÷`), and Chinese unit words (`包`=pack/sachet, `顆`/`粒`=piece/tablet, `歲`=years old, `月`=months). This is exactly the "0.5 # BID PC"-style free text the task asked about.
 
 ### 3.6 Other special types (each n=1, except `fluid_421_rule` n=3)
+
 - `fluid_421_rule` (n=3, e.g. `taita1`): `{"type": "fluid_421_rule"}` or with `formula` sub-field — this is the classic Holliday-Segar 4-2-1 maintenance-fluid rule; two of the three instances carry no numeric params at all (rule is applied procedurally in app code, not data-driven) and one adds a `formula` string.
 - `supp_by_weight` (`voren_supp`): `{"type": "supp_by_weight", "kg_per_supp_low": 25, "kg_per_supp_high": 12.5, "max_doses_per_day": 2}` — **field names are divisors, not weight thresholds** (see §10 for why `low > high` here is intentional, not a bug).
 - `pack_per_10kg_per_day` (`actein_granule`): `{"type": "pack_per_10kg_per_day", "packs_per_10kg_per_day": 1, "doses_per_day": 3}`
@@ -166,53 +204,54 @@ Free-text `dose`/`label` strings mix: numbers, mg/mL/kg units, `#` (= tablet/cap
 - `ml_by_weight_after_dilution` (`citosol`): `{"type": "ml_by_weight_after_dilution", "starting_ml": "BW÷4 ~ BW÷3 mL", "max_ml": "BW mL", "note": "0.5 amp 稀釋至 20 mL 後"}` — note `starting_ml`/`max_ml` are **strings containing formulas**, not numbers.
 
 ### 3.7 Drugs with NO top-level `calc` (dosing lives in `indications[]` instead)
+
 `prednisolone_tab`, `methylpred_inj`, `succinylcholine`, `midazolam_dormicum`, `ketamine`, `adenosine` — all 6 have multi-indication dosing (see §9 `indications` schema) and every nested `calc` is `mg_per_kg_per_dose`.
 
 ## 4. Categories / tags / group_id
 
 `categories` (17, all used by exactly the drugs' `category` field — perfect 1:1 coverage, no orphans either direction):
 
-| id | label (zh) | order |
-|---|---|---|
-| antipyretic | 退燒/止痛 | 1 |
-| rhinitis | 流鼻水/過敏 | 2 |
-| cough_cold | 止咳/感冒 | 3 |
-| expectorant | 化痰 | 4 |
-| antibiotic | 抗生素 | 5 |
-| flu | 流感 | 6 |
-| croup_bronchodilator | Croup / 支氣管擴張 | 7 |
-| steroid | 類固醇 | 8 |
-| antiemetic | 止吐 | 9 |
-| gi_other | 腸胃道（脹氣/便秘/止瀉/益生菌） | 10 |
-| fluid | 點滴/輸液 | 11 |
-| analgesic_inj | 止痛針劑 | 12 |
-| sedation | 鎮靜/麻醉誘導 | 13 |
-| seizure | 抽搐/癲癇 | 14 |
-| allergy_eps | 過敏/EPS | 15 |
-| muscle_relaxant | 肌肉鬆弛 | 16 |
-| pals_arrest | PALS 心臟停止/心律不整 | 17 |
+| id                   | label (zh)                      | order |
+| -------------------- | ------------------------------- | ----- |
+| antipyretic          | 退燒/止痛                       | 1     |
+| rhinitis             | 流鼻水/過敏                     | 2     |
+| cough_cold           | 止咳/感冒                       | 3     |
+| expectorant          | 化痰                            | 4     |
+| antibiotic           | 抗生素                          | 5     |
+| flu                  | 流感                            | 6     |
+| croup_bronchodilator | Croup / 支氣管擴張              | 7     |
+| steroid              | 類固醇                          | 8     |
+| antiemetic           | 止吐                            | 9     |
+| gi_other             | 腸胃道（脹氣/便秘/止瀉/益生菌） | 10    |
+| fluid                | 點滴/輸液                       | 11    |
+| analgesic_inj        | 止痛針劑                        | 12    |
+| sedation             | 鎮靜/麻醉誘導                   | 13    |
+| seizure              | 抽搐/癲癇                       | 14    |
+| allergy_eps          | 過敏/EPS                        | 15    |
+| muscle_relaxant      | 肌肉鬆弛                        | 16    |
+| pals_arrest          | PALS 心臟停止/心律不整          | 17    |
 
 `category` usage counts: seizure 11, antibiotic 6, croup_bronchodilator 5, gi_other 5, pals_arrest 5, antipyretic 4, rhinitis 4, flu 4, antiemetic 4, sedation 4, expectorant 3, fluid 3, cough_cold 2, steroid 2, analgesic_inj 2, allergy_eps 2, muscle_relaxant 1.
 
 `tags` (free list, distinct values and counts — **note this is a flat, ungrouped tag vocabulary, not the same set implied by the task's example list of "uri, age, sedation, seizure, antibiotic, antipyretic, liquid, status_epilepticus, pals, resuscitation"**; only some of those actually occur):
 
-| tag | count |
-|---|---|
-| uri | 26 |
-| common | 12 |
-| age | 11 |
-| emergency | 10 |
-| starred_default | 9 |
-| pals | 5 |
-| fever | 4 |
-| flu | 4 |
-| seizure_second_line | 2 |
-| seizure | 2 |
-| se_protocol | 2 |
-| allergy | 2 |
-| seizure_first_line | 1 |
-| rsi | 1 |
-| sedation | 1 |
+| tag                 | count |
+| ------------------- | ----- |
+| uri                 | 26    |
+| common              | 12    |
+| age                 | 11    |
+| emergency           | 10    |
+| starred_default     | 9     |
+| pals                | 5     |
+| fever               | 4     |
+| flu                 | 4     |
+| seizure_second_line | 2     |
+| seizure             | 2     |
+| se_protocol         | 2     |
+| allergy             | 2     |
+| seizure_first_line  | 1     |
+| rsi                 | 1     |
+| sedation            | 1     |
 
 No `antibiotic`, `antipyretic`, `liquid`, `status_epilepticus`, or `resuscitation` tag literal exists — those concepts are covered instead by `category` (`antibiotic`, `antipyretic`), by `se_protocol`/`seizure_*` tags, and by the `pals_algorithms`/`se_algorithm` top-level arrays, not by a `tags` value. Tab/filter logic in a port should not assume the task's example tag list is literal.
 
@@ -238,28 +277,28 @@ No `antibiotic`, `antipyretic`, `liquid`, `status_epilepticus`, or `resuscitatio
 
 ## 7. Textual fields needing TH/EN translation
 
-| Field | Shape | Language mix |
-|---|---|---|
-| `brand` | string | mixed 43, en 23, zh 1 |
-| `notes` | string | mixed 40, zh 5 |
-| `frequency` | string (dosing-frequency shorthand, e.g. Q12H, BID, PRN, ST) | en 43, mixed 13 (English/Latin abbreviations dominate; arguably coded shorthand, not translation content) |
-| `source` | string (citation) | mixed 27, zh 24, en 16 — citation strings, generally should NOT be translated, just displayed as-is or given an EN gloss |
-| `warnings` | array[string] | zh 17, mixed 17, en 4 |
-| `kmuh_detail` | object, 7 fixed Chinese sub-keys (see below) | all-Chinese string values |
-| `contraindications[].reason` | string inside object | Chinese, numeric-embedded |
-| `indications[].label/notes/duration/onset` | strings | mixed |
+| Field                                      | Shape                                                        | Language mix                                                                                                             |
+| ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `brand`                                    | string                                                       | mixed 43, en 23, zh 1                                                                                                    |
+| `notes`                                    | string                                                       | mixed 40, zh 5                                                                                                           |
+| `frequency`                                | string (dosing-frequency shorthand, e.g. Q12H, BID, PRN, ST) | en 43, mixed 13 (English/Latin abbreviations dominate; arguably coded shorthand, not translation content)                |
+| `source`                                   | string (citation)                                            | mixed 27, zh 24, en 16 — citation strings, generally should NOT be translated, just displayed as-is or given an EN gloss |
+| `warnings`                                 | array[string]                                                | zh 17, mixed 17, en 4                                                                                                    |
+| `kmuh_detail`                              | object, 7 fixed Chinese sub-keys (see below)                 | all-Chinese string values                                                                                                |
+| `contraindications[].reason`               | string inside object                                         | Chinese, numeric-embedded                                                                                                |
+| `indications[].label/notes/duration/onset` | strings                                                      | mixed                                                                                                                    |
 
 `kmuh_detail` is present on **all 67** records with exactly the same 7 Chinese-language sub-keys every time (no variation in key names, no optional keys observed):
 
-| Sub-key (zh) | Meaning | Type | n | Example |
-|---|---|---|---|---|
-| `臨床用途` | clinical use / indication | str | 67 | `"發燒、輕度疼痛"` |
-| `禁忌` | contraindications (free text, distinct from the structured `contraindications` array) | str | 67 | `"嚴重肝功能不全、過敏"` |
-| `副作用` | adverse effects | str | 67 | `"肝毒性（過量）、罕見過敏皮疹"` |
-| `警語` | warnings/black-box-style notes | str | 67 | `"Max 75 mg/kg/day；間隔 ≥4 hr；..."` |
-| `懷孕分級` | pregnancy category | str | 67 | `"AU TGA: A"`, `"AU TGA: C（第 3 trimester D）"`, sometimes `"—"` |
-| `授乳` | breastfeeding compatibility | str | 67 | `"相容"`, `"短期可"`, `"資料不足"` |
-| `管制性藥品` | controlled-substance status | str | 67 | `"—"` (almost always em-dash = N/A), occasionally `"管制藥"` |
+| Sub-key (zh) | Meaning                                                                               | Type | n   | Example                                                           |
+| ------------ | ------------------------------------------------------------------------------------- | ---- | --- | ----------------------------------------------------------------- |
+| `臨床用途`   | clinical use / indication                                                             | str  | 67  | `"發燒、輕度疼痛"`                                                |
+| `禁忌`       | contraindications (free text, distinct from the structured `contraindications` array) | str  | 67  | `"嚴重肝功能不全、過敏"`                                          |
+| `副作用`     | adverse effects                                                                       | str  | 67  | `"肝毒性（過量）、罕見過敏皮疹"`                                  |
+| `警語`       | warnings/black-box-style notes                                                        | str  | 67  | `"Max 75 mg/kg/day；間隔 ≥4 hr；..."`                             |
+| `懷孕分級`   | pregnancy category                                                                    | str  | 67  | `"AU TGA: A"`, `"AU TGA: C（第 3 trimester D）"`, sometimes `"—"` |
+| `授乳`       | breastfeeding compatibility                                                           | str  | 67  | `"相容"`, `"短期可"`, `"資料不足"`                                |
+| `管制性藥品` | controlled-substance status                                                           | str  | 67  | `"—"` (almost always em-dash = N/A), occasionally `"管制藥"`      |
 
 This is the primary "clinical detail" sub-object the task asked about — its 7 sub-key names are fixed and exhaustive: `臨床用途, 禁忌, 副作用, 警語, 懷孕分級, 授乳, 管制性藥品`. There is no English mirror of these anywhere in the file — a bilingual port needs to translate values for all 67×7 = 469 strings (many are short, some — `警語`/`副作用` — embed numbers/units, see §9).
 
@@ -267,12 +306,12 @@ This is the primary "clinical detail" sub-object the task asked about — its 7 
 
 Present on 14 records, always a **list of objects** (never a bare string or single object). Distinct shapes, keyed by `type`:
 
-| `type` | count | threshold field | extra fields |
-|---|---|---|---|
-| `age_below_months` | 10 | `threshold_months` (int) | `severity`, `reason` |
-| `weight_above_kg` | 2 | `threshold_kg` (int) | `severity`, `reason` |
-| `age_below_weeks` | 1 | `threshold_weeks` (int) | `severity`, `reason` |
-| `age_below_years` | 1 | `threshold_years` (int) | `severity`, `reason` |
+| `type`             | count | threshold field          | extra fields         |
+| ------------------ | ----- | ------------------------ | -------------------- |
+| `age_below_months` | 10    | `threshold_months` (int) | `severity`, `reason` |
+| `weight_above_kg`  | 2     | `threshold_kg` (int)     | `severity`, `reason` |
+| `age_below_weeks`  | 1     | `threshold_weeks` (int)  | `severity`, `reason` |
+| `age_below_years`  | 1     | `threshold_years` (int)  | `severity`, `reason` |
 
 `severity` distinct values (Chinese free text, small but not a clean enum): `不建議`(6), `禁用`(3), `慎用`(3), `建議改膠囊`(1), `建議改錠劑`(1). Note `建議改膠囊`/`建議改錠劑` are themselves recommendation text ("suggest switching to capsule/tablet"), not a graded severity like the other three — inconsistent semantics for the `severity` field.
 
@@ -297,7 +336,7 @@ Fields where numbers/units/comparators are embedded inside Chinese (or mixed) pr
 
 - **No duplicate `id` values** across the 67 drugs (verified).
 - **6 drugs have no top-level `calc`** (`prednisolone_tab`, `methylpred_inj`, `succinylcholine`, `midazolam_dormicum`, `ketamine`, `adenosine`) — not a bug per se, dosing is nested under `indications[].calc` for these multi-indication drugs, but any schema/validator that assumes `calc` is required will break on these 6 ids.
-- **`voren_supp` `supp_by_weight`: `kg_per_supp_low` (25) > `kg_per_supp_high` (12.5).** This looks like an ordering violation but is **not a data bug** — confirmed via its own `notes` field (`"速算: BW÷25 ~ BW÷12.5 顆"`): the field names actually store **divisors** for the low/high dose bound (dose = BW ÷ divisor), so a smaller divisor yields a *larger* dose — i.e. `low`/`high` here refer to the resulting dose ordering, not to the raw magnitude of the two numeric fields. **Flag for schema design**: this naming is confusing and should be renamed or restructured in the port (e.g. `divisor_low_dose`/`divisor_high_dose`) to avoid a future engineer "fixing" it into an actual bug.
+- **`voren_supp` `supp_by_weight`: `kg_per_supp_low` (25) > `kg_per_supp_high` (12.5).** This looks like an ordering violation but is **not a data bug** — confirmed via its own `notes` field (`"速算: BW÷25 ~ BW÷12.5 顆"`): the field names actually store **divisors** for the low/high dose bound (dose = BW ÷ divisor), so a smaller divisor yields a _larger_ dose — i.e. `low`/`high` here refer to the resulting dose ordering, not to the raw magnitude of the two numeric fields. **Flag for schema design**: this naming is confusing and should be renamed or restructured in the port (e.g. `divisor_low_dose`/`divisor_high_dose`) to avoid a future engineer "fixing" it into an actual bug.
 - **`mgo_tab` `age_band` has an uncovered age gap**: bands are `[0,2)`, `[2,5)`, `[6,11)`, `[12,999)` — ages **5 to 6** (`age_high:5` then next `age_low:6`) fall into no band. This is a genuine data gap in the upstream source, id: `mgo_tab`.
 - No other `low > high` violations found anywhere else (checked all top-level `calc.low/high` and all `indications[].calc.low/high` pairs — all clean).
 - No unknown/unparseable `calc.type` strings — all 12 top-level types and the 1 nested type are internally consistent, but as noted in §1 they don't match the stale `_meta.schema_notes` enumeration.
@@ -313,13 +352,14 @@ Fields where numbers/units/comparators are embedded inside Chinese (or mixed) pr
 All of this content **is present directly inside `peds_drugs.json`** as two dedicated top-level keys — it is **not** in a separate file and (based on this file alone) does not appear to be hard-coded elsewhere in app code; a port should treat this file as the single source for these algorithms too.
 
 ### `pals_algorithms` (array, 3 entries)
+
 Each entry: `id, title, subtitle, icon, steps_initial, decision_tree, drugs, figure_url, figure_label`, plus algorithm-specific extras:
 
-| id | extra fields |
-|---|---|
+| id               | extra fields                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------ |
 | `cardiac_arrest` | `energy_doses`, `high_quality_cpr`, `reversible_causes` (`{title, h:[...], t:[...]}` — 6H+5T mnemonic) |
-| `tachy_pulse` | `differentiation` (`{title, sinus_tach:{...}, svt:{...}}`), `energy_doses`, `refractory_note` |
-| `brady_pulse` | `possible_causes` (list) |
+| `tachy_pulse`    | `differentiation` (`{title, sinus_tach:{...}, svt:{...}}`), `energy_doses`, `refractory_note`          |
+| `brady_pulse`    | `possible_causes` (list)                                                                               |
 
 `decision_tree` is a recursive free-form structure — sometimes `{question, yes:{...}, no:{...}}` with each branch either `actions:[...]` or `branches:[{qrs, label, action}]` depending on the algorithm; not a single fixed schema across the 3 entries — a port's decision-tree renderer needs to handle at least these two shapes.
 
@@ -330,6 +370,7 @@ Each entry: `id, title, subtitle, icon, steps_initial, decision_tree, drugs, fig
 External reference: each algorithm carries a `figure_url` pointing to the original AHA figure image (ahajournals.org) plus a Chinese `figure_label` ("查看原始 AHA Figure N →") link caption — these will need EN/TH label translation but the URL itself is fixed.
 
 ### `se_algorithm` (single object, not an array)
+
 Fields: `id ("convulsive_se"), title, subtitle, icon, time_stages, decision_label, citation, figure_url, figure_label`.
 
 `time_stages` is a list of phases, each: `{minutes: "0–5", phase, level?, subtitle?, actions:[...], drugs?:[...]}`. `drugs` cross-references dosing records exactly as in `pals_algorithms` (e.g. stage `"5–20"` references `["midazolam_dormicum","lorazepam_inj","diazepam_iv","diazepam_pr","phenobarbital_iv"]`). 4 stages total (`0–5`, `5–20`, `20–40`, `40–60`), following the AES 2016 Status Epilepticus algorithm; `actions[]` strings embed weight-based dosing (see §9 for an example).

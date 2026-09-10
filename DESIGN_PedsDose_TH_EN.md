@@ -139,6 +139,7 @@ reliable
 ให้ใช้โทนสีหลักแบบ pastel และสะอาด
 
 ### Primary
+
 - Soft Sky Blue — ใช้เป็นสีหลักของแอป
 - Mint Green — ใช้เสริมในส่วน positive / safe
 - Peach / Soft Coral — ใช้กับ CTA บางจุด
@@ -165,22 +166,27 @@ reliable
 แม้ UI จะน่ารัก แต่สีเตือนต้องชัด
 
 ### Safe / normal
+
 - สีเขียว mint/green ที่มองชัด
 - เช่น `#34D399` หรือโทนใกล้เคียง
 
 ### Caution
+
 - สีเหลืองอมส้มที่อ่านง่าย
 - เช่น `#FBBF24`
 
 ### Danger / Contraindication
+
 - สีแดงอ่อนแต่ชัด
 - เช่น `#F87171`
 
 ### Info
+
 - สีฟ้า
 - เช่น `#60A5FA`
 
 ### Important rule
+
 ห้ามใช้สีพาสเทลจน warning อ่านยาก
 
 ข้อมูลด้านความปลอดภัยต้อง contrast พอ
@@ -213,6 +219,7 @@ reliable
 แนะนำแนวทาง:
 
 ### Thai-friendly UI fonts
+
 - Noto Sans Thai
 - IBM Plex Sans Thai
 - Prompt
@@ -220,6 +227,7 @@ reliable
 - LINE Seed Sans TH (ถ้าใช้งานได้ตามเงื่อนไข)
 
 ### English/UI
+
 - Inter
 - Nunito
 - Quicksand (ใช้เฉพาะบางส่วน)
@@ -231,12 +239,15 @@ reliable
 แนวทางที่แนะนำ:
 
 ### Option A
+
 - Main UI: `Noto Sans Thai` + `Inter`
 
 ### Option B
+
 - Main UI: `IBM Plex Sans Thai` + `Inter`
 
 ### Option C
+
 - Soft and cute UI: `Prompt` + `Nunito`
 
 ## 5.4 Text hierarchy
@@ -252,6 +263,7 @@ reliable
 7. Reference
 
 ### ขนาดตัวอักษรโดยประมาณ
+
 - Hero title: ใหญ่เด่น
 - Section title: ใหญ่ปานกลาง
 - Card title: ชัด
@@ -268,6 +280,7 @@ reliable
 ควรใช้มุมโค้งมนทั่วทั้งระบบ
 
 แนวทาง:
+
 - ปุ่ม: rounded มาก
 - input: rounded
 - card: rounded ใหญ่
@@ -281,12 +294,14 @@ reliable
 ใช้เงาอ่อน ๆ แบบ soft shadow
 
 ต้องการความรู้สึก:
+
 - ลอยขึ้นเล็กน้อย
 - เบา
 - สะอาด
 - ไม่หนาเกินไป
 
 หลีกเลี่ยง:
+
 - เงาดำเข้ม
 - เงาหนักแบบ material แข็ง ๆ
 - glow สีแรง
@@ -351,6 +366,7 @@ Animation ต้องให้ความรู้สึก:
 - non-distracting
 
 ไม่ใช่:
+
 - flashy
 - bouncy เกินไป
 - over-animated
@@ -374,23 +390,28 @@ Animation ต้องให้ความรู้สึก:
 ## 8.3 Recommended interaction animations
 
 ### Buttons
+
 - hover: ขยายเล็กน้อย
 - tap: กดยุบเล็กน้อย
 - focus: มี ring ชัดเจน
 
 ### Cards
+
 - hover: ยกขึ้นเล็กน้อย
 - selected: border + soft glow + icon animation นิดหน่อย
 
 ### Tabs / category chips
+
 - active state เปลี่ยนสีแบบ smooth
 - slide indicator ได้
 
 ### Result panel
+
 - เมื่อคำนวณเสร็จ ให้ animate แบบ fade + slide in
 - ห้ามเด้งแรง
 
 ### Accordion / clinical info
+
 - expand/collapse smoothly
 - รองรับ reduced motion
 
@@ -447,28 +468,36 @@ Animation ต้องให้ความรู้สึก:
 บน desktop สามารถใช้ 2-column หรือ 3-zone layout ได้ เช่น
 
 ### Option A
+
 Left panel:
+
 - input
 - search
 - category
 - drug list
 
 Right panel:
+
 - result
 - warning
 - clinical details
 
 ### Option B
+
 Top:
+
 - title + language switch
 
 Left:
+
 - patient input + search + categories
 
 Center:
+
 - drug list
 
 Right:
+
 - result + clinical card
 
 แต่ต้องไม่ซับซ้อนเกินไป
@@ -524,6 +553,7 @@ Agent สามารถใช้ breakpoints ตาม framework ได้ แ�
 มือถือเป็นเป้าหมายสำคัญมาก
 
 ### Mobile UI requirements
+
 - ปุ่มใหญ่พอกดง่าย
 - input สูงกำลังดี
 - card ซ้อนกันสวย
@@ -536,6 +566,7 @@ Agent สามารถใช้ breakpoints ตาม framework ได้ แ�
 ## 10.4 Tablet behavior
 
 บนแท็บเล็ต:
+
 - ใช้ 2 columns ได้
 - ให้ drug list กับ result อยู่ร่วมกันได้
 - เพิ่ม white space ได้
@@ -544,6 +575,7 @@ Agent สามารถใช้ breakpoints ตาม framework ได้ แ�
 ## 10.5 Desktop behavior
 
 บน desktop:
+
 - ใช้พื้นที่กว้างขึ้น
 - เพิ่ม illustration พื้นหลังฝั่งขวาหรือ header ได้
 - ทำ layout แบบ card sections ที่ชัดเจน
@@ -565,16 +597,19 @@ Header ควรมี:
 ตัวอย่างข้อความ:
 
 ### Thai
+
 - PedsDose
 - ผู้ช่วยคำนวณขนาดยาในเด็ก
 
 ### English
+
 - PedsDose
 - Pediatric Dose Calculator
 
 ## 11.2 Style
 
 Header ควร:
+
 - ดูสดใส
 - มี gradient อ่อน ๆ ได้
 - มี blob/background illustration นิดหน่อย
@@ -591,12 +626,14 @@ Header ควร:
 ส่วนกรอกข้อมูลเด็กควรอยู่ใน card ที่เป็นมิตร
 
 ช่องหลัก:
+
 - Weight
 - Age
 
 อาจแยก:
+
 - อายุเป็นปี / เดือน
-หรือ
+  หรือ
 - โครงสร้างที่สอดคล้องกับ logic เดิมของ upstream
 
 ## 12.2 Input styling
@@ -608,12 +645,14 @@ Header ควร:
 - unit อยู่ในตำแหน่งที่ชัด
 
 ตัวอย่าง:
+
 - Weight [ 18.0 ] kg
 - Age [ 5 ] years [ 0 ] months
 
 ## 12.3 Inline friendliness
 
 สามารถใช้ icon เล็ก ๆ เช่น
+
 - น้ำหนัก = scale icon
 - อายุ = baby/clock icon
 
@@ -628,6 +667,7 @@ Header ควร:
 Search bar ควรโดดเด่น ใช้ง่าย และเป็นมิตร
 
 ลักษณะ:
+
 - rounded full or soft rounded
 - icon ค้นหา
 - clear button
@@ -642,6 +682,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 - ถ้ามี empty result ให้มีข้อความน่ารักแต่ไม่เสียเวลา
 
 ตัวอย่าง empty state:
+
 - ไม่พบยาที่ค้นหา ลองค้นด้วยชื่อสามัญหรือชื่ออื่น
 - No matching medicine found. Try a generic name or another keyword.
 
@@ -654,6 +695,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 หมวดหมู่ควรเป็น chip/tabs แบบ pill
 
 ลักษณะ:
+
 - สีพาสเทล
 - active ชัด
 - มี icon ได้
@@ -663,6 +705,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 14.2 Examples
 
 เช่น:
+
 - ⭐ Favorites
 - 🤧 URI
 - 🤢 AGE
@@ -686,6 +729,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 15.1 Card style
 
 รายการยาควรแสดงเป็น card หรือ list item ที่:
+
 - อ่านง่าย
 - แยก item ชัด
 - น่ากด
@@ -695,6 +739,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 15.2 Card contents
 
 ควรมีอย่างน้อย:
+
 - Drug name
 - Form / route
 - Short category / tags
@@ -703,6 +748,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 15.3 Selected state
 
 เมื่อเลือกยา:
+
 - border เด่นขึ้น
 - background เปลี่ยนอ่อน ๆ
 - อาจมี check icon เล็กน้อย
@@ -721,6 +767,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 16.2 Result card style
 
 ใช้ card พิเศษที่:
+
 - ใหญ่กว่า card อื่น
 - มี background ขาวหรือฟ้าอ่อน
 - มี shadow อ่อน
@@ -742,12 +789,14 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 16.4 Numeric emphasis
 
 ตัวเลข result เช่น
+
 - `180 mg/dose`
 - `3.6 mL/dose`
 
 ต้องเด่นมากที่สุด
 
 อาจใช้:
+
 - larger font
 - bold
 - separated line
@@ -756,6 +805,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 16.5 Range display
 
 ถ้าเป็น dose range:
+
 - แสดงให้เข้าใจง่าย
 - ไม่รก
 - ใช้ stacked layout หรือ dual-value layout
@@ -771,17 +821,20 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 17.2 Style hierarchy
 
 ### Contraindication
+
 - สีแดงอ่อนแต่ชัด
 - icon เตือน
 - label ชัดมาก
 - card ชัดเจน
 
 ### Warning / caution
+
 - สีเหลือง/ส้ม
 - card แยก
 - อ่านง่าย
 
 ### Info note
+
 - ฟ้าหรือเทาอ่อน
 - secondary card
 
@@ -800,6 +853,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 รายละเอียดทางคลินิกควรอยู่ใน accordion / collapsible card
 
 หัวข้อเช่น:
+
 - Clinical use
 - Contraindications
 - Adverse effects
@@ -828,10 +882,12 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 
 ใช้ card หรือ footer section เบา ๆ
 มีหัวข้อ:
+
 - แหล่งอ้างอิง
 - Reference
 
 ควรแสดง:
+
 - source name
 - optional metadata
 - provenance ชัดเจน
@@ -845,6 +901,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 สามารถใส่ความน่ารักได้มากกว่าส่วนอื่น
 
 เช่น:
+
 - illustration เล็ก ๆ
 - icon ยิ้ม
 - ข้อความเป็นมิตร
@@ -852,6 +909,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 20.2 Loading state
 
 ใช้:
+
 - skeleton cards
 - shimmer เบา ๆ
 - pulse soft
@@ -861,6 +919,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ## 20.3 Error state
 
 ถ้าคำนวณไม่ได้:
+
 - ใช้ card ที่ชัด
 - สีอ่อน
 - ข้อความตรงไปตรงมา
@@ -875,6 +934,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 ควรอยู่ใกล้ header มองเห็นง่าย
 
 รูปแบบ:
+
 - segmented control
 - pill switch
 - ไทย | EN
@@ -894,6 +954,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 แม้หน้าตาจะน่ารัก แต่ต้องเข้าถึงได้ดี
 
 ## 22.1 Required
+
 - contrast ดี
 - focus state ชัด
 - keyboard accessible
@@ -903,6 +964,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 - supports reduced motion
 
 ## 22.2 Thai language support
+
 - line-height ต้องเหมาะกับภาษาไทย
 - ห้าม clip ตัวอักษรไทย
 - spacing ต้องไม่อึดอัด
@@ -914,6 +976,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 เพิ่มได้เพื่อให้น่าใช้ แต่ต้องไม่เยอะเกิน
 
 ## 23.1 Good microinteractions
+
 - hover ปุ่มขยับเล็กน้อย
 - card selected เด่นขึ้น
 - category selected animated
@@ -924,6 +987,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 - collapse/expand smooth
 
 ## 23.2 Avoid
+
 - confetti
 - excessive bounce
 - looping animation ใหญ่ ๆ
@@ -937,6 +1001,7 @@ Search bar ควรโดดเด่น ใช้ง่าย และเป�
 Agent สามารถใช้ library หรือสร้างเองก็ได้ แต่หน้าตาต้องไปในแนวนี้
 
 ควรมีองค์ประกอบ:
+
 - rounded button
 - rounded input
 - soft card
@@ -970,6 +1035,7 @@ z-index scale
 เพื่อให้ UI consistency ดี
 
 ## 25.1 Radius direction
+
 - small
 - medium
 - large
@@ -979,6 +1045,7 @@ z-index scale
 ใช้ large/xlarge เยอะเป็นพิเศษในโปรเจกต์นี้
 
 ## 25.2 Motion tokens
+
 - fast
 - normal
 - slow
@@ -994,6 +1061,7 @@ z-index scale
 ต้องเป็นหน้าที่ดีที่สุดและใช้งานบ่อยสุด
 
 โฟกัส:
+
 - กรอกข้อมูลได้เร็ว
 - ค้นหายาได้เร็ว
 - เห็นผลลัพธ์เร็ว
@@ -1016,6 +1084,7 @@ z-index scale
 # 27. PWA / Offline Visual Consideration
 
 ถ้ามี offline support:
+
 - แสดง status แบบ unobtrusive
 - เช่น badge เล็ก ๆ “Offline ready”
 - ไม่เด่นเกิน result
@@ -1027,6 +1096,7 @@ z-index scale
 หน้าตาต้องสวย แต่ต้องเร็ว
 
 ดังนั้น:
+
 - อย่าใช้ illustration ขนาดใหญ่มากเกินจำเป็น
 - อย่าใช้ animation หนัก
 - อย่าใส่กราฟิกเยอะจน render ช้า
@@ -1038,32 +1108,40 @@ z-index scale
 # 29. Suggested UI Themes by Section
 
 ## Header
+
 - ฟ้าอ่อน / cream
 - มี blob หรือ cloud เบา ๆ
 
 ## Input
+
 - ขาว + border อ่อน
 - icon น่ารักเล็กน้อย
 
 ## Category chips
+
 - พาสเทลหลากสี
 - active ชัด
 
 ## Drug list
+
 - ขาวสะอาด
 - selected card มีสี accent อ่อน
 
 ## Result
+
 - ฟ้าขาวเด่น
 - ตัวเลขชัดมาก
 
 ## Warning
+
 - เหลือง / แดง ตามระดับ
 
 ## Clinical detail
+
 - ขาว / lavender อ่อน / cream
 
 ## Reference
+
 - เทาอ่อน / ฟ้าอ่อน
 
 ---
@@ -1092,6 +1170,7 @@ clean bilingual UI
 Agent ต้องปฏิบัติตามข้อกำหนดเหล่านี้
 
 ## Must
+
 - ดูน่ารักเหมือนเด็ก
 - ดูเป็นมิตร
 - อ่านง่าย
@@ -1106,6 +1185,7 @@ Agent ต้องปฏิบัติตามข้อกำหนดเห�
 - ใช้งานจริงได้
 
 ## Must not
+
 - มืดเกินไป
 - แข็งแบบ enterprise
 - สีฉูดฉาดเกินไป

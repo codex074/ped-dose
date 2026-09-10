@@ -23,120 +23,201 @@ Two `<script>` blocks: main app **lines 717–1594**; unrelated feedback widget 
 ```js
 if (t === 'mg_per_kg_per_dose') {
   if (weight == null) return { needs_weight: true };
-  let lowMg = calc.low * weight, highMg = calc.high * weight;
-  if (calc.max_dose_mg) { lowMg = Math.min(lowMg, calc.max_dose_mg); highMg = Math.min(highMg, calc.max_dose_mg); }
-  if (calc.min_dose_mg) { lowMg = Math.max(lowMg, calc.min_dose_mg); highMg = Math.max(highMg, calc.min_dose_mg); }
-  const result = { type:'dose', mgRange:[lowMg,highMg], rule:`${calc.low}${calc.high!==calc.low?'-'+calc.high:''} mg/kg/dose` };
+  let lowMg = calc.low * weight,
+    highMg = calc.high * weight;
+  if (calc.max_dose_mg) {
+    lowMg = Math.min(lowMg, calc.max_dose_mg);
+    highMg = Math.min(highMg, calc.max_dose_mg);
+  }
+  if (calc.min_dose_mg) {
+    lowMg = Math.max(lowMg, calc.min_dose_mg);
+    highMg = Math.max(highMg, calc.min_dose_mg);
+  }
+  const result = {
+    type: 'dose',
+    mgRange: [lowMg, highMg],
+    rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mg/kg/dose`,
+  };
   if (calc.min_dose_mg) result.rule += ` (min ${calc.min_dose_mg} mg)`;
   if (calc.max_dose_mg) result.rule += ` (max ${calc.max_dose_mg} mg/dose)`;
-  if (drug.concentration_mg_per_ml) result.mlRange = [lowMg/drug.concentration_mg_per_ml, highMg/drug.concentration_mg_per_ml];
-  if (drug.concentration_mg_per_unit) result.unitRange = [lowMg/drug.concentration_mg_per_unit, highMg/drug.concentration_mg_per_unit];
+  if (drug.concentration_mg_per_ml)
+    result.mlRange = [lowMg / drug.concentration_mg_per_ml, highMg / drug.concentration_mg_per_ml];
+  if (drug.concentration_mg_per_unit)
+    result.unitRange = [
+      lowMg / drug.concentration_mg_per_unit,
+      highMg / drug.concentration_mg_per_unit,
+    ];
   return result;
 }
 if (t === 'mg_per_kg_per_day') {
   if (weight == null) return { needs_weight: true };
   const dosesDay = calc.doses_per_day || 1;
-  let lowMgDay = calc.low*weight, highMgDay = calc.high*weight;
-  if (calc.max_mg_per_day) { lowMgDay = Math.min(lowMgDay, calc.max_mg_per_day); highMgDay = Math.min(highMgDay, calc.max_mg_per_day); }
-  const lowMg = lowMgDay/dosesDay, highMg = highMgDay/dosesDay;
-  const result = { type:'dose', mgRange:[lowMg,highMg], rule:`${calc.low}${calc.high!==calc.low?'-'+calc.high:''} mg/kg/day ÷ ${dosesDay}` };
-  if (drug.concentration_mg_per_ml) result.mlRange = [lowMg/drug.concentration_mg_per_ml, highMg/drug.concentration_mg_per_ml];
-  if (drug.concentration_mg_per_unit) result.unitRange = [lowMg/drug.concentration_mg_per_unit, highMg/drug.concentration_mg_per_unit];
+  let lowMgDay = calc.low * weight,
+    highMgDay = calc.high * weight;
+  if (calc.max_mg_per_day) {
+    lowMgDay = Math.min(lowMgDay, calc.max_mg_per_day);
+    highMgDay = Math.min(highMgDay, calc.max_mg_per_day);
+  }
+  const lowMg = lowMgDay / dosesDay,
+    highMg = highMgDay / dosesDay;
+  const result = {
+    type: 'dose',
+    mgRange: [lowMg, highMg],
+    rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mg/kg/day ÷ ${dosesDay}`,
+  };
+  if (drug.concentration_mg_per_ml)
+    result.mlRange = [lowMg / drug.concentration_mg_per_ml, highMg / drug.concentration_mg_per_ml];
+  if (drug.concentration_mg_per_unit)
+    result.unitRange = [
+      lowMg / drug.concentration_mg_per_unit,
+      highMg / drug.concentration_mg_per_unit,
+    ];
   return result;
 }
 if (t === 'mcg_per_kg_per_dose') {
   if (weight == null) return { needs_weight: true };
-  let lowMcg = calc.low*weight, highMcg = calc.high*weight;
-  if (calc.max_dose_mcg) { lowMcg = Math.min(lowMcg, calc.max_dose_mcg); highMcg = Math.min(highMcg, calc.max_dose_mcg); }
-  const result = { type:'dose', mcgRange:[lowMcg,highMcg], rule:`${calc.low}${calc.high!==calc.low?'-'+calc.high:''} mcg/kg/dose` };
-  if (drug.concentration_mcg_per_ml) result.mlRange = [lowMcg/drug.concentration_mcg_per_ml, highMcg/drug.concentration_mcg_per_ml];
-  else if (drug.concentration_mg_per_ml) result.mlRange = [lowMcg/(drug.concentration_mg_per_ml*1000), highMcg/(drug.concentration_mg_per_ml*1000)];
+  let lowMcg = calc.low * weight,
+    highMcg = calc.high * weight;
+  if (calc.max_dose_mcg) {
+    lowMcg = Math.min(lowMcg, calc.max_dose_mcg);
+    highMcg = Math.min(highMcg, calc.max_dose_mcg);
+  }
+  const result = {
+    type: 'dose',
+    mcgRange: [lowMcg, highMcg],
+    rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mcg/kg/dose`,
+  };
+  if (drug.concentration_mcg_per_ml)
+    result.mlRange = [
+      lowMcg / drug.concentration_mcg_per_ml,
+      highMcg / drug.concentration_mcg_per_ml,
+    ];
+  else if (drug.concentration_mg_per_ml)
+    result.mlRange = [
+      lowMcg / (drug.concentration_mg_per_ml * 1000),
+      highMcg / (drug.concentration_mg_per_ml * 1000),
+    ];
   return result;
 }
 if (t === 'ml_per_kg_per_dose') {
   if (weight == null) return { needs_weight: true };
-  let lowMl = calc.low*weight, highMl = calc.high*weight;
-  if (calc.max_ml_per_dose) { lowMl = Math.min(lowMl, calc.max_ml_per_dose); highMl = Math.min(highMl, calc.max_ml_per_dose); }
-  return { type:'dose', mlRange:[lowMl,highMl], rule:`${calc.low}${calc.high!==calc.low?'-'+calc.high:''} mL/kg/dose` };
+  let lowMl = calc.low * weight,
+    highMl = calc.high * weight;
+  if (calc.max_ml_per_dose) {
+    lowMl = Math.min(lowMl, calc.max_ml_per_dose);
+    highMl = Math.min(highMl, calc.max_ml_per_dose);
+  }
+  return {
+    type: 'dose',
+    mlRange: [lowMl, highMl],
+    rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mL/kg/dose`,
+  };
 }
 if (t === 'ml_per_kg_per_day') {
   if (weight == null) return { needs_weight: true };
   const dosesDay = calc.doses_per_day || 1;
-  const lowMlDay = calc.low*weight, highMlDay = calc.high*weight;
-  return { type:'dose', mlRange:[lowMlDay/dosesDay, highMlDay/dosesDay], rule:`${calc.low}${calc.high!==calc.low?'-'+calc.high:''} mL/kg/day ÷ ${dosesDay}` };
+  const lowMlDay = calc.low * weight,
+    highMlDay = calc.high * weight;
+  return {
+    type: 'dose',
+    mlRange: [lowMlDay / dosesDay, highMlDay / dosesDay],
+    rule: `${calc.low}${calc.high !== calc.low ? '-' + calc.high : ''} mL/kg/day ÷ ${dosesDay}`,
+  };
 }
 if (t === 'supp_by_weight') {
   if (weight == null) return { needs_weight: true };
-  return { type:'dose', unitRange:[weight/calc.kg_per_supp_low, weight/calc.kg_per_supp_high], rule:`BW÷${calc.kg_per_supp_low} ~ BW÷${calc.kg_per_supp_high} 顆` };
+  return {
+    type: 'dose',
+    unitRange: [weight / calc.kg_per_supp_low, weight / calc.kg_per_supp_high],
+    rule: `BW÷${calc.kg_per_supp_low} ~ BW÷${calc.kg_per_supp_high} 顆`,
+  };
 }
 if (t === 'pack_per_10kg_per_day') {
   if (weight == null) return { needs_weight: true };
   const dosesDay = calc.doses_per_day || 3;
-  const totalPacks = (weight/10) * (calc.packs_per_10kg_per_day || 1);
-  return { type:'dose', packsPerDose: totalPacks/dosesDay, rule:`${calc.packs_per_10kg_per_day} 包/10kg/day ÷ ${dosesDay}` };
+  const totalPacks = (weight / 10) * (calc.packs_per_10kg_per_day || 1);
+  return {
+    type: 'dose',
+    packsPerDose: totalPacks / dosesDay,
+    rule: `${calc.packs_per_10kg_per_day} 包/10kg/day ÷ ${dosesDay}`,
+  };
 }
 if (t === 'pack_per_30kg_per_dose') {
   if (weight == null) return { needs_weight: true };
-  return { type:'dose', packsPerDose: weight/30, rule: 'BW÷30 包/dose TID' };
+  return { type: 'dose', packsPerDose: weight / 30, rule: 'BW÷30 包/dose TID' };
 }
 if (t === 'weight_band') {
   if (weight == null) return { needs_weight: true };
-  const band = calc.bands.find(b => weight >= b.weight_low && weight < b.weight_high);
-  return { type:'band', bandText: band ? band.dose : '無相符區間', rule:'依體重分組' };
+  const band = calc.bands.find((b) => weight >= b.weight_low && weight < b.weight_high);
+  return { type: 'band', bandText: band ? band.dose : '無相符區間', rule: '依體重分組' };
 }
 if (t === 'age_band') {
   if (age == null) return { needs_age: true };
-  const band = calc.bands.find(b => age >= b.age_low && age < b.age_high);
-  if (!band) return { type:'band', bandText:'無相符區間', rule:'依年齡分組' };
+  const band = calc.bands.find((b) => age >= b.age_low && age < b.age_high);
+  if (!band) return { type: 'band', bandText: '無相符區間', rule: '依年齡分組' };
   if (band.mg_per_kg_per_dose !== undefined) {
     if (weight == null) return { needs_weight: true };
     const high = band.mg_per_kg_per_dose_high ?? band.mg_per_kg_per_dose;
-    let lowMg = band.mg_per_kg_per_dose*weight, highMg = high*weight;
-    if (band.max_mg_per_dose) { lowMg = Math.min(lowMg, band.max_mg_per_dose); highMg = Math.min(highMg, band.max_mg_per_dose); }
-    const ruleLabel = band.label || `${band.mg_per_kg_per_dose}${high!==band.mg_per_kg_per_dose?'-'+high:''} mg/kg/dose`;
-    const result = { type:'dose', mgRange:[lowMg,highMg], rule: ruleLabel };
-    if (drug.concentration_mg_per_ml) result.mlRange = [lowMg/drug.concentration_mg_per_ml, highMg/drug.concentration_mg_per_ml];
+    let lowMg = band.mg_per_kg_per_dose * weight,
+      highMg = high * weight;
+    if (band.max_mg_per_dose) {
+      lowMg = Math.min(lowMg, band.max_mg_per_dose);
+      highMg = Math.min(highMg, band.max_mg_per_dose);
+    }
+    const ruleLabel =
+      band.label ||
+      `${band.mg_per_kg_per_dose}${high !== band.mg_per_kg_per_dose ? '-' + high : ''} mg/kg/dose`;
+    const result = { type: 'dose', mgRange: [lowMg, highMg], rule: ruleLabel };
+    if (drug.concentration_mg_per_ml)
+      result.mlRange = [
+        lowMg / drug.concentration_mg_per_ml,
+        highMg / drug.concentration_mg_per_ml,
+      ];
     return result;
   }
   if (band.mg_per_dose !== undefined) {
     const mg = band.mg_per_dose;
     const ruleLabel = band.label || `${mg} mg/dose`;
-    const result = { type:'dose', mgRange:[mg,mg], rule: ruleLabel };
-    if (drug.concentration_mg_per_ml) result.mlRange = [mg/drug.concentration_mg_per_ml, mg/drug.concentration_mg_per_ml];
+    const result = { type: 'dose', mgRange: [mg, mg], rule: ruleLabel };
+    if (drug.concentration_mg_per_ml)
+      result.mlRange = [mg / drug.concentration_mg_per_ml, mg / drug.concentration_mg_per_ml];
     return result;
   }
-  return { type:'band', bandText: band.dose || '無資料', rule: band.label || '依年齡分組' };
+  return { type: 'band', bandText: band.dose || '無資料', rule: band.label || '依年齡分組' };
 }
 if (t === 'fluid_421_rule') {
   if (weight == null) return { needs_weight: true };
   let rate = 0;
-  if (weight <= 10) rate = weight*4;
-  else if (weight <= 20) rate = 40 + (weight-10)*2;
-  else rate = 60 + (weight-20);
-  return { type:'rate', rate, rule:'4-2-1 rule', display:`${num(rate)} mL/hr` };
+  if (weight <= 10) rate = weight * 4;
+  else if (weight <= 20) rate = 40 + (weight - 10) * 2;
+  else rate = 60 + (weight - 20);
+  return { type: 'rate', rate, rule: '4-2-1 rule', display: `${num(rate)} mL/hr` };
 }
 if (t === 'ml_by_weight_after_dilution') {
   if (weight == null) return { needs_weight: true };
-  return { type:'special', text:`起始 ${num(weight/4)}-${num(weight/3)} mL，最多 ${num(weight)} mL（${calc.note||''}）` };
+  return {
+    type: 'special',
+    text: `起始 ${num(weight / 4)}-${num(weight / 3)} mL，最多 ${num(weight)} mL（${calc.note || ''}）`,
+  };
 }
 ```
 
 ### Per-type summary
 
-| type | doses_per_day | Cap fields (value-level, order matters) | mL conv | unit conv | count |
-|---|---|---|---|---|---|
-| `mg_per_kg_per_dose` | n/a | `max_dose_mg` (min) THEN `min_dose_mg` (max) — **min applied after max, can override** | `concentration_mg_per_ml` | `concentration_mg_per_unit` | 23 |
-| `mg_per_kg_per_day` | default 1, divides AFTER cap | `max_mg_per_day` on daily total only | yes | yes | 11 |
-| `mcg_per_kg_per_dose` | n/a | `max_dose_mcg` | `concentration_mcg_per_ml` else `mg_per_ml*1000` | none | 1 |
-| `ml_per_kg_per_dose` | n/a | `max_ml_per_dose` | n/a | n/a | 3 |
-| `ml_per_kg_per_day` | default 1 | **none supported** | n/a | n/a | 5 |
-| `supp_by_weight` | n/a | none | n/a | direct | 1 |
-| `pack_per_10kg_per_day` | default **3** | none | n/a | packs | 1 |
-| `pack_per_30kg_per_dose` | n/a | none | n/a | packs | 1 |
-| `weight_band` | n/a | free text | n/a | n/a | 5 |
-| `age_band` | n/a | sub-branch max only | sub-branch only | **not implemented even when possible** | 6 |
-| `fluid_421_rule` | n/a | inclusive `<=` at 10 and 20 | n/a | n/a | 3 |
-| `ml_by_weight_after_dilution` | n/a | n/a | n/a | n/a | 1 |
+| type                          | doses_per_day                | Cap fields (value-level, order matters)                                                | mL conv                                          | unit conv                              | count |
+| ----------------------------- | ---------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------ | -------------------------------------- | ----- |
+| `mg_per_kg_per_dose`          | n/a                          | `max_dose_mg` (min) THEN `min_dose_mg` (max) — **min applied after max, can override** | `concentration_mg_per_ml`                        | `concentration_mg_per_unit`            | 23    |
+| `mg_per_kg_per_day`           | default 1, divides AFTER cap | `max_mg_per_day` on daily total only                                                   | yes                                              | yes                                    | 11    |
+| `mcg_per_kg_per_dose`         | n/a                          | `max_dose_mcg`                                                                         | `concentration_mcg_per_ml` else `mg_per_ml*1000` | none                                   | 1     |
+| `ml_per_kg_per_dose`          | n/a                          | `max_ml_per_dose`                                                                      | n/a                                              | n/a                                    | 3     |
+| `ml_per_kg_per_day`           | default 1                    | **none supported**                                                                     | n/a                                              | n/a                                    | 5     |
+| `supp_by_weight`              | n/a                          | none                                                                                   | n/a                                              | direct                                 | 1     |
+| `pack_per_10kg_per_day`       | default **3**                | none                                                                                   | n/a                                              | packs                                  | 1     |
+| `pack_per_30kg_per_dose`      | n/a                          | none                                                                                   | n/a                                              | packs                                  | 1     |
+| `weight_band`                 | n/a                          | free text                                                                              | n/a                                              | n/a                                    | 5     |
+| `age_band`                    | n/a                          | sub-branch max only                                                                    | sub-branch only                                  | **not implemented even when possible** | 6     |
+| `fluid_421_rule`              | n/a                          | inclusive `<=` at 10 and 20                                                            | n/a                                              | n/a                                    | 3     |
+| `ml_by_weight_after_dilution` | n/a                          | n/a                                                                                    | n/a                                              | n/a                                    | 1     |
 
 **Caps mutate the value itself** (used downstream for mL/unit conversion), not just display. No "capped" flag/message exists — the only trace is `mg_per_kg_per_dose` appending `(max X mg/dose)`/`(min X mg)` text to `rule`.
 
@@ -149,7 +230,8 @@ if (t === 'ml_by_weight_after_dilution') {
 ## 4. Rounding/formatting — `num()` (line 760), used for everything
 
 ```js
-function num(x, decimals = 2) {          // decimals param is dead code
+function num(x, decimals = 2) {
+  // decimals param is dead code
   if (x === null || x === undefined || isNaN(x)) return '—';
   if (x === 0) return '0';
   if (x >= 100) return Math.round(x).toString();
@@ -169,18 +251,23 @@ function num(x, decimals = 2) {          // decimals param is dead code
 function checkContraindication(drug) {
   if (!drug.contraindications) return null;
   for (const c of drug.contraindications) {
-    if (c.type === 'age_below_months' && state.age != null && state.age * 12 < c.threshold_months) return c;
-    if (c.type === 'age_below_years' && state.age != null && state.age < c.threshold_years) return c;
-    if (c.type === 'age_below_weeks' && state.age != null && state.age * 52 < c.threshold_weeks) return c;
-    if (c.type === 'weight_above_kg' && state.weight != null && state.weight >= c.threshold_kg) return c;
-    if (c.type === 'weight_below_kg' && state.weight != null && state.weight < c.threshold_kg) return c;
+    if (c.type === 'age_below_months' && state.age != null && state.age * 12 < c.threshold_months)
+      return c;
+    if (c.type === 'age_below_years' && state.age != null && state.age < c.threshold_years)
+      return c;
+    if (c.type === 'age_below_weeks' && state.age != null && state.age * 52 < c.threshold_weeks)
+      return c;
+    if (c.type === 'weight_above_kg' && state.weight != null && state.weight >= c.threshold_kg)
+      return c;
+    if (c.type === 'weight_below_kg' && state.weight != null && state.weight < c.threshold_kg)
+      return c;
   }
   return null;
 }
 function severityClass(sev) {
   if (sev === '禁用') return 'severe';
   if (sev === '不建議') return 'moderate';
-  return 'mild';   // catches 慎用, 建議改膠囊, 建議改錠劑, etc.
+  return 'mild'; // catches 慎用, 建議改膠囊, 建議改錠劑, etc.
 }
 ```
 

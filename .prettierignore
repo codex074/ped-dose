@@ -1,0 +1,6 @@
+dist
+node_modules
+coverage
+.superpowers
+pnpm-lock.yaml
+public/data

@@ -444,9 +444,7 @@ Example concept:
   "acc_effervescent": {
     "brand": "...",
     "notes": "...",
-    "warnings": [
-      "..."
-    ],
+    "warnings": ["..."],
     "clinical": {
       "use": "...",
       "contraindications": "...",
@@ -804,11 +802,11 @@ For every calculation regression fixture, run both languages.
 Pseudo-test:
 
 ```ts
-const th = calculateAndRender(input, drug, "th")
-const en = calculateAndRender(input, drug, "en")
+const th = calculateAndRender(input, drug, 'th');
+const en = calculateAndRender(input, drug, 'en');
 
-expect(th.numericResult).toEqual(en.numericResult)
-expect(th.calculationMetadata).toEqual(en.calculationMetadata)
+expect(th.numericResult).toEqual(en.numericResult);
+expect(th.calculationMetadata).toEqual(en.calculationMetadata);
 ```
 
 Test at minimum:

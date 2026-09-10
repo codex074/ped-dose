@@ -83,12 +83,26 @@ Port `calcDose`, `num`, `checkContraindication`, `severityClass`, and the energy
 - `DoseResult` (frozen before UI fan-out):
   ```ts
   type DoseResult =
-    | { kind: 'needs_weight' } | { kind: 'needs_age' }
-    | { kind: 'dose'; mgRange?: [number, number]; mcgRange?: [number, number]; mlRange?: [number, number];
-        unitRange?: [number, number]; packsPerDose?: number; rule: RuleDescriptor }
-    | { kind: 'band'; bandText: string; rule: RuleDescriptor }      // bandText is raw upstream free text → translated via drug key
+    | { kind: 'needs_weight' }
+    | { kind: 'needs_age' }
+    | {
+        kind: 'dose';
+        mgRange?: [number, number];
+        mcgRange?: [number, number];
+        mlRange?: [number, number];
+        unitRange?: [number, number];
+        packsPerDose?: number;
+        rule: RuleDescriptor;
+      }
+    | { kind: 'band'; bandText: string; rule: RuleDescriptor } // bandText is raw upstream free text → translated via drug key
     | { kind: 'rate'; rate: number; rule: RuleDescriptor }
-    | { kind: 'special'; template: 'dilution'; start: [number, number]; max: number; note?: string };
+    | {
+        kind: 'special';
+        template: 'dilution';
+        start: [number, number];
+        max: number;
+        note?: string;
+      };
   ```
 - Contraindication severity: `禁用` → `severe`, `不建議` → `moderate`, else `mild`. The raw severity string is still shown (translated via drug key) so recommendation-style values like `建議改膠囊` survive.
 - Age input is a single float in years, `[0, 18]`; weight `(0, 120]`. The UI offers an optional years + months helper that computes `years + months / 12` before the engine sees it; the engine never receives months.
@@ -143,17 +157,17 @@ localStorage keys: `pedsdose.lang`, `pedsdose.starred.v1` (seeded from `starred_
 
 ## 11. Deliberate non-parity (recorded in UPSTREAM.md)
 
-| Item | Decision |
-|---|---|
-| Feedback widget + Google Forms POST | Dropped (author's personal channel, network call) |
-| Disclaimer | Rendered in footer and About (upstream never rendered `_meta.disclaimer`) |
-| `kmuh_code` | Kept in JSON; removed from search and display |
-| Liquid tab whitelist | Kept; moved to `src/clinical/filters.ts` config |
-| Hard-coded proofread date | Replaced by `_meta.last_updated` |
-| Dark mode | Not in v1 (DESIGN.md forbids dark UI; upstream had OS dark mode) |
-| Stray leading space in 抗生素 tab label | Not replicated |
-| `monitoring` field | Displayed in clinical info if present (upstream never rendered it) |
-| Accessibility | Improved (roles, aria-expanded, focus rings) |
+| Item                                    | Decision                                                                  |
+| --------------------------------------- | ------------------------------------------------------------------------- |
+| Feedback widget + Google Forms POST     | Dropped (author's personal channel, network call)                         |
+| Disclaimer                              | Rendered in footer and About (upstream never rendered `_meta.disclaimer`) |
+| `kmuh_code`                             | Kept in JSON; removed from search and display                             |
+| Liquid tab whitelist                    | Kept; moved to `src/clinical/filters.ts` config                           |
+| Hard-coded proofread date               | Replaced by `_meta.last_updated`                                          |
+| Dark mode                               | Not in v1 (DESIGN.md forbids dark UI; upstream had OS dark mode)          |
+| Stray leading space in 抗生素 tab label | Not replicated                                                            |
+| `monitoring` field                      | Displayed in clinical info if present (upstream never rendered it)        |
+| Accessibility                           | Improved (roles, aria-expanded, focus rings)                              |
 
 ## 12. Documentation deliverables
 
