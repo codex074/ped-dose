@@ -145,5 +145,6 @@
   "error.unableToCalculate": "ไม่สามารถคำนวณได้",
   "error.reviewSource": "กรุณาตรวจสอบข้อมูลต้นฉบับก่อนใช้ยา",
   "error.dataLoad": "โหลดข้อมูลไม่สำเร็จ",
-  "panel.empty": "เลือกยาจากรายการเพื่อดูขนาดยา"
+  "panel.empty": "เลือกยาจากรายการเพื่อดูขนาดยา",
+  "patient.ageHelperToggle": "ตัวช่วย ปี + เดือน"
 }

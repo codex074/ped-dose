@@ -41,8 +41,10 @@ describe('App data loading (via fetch)', () => {
 describe('Layout (via renderWithProviders, real dataset)', () => {
   test('renders every stub section when the dataset is ready and view is "all"', () => {
     renderWithProviders(<Layout />);
-    expect(screen.getByTestId('stub-patient-input')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-patient-summary-banner')).toBeInTheDocument();
+    // PatientInput/PatientSummaryBanner are implemented (Task 15), not stubs: assert their real
+    // rendered output instead of a testid. The banner stays hidden until weight/age is entered.
+    expect(screen.getByRole('heading', { name: 'ข้อมูลผู้ป่วย' })).toBeInTheDocument();
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
     expect(screen.getByRole('searchbox')).toBeInTheDocument();
     expect(screen.getByRole('tablist')).toBeInTheDocument();
     expect(screen.getByTestId('stub-drug-list')).toBeInTheDocument();

@@ -145,5 +145,6 @@
   "error.unableToCalculate": "Unable to calculate",
   "error.reviewSource": "Please verify against the source reference before use",
   "error.dataLoad": "Failed to load data",
-  "panel.empty": "Pick a medicine from the list to see its dose"
+  "panel.empty": "Pick a medicine from the list to see its dose",
+  "patient.ageHelperToggle": "Years + months helper"
 }
