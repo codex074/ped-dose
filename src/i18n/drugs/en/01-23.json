@@ -1,0 +1,576 @@
+{
+  "_meta": {
+    "status": "draft",
+    "range": "01-23",
+    "generatedFrom": "2.5"
+  },
+  "antiphen_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Anti-phen syrup 24 mg/mL",
+    "notes": "Quick calc: BW÷4 ~ BW÷2 mL/dose; space doses ≥4 hours apart; may stagger with Ibuprofen by half an hour",
+    "frequency": "Q4-6H PRN",
+    "source": "Lexicomp + KMUH quick-dose table",
+    "package": "60 mL/bottle",
+    "clinical": {
+      "use": "Fever, mild pain",
+      "contraindications": "Severe hepatic impairment, hypersensitivity",
+      "adverseEffects": "Hepatotoxicity (overdose), rare allergic rash",
+      "warnings": "Max 75 mg/kg/day; space doses ≥4 hr apart; do not combine with other acetaminophen-containing products",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "acetaminophen_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Panadol / Acetaminophen 500mg tab",
+    "notes": "Max 1#/dose; tablets are usually only started at ≥30 kg",
+    "frequency": "Q4-6H PRN",
+    "source": "Lexicomp + KMUH quick-dose table",
+    "unit": "tab",
+    "clinical": {
+      "use": "Fever, mild pain",
+      "contraindications": "Severe hepatic impairment",
+      "adverseEffects": "Hepatotoxicity (overdose), rash",
+      "warnings": "Tablets usually only started at ≥30 kg; max 4 g/day (children 75 mg/kg/day)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "idefen_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Idofen syrup 20 mg/mL",
+    "notes": "Quick calc: BW÷4 ~ BW÷2 mL/dose; contraindicated < 6 months; for use ≥ 6 months-12 years",
+    "frequency": "Q6-8H PRN",
+    "source": "Lexicomp + KMUH quick-dose table",
+    "package": "60 mL/bottle",
+    "contraindications": [
+      {
+        "severity": "Contraindicated",
+        "reason": "NSAID — GI bleeding / nephrotoxicity risk"
+      }
+    ],
+    "clinical": {
+      "use": "Fever, inflammatory pain",
+      "contraindications": "<6 months, GI ulcer, aspirin triad (asthma+rhinitis+nasal polyp), severe renal/hepatic failure",
+      "adverseEffects": "GI upset, GI bleeding, acute kidney injury, decreased platelet function",
+      "warnings": "Contraindicated <6 months; use with caution during dehydration/prerenal hypoperfusion; max 40 mg/kg/day",
+      "pregnancy": "AU TGA: C (D in 3rd trimester)",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "voren_supp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Voren supp 12.5 mg",
+    "notes": "Quick calc: BW÷25 ~ BW÷12.5 supp; Max 2 supp/day; backup antipyretic for infants/young children",
+    "frequency": "Q6H PRN",
+    "source": "KMUH quick-dose table",
+    "unit": "supp",
+    "contraindications": [
+      {
+        "severity": "Not recommended",
+        "reason": "NSAID — GI bleeding / nephrotoxicity; limit to backup antipyretic use in infants/young children"
+      }
+    ],
+    "clinical": {
+      "use": "Backup antipyretic for infants/young children",
+      "contraindications": "Active GI bleeding, severe renal failure, aspirin triad",
+      "adverseEffects": "GI upset, rectal irritation, rare abnormal liver function",
+      "warnings": "Max 2 supp/day; when fever has not resolved, do not repeat PR + PO NSAID within a short interval",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "peace_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Peace syrup",
+    "frequency": "TID PC",
+    "source": "KMUH quick-dose table",
+    "concentration_note": "Triprolidine 0.25 mg + Pseudoephedrine 6 mg/mL",
+    "clinical": {
+      "use": "Nasal congestion/rhinorrhea from common cold (combination product)",
+      "contraindications": "Current MAOI therapy, severe HTN, CAD, hyperthyroidism",
+      "adverseEffects": "Drowsiness, dry mouth, stimulation (from the pseudoephedrine component)",
+      "warnings": "<2y not recommended; monitor BP/HR due to pseudoephedrine content",
+      "pregnancy": "—",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "cypromin_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cypromin syrup 0.4 mg/mL",
+    "notes": "First-generation antihistamine; may switch to cetirizine in older children",
+    "frequency": "TID PC",
+    "source": "KMUH quick-dose table",
+    "package": "60 mL/bottle",
+    "clinical": {
+      "use": "Allergy, rhinorrhea, itching; also used for poor appetite",
+      "contraindications": "Glaucoma, BPH, MAOI, neonates",
+      "adverseEffects": "Drowsiness, dry mouth, weight gain (increased appetite)",
+      "warnings": "First-generation antihistamine with pronounced sedative effect",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "Short-term use acceptable (may reduce milk supply)",
+      "controlledDrug": "—"
+    }
+  },
+  "cetirizine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cetirizine syrup 1 mg/mL",
+    "notes": "Per label, by age band: <3y per physician's judgment (typically 0.25 mg/kg/dose); 3-6y 5 mg QD or 2.5 mg BID; ≥6y 10 mg QD. Halve the dose for renal impairment.",
+    "frequency": "QD (taken at dinner)",
+    "source": "Cetirizine syrup label + hospital formulary",
+    "package": "60 mL/bottle",
+    "bands": [
+      {
+        "label": "<3y · 0.25 mg/kg QD-BID (per physician's judgment)"
+      },
+      {
+        "label": "3-6y · 5 mg QD (or 2.5 mg BID)"
+      },
+      {
+        "label": "≥6y / adult · 10 mg QD"
+      }
+    ],
+    "clinical": {
+      "use": "Allergic rhinitis, urticaria, pruritus",
+      "contraindications": "Hypersensitivity to cetirizine / hydroxyzine; severe renal impairment (CrCl <10) requires adjustment",
+      "adverseEffects": "Drowsiness (milder than first-generation), dry mouth, headache",
+      "warnings": "Requires dose adjustment in renal impairment; assess before use under age 2",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "Passes into breast milk; long-term use best avoided",
+      "controlledDrug": "—"
+    }
+  },
+  "cypromin_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cypromin 4mg tab",
+    "notes": "Converted from syrup 0.4 mg/mL × 0.6 mL/kg/day to 0.24 mg/kg/day; max 16 mg/day",
+    "frequency": "TID PC",
+    "source": "KMUH quick-dose table",
+    "unit": "tab",
+    "clinical": {
+      "use": "Allergy, rhinorrhea, itching",
+      "contraindications": "Glaucoma, BPH, MAOI, neonates",
+      "adverseEffects": "Drowsiness, dry mouth",
+      "warnings": "First-generation antihistamine; watch for drowsiness",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "secorine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Secorine syrup",
+    "frequency": "TID PC",
+    "source": "KMUH quick-dose table",
+    "clinical": {
+      "use": "Symptomatic relief of common cold (combination product)",
+      "contraindications": "MAOI, severe HTN",
+      "adverseEffects": "Drowsiness, dry mouth, stimulation",
+      "warnings": "<2y not recommended; monitor BP/HR due to methylephedrine content",
+      "pregnancy": "—",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "glyo_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Compound Glycyrrhiza Mixture",
+    "notes": "Avoid <1 year (contains compound glycyrrhiza; contraindicated in young infants)",
+    "frequency": "TID PC",
+    "source": "KMUH quick-dose table",
+    "warnings": ["Contraindicated <1 year"],
+    "contraindications": [
+      {
+        "severity": "Not recommended",
+        "reason": "Avoid < 1 year (compound glycyrrhiza component)"
+      }
+    ],
+    "clinical": {
+      "use": "Cough relief",
+      "contraindications": "<1 year, hypokalemia, severe hypertension",
+      "adverseEffects": "Pseudo-hyperaldosteronism (long-term/high dose): hypertension, hypokalemia, edema",
+      "warnings": "Avoid <1 year (contains compound glycyrrhiza); avoid prolonged high-dose use",
+      "pregnancy": "—",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "actein_granule": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Actein granule 200 mg/3g/sac",
+    "frequency": "TID PC",
+    "source": "KMUH quick-dose table",
+    "unit": "sachet",
+    "clinical": {
+      "use": "Mucolytic",
+      "contraindications": "Hypersensitivity to acetylcysteine",
+      "adverseEffects": "GI upset, rare bronchospasm (inhaled form)",
+      "warnings": "Use with caution in asthma; separate from antibiotics by 1-2 hr",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "Insufficient data",
+      "controlledDrug": "—"
+    }
+  },
+  "acc_effervescent": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "ACC600 Effervescent Tab",
+    "notes": "600mg mucolytic effervescent tablet; dissolve in water before drinking; <6 years recommend Actein granule 200mg/sachet instead",
+    "frequency": "BID-TID PC",
+    "source": "KMUH drug formulary + Lexicomp",
+    "unit": "tab",
+    "bands": [
+      {
+        "dose": "Not recommended (<6 years switch to Actein granule)"
+      },
+      {
+        "dose": "0.5 # BID PC"
+      },
+      {
+        "dose": "1 # BID-TID PC"
+      }
+    ],
+    "clinical": {
+      "use": "Mucolytic",
+      "contraindications": "Hypersensitivity to acetylcysteine",
+      "adverseEffects": "GI upset, oral mucosal irritation",
+      "warnings": "<6 years recommend switching to granule form; take immediately after dissolving in water",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "Insufficient data",
+      "controlledDrug": "—"
+    }
+  },
+  "soltan_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Mucosolvan syrup (hospital mainly stocks Mubroxol tab)",
+    "frequency": "TID PC",
+    "source": "KMUH quick-dose table",
+    "clinical": {
+      "use": "Mucolytic",
+      "contraindications": "Hypersensitivity to ambroxol",
+      "adverseEffects": "GI upset, rare hypersensitivity",
+      "warnings": "Rare severe skin reactions (Stevens-Johnson syndrome)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "zithromax_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Zithromax syrup 40 mg/mL",
+    "notes": "Quick calc: 0.25 mL/kg QD; reconstitute by adding 9mL water to make 15mL, shake well; stable at room temperature for 7 days after reconstitution",
+    "frequency": "QD",
+    "source": "Lexicomp + KMUH quick-dose table + TCVGH PDF reference",
+    "package": "15 mL/bottle",
+    "concentration_note": "200 mg/5 mL = 40 mg/mL",
+    "duration_note": "Mycoplasma: 3 days; otitis media: 5 days",
+    "clinical": {
+      "use": "Mycoplasma, otitis media, pharyngitis, CAP",
+      "contraindications": "Macrolide hypersensitivity, abnormal liver function",
+      "adverseEffects": "GI upset, taste disturbance, QT prolongation (high dose)",
+      "warnings": "QT prolongation risk (consider baseline ECG); 3 days is sufficient for mycoplasma",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "zithromax_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Zithromax 250 mg tab",
+    "frequency": "QD",
+    "source": "Lexicomp",
+    "unit": "tab",
+    "clinical": {
+      "use": "Mycoplasma, otitis media, pharyngitis, CAP",
+      "contraindications": "Macrolide hypersensitivity",
+      "adverseEffects": "GI upset, QT prolongation (high dose)",
+      "warnings": "QT prolongation risk; max 500 mg/day",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "amoxicillin_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Amoxicillin susp 25 mg/mL",
+    "notes": "High dose for otitis media/CAP; simple URI may use 50 mg/kg/day; switch to capsule in older children",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp + KMUH quick-dose table",
+    "package": "60 mL/bottle",
+    "concentration_note": "1500 mg / 60 mL = 25 mg/mL",
+    "contraindications": [
+      {
+        "severity": "Recommend switching to capsule",
+        "reason": "≥ 30 kg switch to Amoxicillin 500 mg cap"
+      }
+    ],
+    "clinical": {
+      "use": "Otitis media, pharyngitis, CAP, URI",
+      "contraindications": "Penicillin hypersensitivity",
+      "adverseEffects": "GI upset, rash (especially with EBV infection), rare anaphylaxis",
+      "warnings": "High rash rate with EBV/IM infection; use high dose 80-90 mg/kg/day for otitis media/CAP",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "amoxicillin_cap": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Amoxicillin 500 mg cap",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp",
+    "unit": "cap",
+    "clinical": {
+      "use": "Otitis media, pharyngitis, CAP, URI",
+      "contraindications": "Penicillin hypersensitivity",
+      "adverseEffects": "GI upset, rash",
+      "warnings": "Capsules usually only started at ≥30 kg; high dose 80-90 mg/kg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "curam_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Curam Powder for Oral Susp",
+    "notes": "High dose for otitis media/CAP; 7:1 formulation reduces diarrhea; switch to tablet in older children",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp + KMUH quick-dose table",
+    "package": "60 mL/bottle",
+    "concentration_note": "60 mL/bottle, reconstitute with water before use; Amox 400 mg + Clav 57 mg / 5 mL (7:1 ratio)",
+    "contraindications": [
+      {
+        "severity": "Recommend switching to tablet",
+        "reason": "≥ 30 kg switch to Curam 875/125 tab"
+      }
+    ],
+    "clinical": {
+      "use": "Otitis media, CAP, complicated URI (amoxicillin/clavulanate 7:1)",
+      "contraindications": "Penicillin hypersensitivity, history of cholestatic jaundice",
+      "adverseEffects": "GI upset (especially diarrhea), rash, rare abnormal liver function",
+      "warnings": "Clavulanate component prone to causing diarrhea; use 80-90 mg/kg/day (by amox) for otitis media/CAP",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "curam_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Curam 875/125 tab",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp",
+    "unit": "tab",
+    "concentration_note": "Amoxicillin 875 mg + Clav 125 mg",
+    "clinical": {
+      "use": "Otitis media, CAP, complicated URI (875/125 tab)",
+      "contraindications": "Penicillin hypersensitivity, history of cholestatic jaundice",
+      "adverseEffects": "GI upset, rash",
+      "warnings": "For use ≥30 kg; max 3 g/day amox",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "tamiflu": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Tamiflu / Eraflu (Oseltamivir 30/45/75 mg cap)",
+    "notes": "Most effective when started within 48 hours of symptom onset; per Taiwan Pediatric Society antiviral guidance",
+    "frequency": "BID × 5 days",
+    "source": "Lexicomp / Taiwan Pediatric Society",
+    "package": "cap 30/45/75 mg / 60 mg/mL susp",
+    "concentration_note": "Capsule strength varies by age/weight (30/45/75 mg)",
+    "contraindications": [
+      {
+        "severity": "Not recommended",
+        "reason": "< 2 weeks; insufficient safety data in neonates"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "30 mg BID × 5 days"
+      },
+      {
+        "dose": "45 mg BID × 5 days"
+      },
+      {
+        "dose": "60 mg BID × 5 days"
+      },
+      {
+        "dose": "75 mg BID × 5 days"
+      }
+    ],
+    "clinical": {
+      "use": "Treatment and prophylaxis of influenza A/B",
+      "contraindications": "Oseltamivir hypersensitivity",
+      "adverseEffects": "N/V (most common), headache, rare neuropsychiatric events",
+      "warnings": "Most effective within 48 hr of symptom onset; neuropsychiatric events are rare but caregivers should be counseled",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "Compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "rapiacta_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Rapiacta",
+    "notes": "≥6 months: 10-12 mg/kg single dose; adult 600 mg. Option for influenza requiring hospitalization / unable to tolerate oral therapy; publicly funded version (2RAPIA) available during outbreak periods via the CDC, otherwise use the self-pay 2RAPI3 version",
+    "frequency": "Single dose × 1 (IV over 15-30 min)",
+    "source": "Lexicomp + KMUH drug formulary",
+    "package": "300 mg / 60 mL/Bag",
+    "warnings": ["Dilute to 30-100 mL N/S, IV over 15-30 min"],
+    "contraindications": [
+      {
+        "severity": "Not recommended",
+        "reason": "< 6 months; insufficient safety data"
+      }
+    ],
+    "clinical": {
+      "use": "Treatment of influenza A/B (unable to tolerate oral therapy / severe disease)",
+      "contraindications": "Peramivir hypersensitivity",
+      "adverseEffects": "Diarrhea, rare hypersensitivity, decreased neutrophils",
+      "warnings": "For use ≥6 months; single IV infusion over 15-30 min; dose adjustment required for severe hepatic/renal impairment",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "Insufficient data",
+      "controlledDrug": "—"
+    }
+  },
+  "xofluza_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Xofluza 20 mg tab",
+    "notes": "For use ≥1 year; single oral dose completes the course; do not take with dairy/calcium products (reduced absorption)",
+    "frequency": "Single dose × 1",
+    "source": "Lexicomp + KMUH drug formulary",
+    "unit": "tab",
+    "warnings": ["Most effective when taken within 48 hours of symptom onset"],
+    "contraindications": [
+      {
+        "severity": "Not recommended",
+        "reason": "< 1 year; insufficient safety data"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "≥1 year + <20 kg: 2 mg/kg PO single dose"
+      },
+      {
+        "dose": "40 mg (2 #) PO single dose"
+      },
+      {
+        "dose": "80 mg (4 #) PO single dose"
+      }
+    ],
+    "clinical": {
+      "use": "Treatment of influenza A/B (single oral dose)",
+      "contraindications": "Baloxavir hypersensitivity",
+      "adverseEffects": "Diarrhea, headache (uncommon)",
+      "warnings": "For use ≥1 year; do not co-administer with calcium/magnesium/iron-containing products (reduced absorption)",
+      "pregnancy": "— (insufficient data)",
+      "breastfeeding": "Insufficient data",
+      "controlledDrug": "—"
+    }
+  },
+  "relenza_inh": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Relenza rotadisk",
+    "notes": "For use ≥7 years; administered via Diskhaler; use with caution in asthma/COPD (may trigger bronchospasm)",
+    "frequency": "BID × 5 days",
+    "source": "Lexicomp + KMUH drug formulary",
+    "unit": "blister",
+    "warnings": ["Use with caution in asthma/COPD — risk of triggering bronchospasm"],
+    "contraindications": [
+      {
+        "severity": "Not recommended",
+        "reason": "< 7 years not recommended for the Diskhaler inhaled form"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "<7 years not recommended"
+      },
+      {
+        "dose": "10 mg (2 blisters) BID × 5 days"
+      }
+    ],
+    "clinical": {
+      "use": "Treatment of influenza A/B (inhaled)",
+      "contraindications": "Asthma, COPD, lactose hypersensitivity",
+      "adverseEffects": "Bronchospasm (in asthma patients), headache, cough",
+      "warnings": "For use ≥7 years; may trigger bronchospasm in asthma patients — use a bronchodilator before administration",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  }
+}
