@@ -41,12 +41,16 @@ describe('App data loading (via fetch)', () => {
 describe('Layout (via renderWithProviders, real dataset)', () => {
   test('renders every stub section when the dataset is ready and view is "all"', () => {
     renderWithProviders(<Layout />);
-    expect(screen.getByTestId('stub-patient-input')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-patient-summary-banner')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-drug-search')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-category-chips')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-drug-list')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-selected-drug-panel')).toBeInTheDocument();
+    // PatientInput/PatientSummaryBanner are implemented (Task 15), not stubs: assert their real
+    // rendered output instead of a testid. The banner stays hidden until weight/age is entered.
+    expect(screen.getByRole('heading', { name: 'ข้อมูลผู้ป่วย' })).toBeInTheDocument();
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expect(screen.getByRole('searchbox')).toBeInTheDocument();
+    expect(screen.getByRole('tablist')).toBeInTheDocument();
+    expect(screen.getAllByTestId(/^drug-(group-)?card-/).length).toBeGreaterThan(0);
+    // SelectedDrugPanel is implemented (Task 18): with no drug selected it renders its empty
+    // state rather than the old stub.
+    expect(screen.getByTestId('selected-drug-panel-empty')).toBeInTheDocument();
     expect(screen.getByTestId('stub-app-footer')).toBeInTheDocument();
     expect(screen.queryByTestId('pals-view')).not.toBeInTheDocument();
   });
@@ -54,15 +58,15 @@ describe('Layout (via renderWithProviders, real dataset)', () => {
   test('shows the PALSView (and hides search/list) when view=pals', () => {
     renderWithProviders(<Layout />, { calculator: { view: 'pals' } });
     expect(screen.getByTestId('pals-view')).toBeInTheDocument();
-    expect(screen.queryByTestId('stub-drug-search')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('stub-drug-list')).not.toBeInTheDocument();
+    expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
+    expect(screen.queryByTestId(/^drug-(group-)?card-/)).not.toBeInTheDocument();
   });
 
   test('shows the SEView (and hides search/list) when view=se', () => {
     renderWithProviders(<Layout />, { calculator: { view: 'se' } });
     expect(screen.getByTestId('se-view')).toBeInTheDocument();
-    expect(screen.queryByTestId('stub-drug-search')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('stub-drug-list')).not.toBeInTheDocument();
+    expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
+    expect(screen.queryByTestId(/^drug-(group-)?card-/)).not.toBeInTheDocument();
   });
 
   test('switching language flips document.documentElement.lang and keeps stub sections mounted', async () => {
@@ -70,7 +74,7 @@ describe('Layout (via renderWithProviders, real dataset)', () => {
     renderWithProviders(<Layout />);
     await user.click(screen.getByRole('radio', { name: 'EN' }));
     expect(document.documentElement.lang).toBe('en');
-    expect(screen.getByTestId('stub-drug-list')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-selected-drug-panel')).toBeInTheDocument();
+    expect(screen.getAllByTestId(/^drug-(group-)?card-/).length).toBeGreaterThan(0);
+    expect(screen.getByTestId('selected-drug-panel-empty')).toBeInTheDocument();
   });
 });

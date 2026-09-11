@@ -1,0 +1,552 @@
+{
+  "_meta": {
+    "status": "draft",
+    "range": "24-45",
+    "generatedFrom": "2.5"
+  },
+  "epinephrine_inh_croup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bosmin / Adrenalin 1 mg/mL/Amp",
+    "notes": "Croup: 0.5 mL/kg of 1:1000 (1 mg/mL) ≤4 yr max 2.5 mL, >4 yr max 5 mL; observe 2-4 hours for rebound",
+    "frequency": "ST (single dose)",
+    "source": "KMUH quick-reference table + Lexicomp",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Croup (moderate-to-severe airway obstruction)",
+      "contraindications": "— (no absolute contraindication in an emergency)",
+      "adverseEffects": "increased heart rate, tremor, HTN (transient)",
+      "warnings": "observe 2-4 hr after dosing for rebound; concurrent steroid lowers admission rate",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "terbutaline_neb": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bricanyl 2.5 mg/mL/Amp",
+    "frequency": "ST",
+    "source": "KMUH quick-reference table",
+    "package": "2 mL/Amp",
+    "bands": [
+      {
+        "dose": "0.5 amp/dose"
+      },
+      {
+        "dose": "1 amp/dose"
+      }
+    ],
+    "clinical": {
+      "use": "asthma, bronchiolitis bronchodilation",
+      "contraindications": "severe tachyarrhythmia",
+      "adverseEffects": "increased heart rate, tremor, hypokalemia (high dose)",
+      "warnings": "monitor K+ with repeated use; combine with ipratropium for acute asthma",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "ipratropium_neb": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Atrovent 0.25 mg/mL",
+    "frequency": "ST",
+    "source": "KMUH quick-reference table",
+    "package": "2 mL/Amp",
+    "bands": [
+      {
+        "dose": "0.5 amp/dose"
+      },
+      {
+        "dose": "1 amp/dose"
+      }
+    ],
+    "clinical": {
+      "use": "acute asthma exacerbation (combined with a β-agonist)",
+      "contraindications": "atropine allergy, glaucoma",
+      "adverseEffects": "dry mouth, cough, rare acute angle-closure glaucoma (eye contact)",
+      "warnings": "combine with a β-agonist within the first 24 hr of an exacerbation; do not use alone for an acute attack",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "insufficient data",
+      "controlledDrug": "—"
+    }
+  },
+  "exdila_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Exdila / Meptin liquid 5 mcg/mL",
+    "frequency": "BID PC",
+    "source": "KMUH quick-reference table",
+    "package": "60 mL/bot",
+    "clinical": {
+      "use": "asthma maintenance / mild bronchoconstriction",
+      "contraindications": "tachyarrhythmia",
+      "adverseEffects": "palpitations, tremor, dry mouth",
+      "warnings": "recommended for age ≥6 yr; not suitable for acute attacks (slow onset)",
+      "pregnancy": "—",
+      "breastfeeding": "insufficient data",
+      "controlledDrug": "—"
+    }
+  },
+  "meptin_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Meptin 25 mcg tab",
+    "notes": "dosed by weight group; age <6 yr, Meptin liquid is preferred",
+    "frequency": "BID PC",
+    "source": "Lexicomp + KMUH drug database",
+    "unit": "tab",
+    "bands": [
+      {
+        "dose": "0.5 # BID"
+      },
+      {
+        "dose": "1 # BID"
+      },
+      {
+        "dose": "1-2 # BID"
+      }
+    ],
+    "clinical": {
+      "use": "asthma maintenance",
+      "contraindications": "severe tachyarrhythmia",
+      "adverseEffects": "palpitations, tremor",
+      "warnings": "long-acting formulation; use nebulization for acute asthma",
+      "pregnancy": "—",
+      "breastfeeding": "insufficient data",
+      "controlledDrug": "—"
+    }
+  },
+  "prednisolone_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Prednisolone 5 mg tab",
+    "source": "KMUH quick-reference table + Lexicomp",
+    "unit": "tab",
+    "indications": [
+      {
+        "label": "Croup (single dose)",
+        "frequency": "ST × 1 dose"
+      },
+      {
+        "label": "Asthma loading",
+        "frequency": "Loading × 1, maintain 2 mg/kg/day (inpatient loading, 3-day take-home course)"
+      }
+    ],
+    "clinical": {
+      "use": "croup, asthma, skin allergy, autoimmune disease",
+      "contraindications": "active systemic infection, live vaccine within 24 hr",
+      "adverseEffects": "short-term: hyperglycemia, mood changes; long-term: adrenal suppression, Cushingoid appearance, osteoporosis",
+      "warnings": "croup/asthma short courses are usually 3 days; no taper needed for courses <14 days",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "methylpred_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Solu-Medrol 40 mg/Vial",
+    "notes": "equivalent dosing: methylprednisolone ≈ 4× dexamethasone",
+    "source": "KMUH quick-reference table + Lexicomp",
+    "unit": "Vial",
+    "indications": [
+      {
+        "label": "Croup (single dose, equiv. dex 0.6 mg/kg)",
+        "frequency": "ST × 1 dose"
+      },
+      {
+        "label": "Asthma loading",
+        "frequency": "ST, maintain same total dose divided q6h"
+      }
+    ],
+    "clinical": {
+      "use": "croup, acute asthma exacerbation, anaphylaxis",
+      "contraindications": "live vaccine within 24 hr, systemic fungal infection",
+      "adverseEffects": "short-term: hyperglycemia, HTN; long-term same as systemic corticosteroid effects",
+      "warnings": "first choice IV/IM for an acute exacerbation; usually a single dose or ≤72 hr",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "aswell_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Aswell syrup",
+    "notes": "watch for EPS; may combine with diphenhydramine to prevent it",
+    "frequency": "TID PC PRN",
+    "source": "KMUH quick-reference table",
+    "warnings": ["EPS"],
+    "contraindications": [
+      {
+        "severity": "Use with caution",
+        "reason": "age <1 yr: high EPS risk"
+      }
+    ],
+    "clinical": {
+      "use": "nausea / vomiting / GERD",
+      "contraindications": "GI obstruction / perforation, pheochromocytoma, history of tardive dyskinesia",
+      "adverseEffects": "drowsiness, agitation, EPS (higher risk at young age)",
+      "warnings": "age <1 yr high EPS risk; combine with diphenhydramine to prevent EPS; max 5-day course",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "acceptable (small amount)",
+      "controlledDrug": "—"
+    }
+  },
+  "promeran_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Promeran 3.84 mg tab",
+    "frequency": "TID PC PRN",
+    "source": "Lexicomp + KMUH drug database",
+    "unit": "tab",
+    "warnings": [
+      "EPS side effect — higher risk in children, may combine with diphenhydramine to prevent it"
+    ],
+    "clinical": {
+      "use": "nausea / vomiting",
+      "contraindications": "GI obstruction / perforation, history of tardive dyskinesia",
+      "adverseEffects": "drowsiness, EPS, rare NMS",
+      "warnings": "max 5-day course; treat acute EPS with diphenhydramine",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "primperan_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Primperan 5 mg/mL/Amp",
+    "frequency": "Q6-8H PRN",
+    "source": "KMUH quick-reference table",
+    "package": "2 mL/Amp",
+    "warnings": ["EPS — often combined with diphenhydramine (Vena)"],
+    "contraindications": [
+      {
+        "severity": "Use with caution",
+        "reason": "age <1 yr: high EPS risk"
+      }
+    ],
+    "clinical": {
+      "use": "nausea / vomiting (rapid-acting, urgent use)",
+      "contraindications": "GI obstruction / perforation, pheochromocytoma",
+      "adverseEffects": "EPS (especially at young age), drowsiness, rare NMS",
+      "warnings": "slow IV push (<2 min); combine with diphenhydramine to prevent EPS",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "novamin_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Novamin 5 mg/Amp",
+    "notes": "less likely to cause EPS",
+    "frequency": "Q6-8H PRN",
+    "source": "KMUH quick-reference table",
+    "unit": "Amp",
+    "contraindications": [
+      {
+        "severity": "Contraindicated",
+        "reason": "contraindicated <2 yr (respiratory depression + EPS)"
+      }
+    ],
+    "clinical": {
+      "use": "nausea / vomiting (potent IM)",
+      "contraindications": "<2 yr, severe CNS depression, GI obstruction",
+      "adverseEffects": "EPS, sedation, orthostatic hypotension",
+      "warnings": "contraindicated <2 yr; lower EPS risk than metoclopramide",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "kascoal_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Kascoal 40 mg tab",
+    "frequency": "QID PC",
+    "source": "KMUH quick-reference table",
+    "unit": "tab",
+    "bands": [
+      {
+        "dose": "0.5 # QID"
+      },
+      {
+        "dose": "1 # QID"
+      },
+      {
+        "dose": "1-3 # QID"
+      }
+    ],
+    "clinical": {
+      "use": "bloating, indigestion",
+      "contraindications": "—",
+      "adverseEffects": "rare hypersensitivity",
+      "warnings": "simethicone is not absorbed; very high safety profile",
+      "pregnancy": "—",
+      "breastfeeding": "compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "lgg_pack": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "LGG 10 mg/g/sac",
+    "source": "KMUH quick-reference table",
+    "bands": [
+      {
+        "dose": "0.3-0.5 sac TID"
+      },
+      {
+        "dose": "0.5-1 sac TID"
+      },
+      {
+        "dose": "adult dose"
+      }
+    ],
+    "clinical": {
+      "use": "adjunct for acute gastroenteritis, antibiotic-associated diarrhea prevention",
+      "contraindications": "immunocompromised / central venous catheter (rare sepsis risk)",
+      "adverseEffects": "bloating (transient)",
+      "warnings": "rare bacteremia in immunocompromised patients; use with caution in preterm infants",
+      "pregnancy": "—",
+      "breastfeeding": "compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "mgo_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "MgO 250 mg tab",
+    "frequency": "TID-QID PC",
+    "source": "KMUH quick-reference table",
+    "unit": "tab",
+    "max_per_day_note": "Max 2.1 g/day",
+    "bands": [
+      {
+        "dose": "BW÷20 # TID-QID"
+      },
+      {
+        "dose": "0.5-1 # TID-QID"
+      },
+      {
+        "dose": "1-2 # TID-QID"
+      },
+      {
+        "dose": "2 # TID-QID"
+      }
+    ],
+    "clinical": {
+      "use": "constipation, indigestion (antacid)",
+      "contraindications": "severe renal failure, bowel obstruction",
+      "adverseEffects": "diarrhea, rare hypermagnesemia (renal failure patients)",
+      "warnings": "do not use in renal failure; max 2.1 g/day",
+      "pregnancy": "—",
+      "breastfeeding": "compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "glycerin_supp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Glycerin enema",
+    "frequency": "ST PRN",
+    "source": "KMUH quick-reference table",
+    "clinical": {
+      "use": "constipation (PR)",
+      "contraindications": "anal fissure / severe hemorrhoids",
+      "adverseEffects": "anal irritation",
+      "warnings": "short-term use; do not combine with other stimulant laxatives",
+      "pregnancy": "—",
+      "breastfeeding": "compatible",
+      "controlledDrug": "—"
+    }
+  },
+  "smecta": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Smecta 3 g/sac",
+    "notes": "Under 1 yr: 1 pack/day; 1-2 yr: 2 pack/day; >2 yr: 3 pack/day. Space 1 hour apart from other medications.",
+    "frequency": "TID PC",
+    "source": "高醫速算表 + 藥丹",
+    "clinical": {
+      "use": "acute diarrhea (adsorbent type)",
+      "contraindications": "bowel obstruction",
+      "adverseEffects": "constipation",
+      "warnings": "space 1-2 hr apart from other oral medications (adsorbs other drugs)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "compatible",
+      "controlledDrug": "—"
+    },
+    "_review": "source: Source resource name '藥丹' (TH/EN) is ambiguous/unverifiable (possibly a typo for 藥典 or a proper-noun reference tool); kept verbatim rather than guessing."
+  },
+  "taita1": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.1 (solution No. 1, D5W)",
+    "notes": "D5W isotonic; commonly used fluid base for neonates/infants",
+    "source": "KMUH drug database",
+    "package": "500 mL/Bag",
+    "clinical": {
+      "use": "neonate / infant fluid base (D5W)",
+      "contraindications": "hyperglycemia, severe hyponatremia",
+      "adverseEffects": "fluid overload: edema, dilutional hyponatremia",
+      "warnings": "calculate maintenance using the 4-2-1 rule; monitor blood glucose in infants",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "taita2": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.2",
+    "source": "KMUH quick-reference table",
+    "clinical": {
+      "use": "pediatric maintenance fluid (D5 1/3 saline)",
+      "contraindications": "severe hyper/hyponatremia",
+      "adverseEffects": "fluid overload edema; prolonged hypotonic use requires monitoring for hyponatremia",
+      "warnings": "recent guidelines favor isotonic fluids (such as D5NS); monitor Na if hypotonic fluid is used",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "taita5": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.5 (solution No. 5)",
+    "notes": "higher sugar content, prone to causing pain",
+    "source": "KMUH quick-reference table",
+    "clinical": {
+      "use": "pediatric maintenance fluid (higher glucose content)",
+      "contraindications": "hyperglycemia, severe hyper/hyponatremia",
+      "adverseEffects": "hyperglycemia, phlebitis (high sugar content)",
+      "warnings": "higher sugar content, IV site prone to pain; caution in diabetes or stress hyperglycemia",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "morphine_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Morphine 10 mg/mL/Amp",
+    "notes": "controlled drug; watch for respiratory depression; halve the dose in neonates",
+    "frequency": "Q4-8H PRN",
+    "source": "KMUH quick-reference table + Lexicomp",
+    "package": "1 mL/Amp",
+    "warnings": ["respiratory depression", "controlled drug"],
+    "contraindications": [
+      {
+        "severity": "Use with caution",
+        "reason": "high respiratory-depression risk in neonates; halve the dose"
+      }
+    ],
+    "clinical": {
+      "use": "moderate to severe pain",
+      "contraindications": "active respiratory depression, paralytic ileus, acute phase of severe asthma",
+      "adverseEffects": "respiratory depression, drowsiness, N/V, constipation, pruritus, histamine release",
+      "warnings": "halve the dose in neonates; have naloxone ready for respiratory depression; slow IV push",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "short-term use acceptable (watch for infant drowsiness)",
+      "controlledDrug": "Controlled drug, Category 1"
+    }
+  },
+  "fentanyl_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Fentanyl 50 mcg/mL",
+    "notes": "controlled drug; rapid push risks chest wall rigidity; usually 1 mcg/kg for procedural sedation",
+    "frequency": "Q1-2H PRN",
+    "source": "Lexicomp + KMUH quick-reference table",
+    "package": "2 mL/Amp = 100 mcg",
+    "warnings": ["respiratory depression", "chest wall rigidity", "controlled drug"],
+    "clinical": {
+      "use": "acute pain, procedural sedation analgesia",
+      "contraindications": "active respiratory depression, severe asthma",
+      "adverseEffects": "respiratory depression, drowsiness, chest wall rigidity (rapid push), low BP",
+      "warnings": "pushing too fast may cause chest wall rigidity; have naloxone ready; slow IV over 1-2 min",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "short-term use acceptable",
+      "controlledDrug": "Controlled drug, Category 1"
+    }
+  },
+  "succinylcholine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Relaxin 50 mg/mL",
+    "source": "Lexicomp + KMUH quick-reference table",
+    "package": "10 mL/vial",
+    "warnings": [
+      "hyperkalemia (contraindicated in burns / trauma / neuromuscular disease)",
+      "Malignant hyperthermia"
+    ],
+    "indications": [
+      {
+        "label": "RSI IV",
+        "frequency": "ST"
+      },
+      {
+        "label": "RSI IM",
+        "frequency": "ST"
+      }
+    ],
+    "clinical": {
+      "use": "RSI (rapid muscle relaxation)",
+      "contraindications": "24 hr post-burn, upper/lower motor neuron injury, severe hyperkalemia, family history of malignant hyperthermia",
+      "adverseEffects": "hyperkalemia, bradycardia (especially in children), myalgia, rare malignant hyperthermia",
+      "warnings": "pediatric IV 1-2 mg/kg / IM 3-4 mg/kg; have atropine ready to prevent bradycardia, dantrolene to treat MH",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  }
+}

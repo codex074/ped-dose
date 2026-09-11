@@ -1,0 +1,577 @@
+{
+  "_meta": {
+    "status": "draft",
+    "range": "01-23",
+    "generatedFrom": "2.5"
+  },
+  "antiphen_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Anti-phen syrup 24 mg/mL",
+    "notes": "สูตรคำนวณเร็ว: BW÷4 ~ BW÷2 mL/dose; เว้นระยะห่าง ≥4 ชั่วโมง; สามารถสลับกับ Ibuprofen ห่างครึ่งชั่วโมงได้",
+    "frequency": "Q4-6H PRN",
+    "source": "Lexicomp + ตารางคำนวณยาเร็ว KMUH",
+    "package": "60 mL/ขวด",
+    "clinical": {
+      "use": "ไข้, ปวดเล็กน้อย",
+      "contraindications": "ตับทำงานบกพร่องรุนแรง, แพ้ยา",
+      "adverseEffects": "พิษต่อตับ (กรณีใช้เกินขนาด), ผื่นแพ้ (พบได้น้อย)",
+      "warnings": "Max 75 mg/kg/day; เว้นระยะห่าง ≥4 hr; ห้ามใช้ร่วมกับผลิตภัณฑ์อื่นที่มี acetaminophen",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "acetaminophen_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Panadol / Acetaminophen 500mg tab",
+    "notes": "Max 1#/dose; โดยทั่วไปเริ่มให้ยาเม็ดเมื่อ ≥30 kg",
+    "frequency": "Q4-6H PRN",
+    "source": "Lexicomp + ตารางคำนวณยาเร็ว KMUH",
+    "unit": "tab",
+    "clinical": {
+      "use": "ไข้, ปวดเล็กน้อย",
+      "contraindications": "ตับทำงานบกพร่องรุนแรง",
+      "adverseEffects": "พิษต่อตับ (กรณีใช้เกินขนาด), ผื่นผิวหนัง",
+      "warnings": "โดยทั่วไปเริ่มให้ยาเม็ดเมื่อ ≥30 kg; max 4 g/day (เด็ก 75 mg/kg/day)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "idefen_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Idofen syrup 20 mg/mL",
+    "notes": "สูตรคำนวณเร็ว: BW÷4 ~ BW÷2 mL/dose; ห้ามใช้ < 6 เดือน; ใช้ได้ตั้งแต่ ≥ 6 เดือน-12 ปี",
+    "frequency": "Q6-8H PRN",
+    "source": "Lexicomp + ตารางคำนวณยาเร็ว KMUH",
+    "package": "60 mL/ขวด",
+    "contraindications": [
+      {
+        "severity": "ห้ามใช้",
+        "reason": "NSAID — ความเสี่ยงเลือดออกทางเดินอาหาร / พิษต่อไต"
+      }
+    ],
+    "clinical": {
+      "use": "ไข้, ปวดจากการอักเสบ",
+      "contraindications": "<6 เดือน, แผลในทางเดินอาหาร, aspirin triad (asthma+rhinitis+nasal polyp), ตับ/ไตวายรุนแรง",
+      "adverseEffects": "GI upset, เลือดออกทางเดินอาหาร, ไตวายเฉียบพลัน, การทำงานของเกล็ดเลือดลดลง",
+      "warnings": "ห้ามใช้ <6 เดือน; ระมัดระวังในภาวะขาดน้ำ/เลือดไปเลี้ยงไตลดลงก่อนไต; max 40 mg/kg/day",
+      "pregnancy": "AU TGA: C (ไตรมาสที่ 3 เป็น D)",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "voren_supp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Voren supp 12.5 mg",
+    "notes": "สูตรคำนวณเร็ว: BW÷25 ~ BW÷12.5 เม็ด; Max 2 เม็ด/วัน; สำรองลดไข้ในทารก/เด็กเล็ก",
+    "frequency": "Q6H PRN",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "unit": "supp",
+    "contraindications": [
+      {
+        "severity": "ไม่แนะนำ",
+        "reason": "NSAID — เลือดออกทางเดินอาหาร / พิษต่อไต; ในทารก/เด็กเล็กใช้เป็นยาสำรองลดไข้เท่านั้น"
+      }
+    ],
+    "clinical": {
+      "use": "สำรองลดไข้ในทารก/เด็กเล็ก",
+      "contraindications": "เลือดออกทางเดินอาหารที่กำลังดำเนินอยู่, ไตวายรุนแรง, aspirin triad",
+      "adverseEffects": "GI upset, ระคายเคืองทวารหนัก, การทำงานของตับผิดปกติ (พบได้น้อย)",
+      "warnings": "Max 2 supp/day; เมื่อไข้ยังไม่ลดห้ามให้ PR + PO NSAID ซ้ำในเวลาใกล้กัน",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "peace_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Peace syrup",
+    "frequency": "TID PC",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "concentration_note": "Triprolidine 0.25 mg + Pseudoephedrine 6 mg/mL",
+    "clinical": {
+      "use": "คัดจมูก น้ำมูกไหลจากไข้หวัด (ยาผสม)",
+      "contraindications": "กำลังใช้ MAOI, HTN รุนแรง, CAD, ไทรอยด์เป็นพิษ",
+      "adverseEffects": "ง่วงซึม, ปากแห้ง, ตื่นตัว/กระตุ้น (จากส่วนของ pseudoephedrine)",
+      "warnings": "<2 ปีไม่แนะนำ; มี pseudoephedrine ต้องระวัง BP/HR",
+      "pregnancy": "—",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "cypromin_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cypromin syrup 0.4 mg/mL",
+    "notes": "First-generation antihistamine สามารถเปลี่ยนเป็น cetirizine ได้เมื่อโตขึ้น",
+    "frequency": "TID PC",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "package": "60 mL/ขวด",
+    "clinical": {
+      "use": "แพ้, น้ำมูกไหล, คัน; ใช้เพื่อกระตุ้นความอยากอาหารด้วย",
+      "contraindications": "Glaucoma, BPH, MAOI, ทารกแรกเกิด",
+      "adverseEffects": "ง่วงซึม, ปากแห้ง, น้ำหนักเพิ่ม (จากความอยากอาหารเพิ่มขึ้น)",
+      "warnings": "ยาต้านฮิสตามีนรุ่นแรก มีฤทธิ์กดประสาท/ง่วงซึมชัดเจน",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "ใช้ระยะสั้นได้ (อาจลดปริมาณน้ำนม)",
+      "controlledDrug": "—"
+    }
+  },
+  "cetirizine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cetirizine syrup 1 mg/mL",
+    "notes": "ตามฉลากแบ่งตามอายุ: <3y ตามดุลยพินิจแพทย์ (โดยทั่วไป 0.25 mg/kg/dose); 3–6y 5 mg QD หรือ 2.5 mg BID; ≥6y 10 mg QD. ผู้ที่ไตทำงานบกพร่องลดขนาดยาครึ่งหนึ่ง",
+    "frequency": "QD (รับประทานเวลามื้อเย็น)",
+    "source": "ฉลากยา Cetirizine syrup + ตำรับยา รพ.",
+    "package": "60 mL/ขวด",
+    "bands": [
+      {
+        "label": "<3y · 0.25 mg/kg QD-BID (ตามดุลยพินิจแพทย์)"
+      },
+      {
+        "label": "3-6y · 5 mg QD (หรือ 2.5 mg BID)"
+      },
+      {
+        "label": "≥6y / ผู้ใหญ่ · 10 mg QD"
+      }
+    ],
+    "clinical": {
+      "use": "แพ้อากาศ, ลมพิษ, ผื่นคัน",
+      "contraindications": "แพ้ cetirizine / hydroxyzine; ไตทำงานบกพร่องรุนแรง (CrCl <10) ต้องปรับขนาดยา",
+      "adverseEffects": "ง่วงซึม (น้อยกว่ายารุ่นแรก), ปากแห้ง, ปวดศีรษะ",
+      "warnings": "ไตทำงานบกพร่องต้องปรับขนาดยา; อายุต่ำกว่า 2 ปีให้ประเมินก่อนใช้",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "ผ่านเข้าน้ำนมได้ แนะนำเลี่ยงการใช้ระยะยาว",
+      "controlledDrug": "—"
+    }
+  },
+  "cypromin_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cypromin 4mg tab",
+    "notes": "แปลงจาก syrup 0.4 mg/mL × 0.6 mL/kg/day เป็น 0.24 mg/kg/day; max 16 mg/day",
+    "frequency": "TID PC",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "unit": "tab",
+    "clinical": {
+      "use": "แพ้, น้ำมูกไหล, คัน",
+      "contraindications": "Glaucoma, BPH, MAOI, ทารกแรกเกิด",
+      "adverseEffects": "ง่วงซึม, ปากแห้ง",
+      "warnings": "ยาต้านฮิสตามีนรุ่นแรก ระวังอาการง่วงซึม",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "secorine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Secorine syrup",
+    "frequency": "TID PC",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "clinical": {
+      "use": "บรรเทาอาการไข้หวัด (ยาผสม)",
+      "contraindications": "MAOI, HTN รุนแรง",
+      "adverseEffects": "ง่วงซึม, ปากแห้ง, ตื่นตัว/กระตุ้น",
+      "warnings": "<2 ปีไม่แนะนำ; มี methylephedrine ต้องระวัง BP/HR",
+      "pregnancy": "—",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "glyo_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Compound Glycyrrhiza Mixture",
+    "notes": "หลีกเลี่ยงใน <1 ปี (มีชะเอมเทศชนิดผสม ห้ามใช้ในทารกเล็ก)",
+    "frequency": "TID PC",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "warnings": ["ห้ามใช้ <1 ปี"],
+    "contraindications": [
+      {
+        "severity": "ไม่แนะนำ",
+        "reason": "< 1 ปีควรหลีกเลี่ยง (ส่วนประกอบชะเอมเทศชนิดผสม)",
+        "_review": "ต้นฉบับขัดแย้งกันเอง: contraindications[0].severity ใช้ 不建議 (ไม่แนะนำ / moderate) แต่ warnings[0] ใช้ถ้อยคำ 禁用 (ห้ามใช้ / severe) สำหรับอายุ <1 ปี แปลตรงตามต้นฉบับทั้งสองจุดโดยไม่ปรับให้สอดคล้องกัน ผู้ตรวจทานทางคลินิกโปรดยืนยันระดับความรุนแรงที่ถูกต้อง"
+      }
+    ],
+    "clinical": {
+      "use": "บรรเทาอาการไอ",
+      "contraindications": "<1 ปี, โพแทสเซียมในเลือดต่ำ, ความดันโลหิตสูงรุนแรง",
+      "adverseEffects": "pseudo-hyperaldosteronism (ใช้ระยะยาว/ปริมาณมาก): ความดันสูง, โพแทสเซียมต่ำ, บวม",
+      "warnings": "<1 ปีหลีกเลี่ยง (มีชะเอมเทศชนิดผสม); ห้ามใช้ปริมาณมากต่อเนื่องระยะยาว",
+      "pregnancy": "—",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "actein_granule": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Actein granule 200 mg/3g/sac",
+    "frequency": "TID PC",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "unit": "ซอง",
+    "clinical": {
+      "use": "ละลายเสมหะ (mucolytic)",
+      "contraindications": "แพ้ Acetylcysteine",
+      "adverseEffects": "GI upset, หลอดลมหดเกร็ง (พบได้น้อย, รูปแบบสูดพ่น)",
+      "warnings": "ผู้ป่วยหอบหืดใช้ด้วยความระมัดระวัง; เว้นระยะห่างจากยาปฏิชีวนะ 1-2 hr",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "ข้อมูลไม่เพียงพอ",
+      "controlledDrug": "—"
+    }
+  },
+  "acc_effervescent": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "ACC600 Effervescent Tab",
+    "notes": "เม็ดฟู่ละลายเสมหะ 600mg; ละลายน้ำก่อนดื่ม; < 6 ปีแนะนำใช้ Actein granule 200mg/ซอง แทน",
+    "frequency": "BID-TID PC",
+    "source": "คลังข้อมูลยา KMUH + Lexicomp",
+    "unit": "เม็ด",
+    "bands": [
+      {
+        "dose": "ไม่แนะนำ (<6 ปีเปลี่ยนไปใช้ Actein granule แทน)"
+      },
+      {
+        "dose": "0.5 # BID PC"
+      },
+      {
+        "dose": "1 # BID-TID PC"
+      }
+    ],
+    "clinical": {
+      "use": "ละลายเสมหะ (mucolytic)",
+      "contraindications": "แพ้ Acetylcysteine",
+      "adverseEffects": "GI upset, ระคายเคืองเยื่อบุช่องปาก",
+      "warnings": "<6 ปีแนะนำเปลี่ยนเป็นรูปแบบ granule; ละลายน้ำแล้วรับประทานทันที",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "ข้อมูลไม่เพียงพอ",
+      "controlledDrug": "—"
+    }
+  },
+  "soltan_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Mucosolvan syrup (ในโรงพยาบาลใช้หลักเป็น Mubroxol tab)",
+    "frequency": "TID PC",
+    "source": "ตารางคำนวณยาเร็ว KMUH",
+    "clinical": {
+      "use": "ละลายเสมหะ (mucolytic)",
+      "contraindications": "แพ้ Ambroxol",
+      "adverseEffects": "GI upset, แพ้ (พบได้น้อย)",
+      "warnings": "ปฏิกิริยาทางผิวหนังรุนแรงพบได้น้อย (Stevens-Johnson)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "zithromax_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Zithromax syrup 40 mg/mL",
+    "notes": "สูตรคำนวณเร็ว: 0.25 mL/kg QD; ต้องเติมน้ำ 9mL ก่อนเพื่อละลายให้ได้ 15mL แล้วเขย่าให้เข้ากัน; หลังผสมเก็บที่อุณหภูมิห้องได้ 7 วัน",
+    "frequency": "QD",
+    "source": "Lexicomp + ตารางคำนวณยาเร็ว KMUH + เอกสาร PDF TCVGH",
+    "package": "15 mL/ขวด",
+    "concentration_note": "200 mg/5 mL = 40 mg/mL",
+    "duration_note": "Mycoplasma: 3 วัน; หูชั้นกลางอักเสบ: 5 วัน",
+    "clinical": {
+      "use": "Mycoplasma, หูชั้นกลางอักเสบ, คอหอยอักเสบ, CAP",
+      "contraindications": "แพ้ Macrolide, ตับทำงานผิดปกติ",
+      "adverseEffects": "GI upset, รับรสผิดปกติ, QT ยาว (ขนาดสูง)",
+      "warnings": "ความเสี่ยง QT ยาว (ควรมี baseline ECG); Mycoplasma ให้ 3 วันเพียงพอ",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "zithromax_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Zithromax 250 mg tab",
+    "frequency": "QD",
+    "source": "Lexicomp",
+    "unit": "เม็ด",
+    "clinical": {
+      "use": "Mycoplasma, หูชั้นกลางอักเสบ, คอหอยอักเสบ, CAP",
+      "contraindications": "แพ้ Macrolide",
+      "adverseEffects": "GI upset, QT ยาว (ขนาดสูง)",
+      "warnings": "ความเสี่ยง QT ยาว; max 500 mg/day",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "amoxicillin_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Amoxicillin susp 25 mg/mL",
+    "notes": "หูชั้นกลางอักเสบ/CAP ใช้ขนาดสูง; URI ทั่วไปสามารถปรับเป็น 50 mg/kg/day; เด็กโตให้เปลี่ยนเป็นแคปซูล",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp + ตารางคำนวณยาเร็ว KMUH",
+    "package": "60 mL/ขวด",
+    "concentration_note": "1500 mg / 60 mL = 25 mg/mL",
+    "contraindications": [
+      {
+        "severity": "แนะนำเปลี่ยนเป็นแคปซูล",
+        "reason": "≥ 30 kg เปลี่ยนเป็น Amoxicillin 500 mg cap"
+      }
+    ],
+    "clinical": {
+      "use": "หูชั้นกลางอักเสบ, คอหอยอักเสบ, CAP, URI",
+      "contraindications": "แพ้ Penicillin",
+      "adverseEffects": "GI upset, ผื่น (โดยเฉพาะเมื่อติดเชื้อ EBV), แพ้แบบรุนแรงเฉียบพลัน (พบได้น้อย)",
+      "warnings": "อัตราการเกิดผื่นสูงเมื่อติดเชื้อ EBV/IM; หูชั้นกลางอักเสบ/CAP ใช้ขนาดสูง 80-90 mg/kg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "amoxicillin_cap": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Amoxicillin 500 mg cap",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp",
+    "unit": "แคปซูล",
+    "clinical": {
+      "use": "หูชั้นกลางอักเสบ, คอหอยอักเสบ, CAP, URI",
+      "contraindications": "แพ้ Penicillin",
+      "adverseEffects": "GI upset, ผื่น",
+      "warnings": "โดยทั่วไปเริ่มให้แคปซูลเมื่อ ≥30 kg; ขนาดสูง 80-90 mg/kg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "curam_susp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Curam Powder for Oral Susp",
+    "notes": "หูชั้นกลางอักเสบ/CAP ใช้ขนาดสูง; อัตราส่วน 7:1 ช่วยลดอาการท้องเสีย; เด็กโตให้เปลี่ยนเป็นยาเม็ด",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp + ตารางคำนวณยาเร็ว KMUH",
+    "package": "60 mL/ขวด",
+    "concentration_note": "60 mL/ขวด ผสมน้ำก่อนใช้; Amox 400 mg + Clav 57 mg / 5 mL (อัตราส่วน 7:1)",
+    "contraindications": [
+      {
+        "severity": "แนะนำเปลี่ยนเป็นยาเม็ด",
+        "reason": "≥ 30 kg เปลี่ยนเป็น Curam 875/125 tab"
+      }
+    ],
+    "clinical": {
+      "use": "หูชั้นกลางอักเสบ, CAP, URI ที่ซับซ้อน (amoxicillin/clavulanate 7:1)",
+      "contraindications": "แพ้ Penicillin, ประวัติ cholestatic jaundice",
+      "adverseEffects": "GI upset (โดยเฉพาะท้องเสีย), ผื่น, การทำงานของตับผิดปกติ (พบได้น้อย)",
+      "warnings": "ส่วนของ Clavulanate ทำให้ท้องเสียได้ง่าย; หูชั้นกลางอักเสบ/CAP ใช้ 80-90 mg/kg/day (คิดตาม amox)",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "curam_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Curam 875/125 tab",
+    "frequency": "Q12H PC",
+    "source": "Lexicomp",
+    "unit": "เม็ด",
+    "concentration_note": "Amoxicillin 875 mg + Clav 125 mg",
+    "clinical": {
+      "use": "หูชั้นกลางอักเสบ, CAP, URI ที่ซับซ้อน (875/125 tab)",
+      "contraindications": "แพ้ Penicillin, ประวัติ cholestatic jaundice",
+      "adverseEffects": "GI upset, ผื่น",
+      "warnings": "ใช้ได้ตั้งแต่ ≥30 kg; max 3 g/day (คิดตาม amox)",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "tamiflu": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Tamiflu / Eraflu (Oseltamivir 30/45/75 mg cap)",
+    "notes": "เริ่มยาภายใน 48 ชั่วโมงหลังมีอาการจะได้ผลดีที่สุด; อ้างอิงคำแนะนำการใช้ยาต้านไวรัสของสมาคมกุมารแพทย์ไต้หวัน",
+    "frequency": "BID × 5 days",
+    "source": "Lexicomp / Taiwan Pediatric Society",
+    "package": "cap 30/45/75 mg / 60 mg/mL susp",
+    "concentration_note": "ขนาดแคปซูลแตกต่างกันตามอายุ/น้ำหนักตัว (30/45/75 mg)",
+    "contraindications": [
+      {
+        "severity": "ไม่แนะนำ",
+        "reason": "< 2 สัปดาห์ ข้อมูลด้านความปลอดภัยในทารกแรกเกิดยังไม่เพียงพอ"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "30 mg BID × 5 days"
+      },
+      {
+        "dose": "45 mg BID × 5 days"
+      },
+      {
+        "dose": "60 mg BID × 5 days"
+      },
+      {
+        "dose": "75 mg BID × 5 days"
+      }
+    ],
+    "clinical": {
+      "use": "รักษาและป้องกัน Influenza A/B",
+      "contraindications": "แพ้ Oseltamivir",
+      "adverseEffects": "คลื่นไส้/อาเจียน (พบบ่อยที่สุด), ปวดศีรษะ, อาการทางจิตประสาท (พบได้น้อย)",
+      "warnings": "ได้ผลดีที่สุดภายใน 48 hr หลังมีอาการ; neuropsychiatric event พบได้น้อยแต่ต้องให้ความรู้แก่ผู้ปกครอง",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ใช้ได้ (เข้ากันได้)",
+      "controlledDrug": "—"
+    }
+  },
+  "rapiacta_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Rapiacta",
+    "notes": "≥6 เดือน: 10-12 mg/kg single dose; ผู้ใหญ่ 600 mg. เลือกใช้เมื่อไข้หวัดใหญ่ต้องนอนรพ./ทานยาทางปากไม่ได้; ช่วงมีการระบาดกรมควบคุมโรคสนับสนุนค่าใช้จ่าย (2RAPIA) ปกติใช้รุ่น 2RAPI3 ที่ต้องชำระเงินเอง",
+    "frequency": "Single dose × 1 (IV over 15-30 min)",
+    "source": "Lexicomp + คลังข้อมูลยา KMUH",
+    "package": "300 mg / 60 mL/Bag",
+    "warnings": ["เจือจางเป็น 30-100 mL N/S, IV over 15-30 min"],
+    "contraindications": [
+      {
+        "severity": "ไม่แนะนำ",
+        "reason": "< 6 เดือน ข้อมูลด้านความปลอดภัยยังไม่เพียงพอ"
+      }
+    ],
+    "clinical": {
+      "use": "รักษา Influenza A/B (ทานยาทางปากไม่ได้ / อาการรุนแรง)",
+      "contraindications": "แพ้ Peramivir",
+      "adverseEffects": "ท้องเสีย, แพ้ (พบได้น้อย), เม็ดเลือดขาวชนิด neutrophil ลดลง",
+      "warnings": "ใช้ได้ตั้งแต่ ≥6 เดือน; ให้ IV ครั้งเดียว 15-30 min; ตับ/ไตทำงานบกพร่องรุนแรงต้องปรับขนาดยา",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ข้อมูลไม่เพียงพอ",
+      "controlledDrug": "—"
+    }
+  },
+  "xofluza_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Xofluza 20 mg tab",
+    "notes": "ใช้ได้ตั้งแต่ ≥1 ปี; รับประทานครั้งเดียวจบ (ครบคอร์ส); ห้ามรับประทานพร้อมผลิตภัณฑ์นม/แคลเซียม (ดูดซึมลดลง)",
+    "frequency": "Single dose × 1",
+    "source": "Lexicomp + คลังข้อมูลยา KMUH",
+    "unit": "เม็ด",
+    "warnings": ["เริ่มยาภายใน 48 ชั่วโมงหลังมีอาการได้ผลดีที่สุด"],
+    "contraindications": [
+      {
+        "severity": "ไม่แนะนำ",
+        "reason": "< 1 ปี ข้อมูลด้านความปลอดภัยยังไม่เพียงพอ"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "≥1 ปี + <20 kg: 2 mg/kg PO single dose"
+      },
+      {
+        "dose": "40 mg (2 #) PO single dose"
+      },
+      {
+        "dose": "80 mg (4 #) PO single dose"
+      }
+    ],
+    "clinical": {
+      "use": "รักษา Influenza A/B (รับประทานครั้งเดียว)",
+      "contraindications": "แพ้ Baloxavir",
+      "adverseEffects": "ท้องเสีย, ปวดศีรษะ (พบได้น้อย)",
+      "warnings": "ใช้ได้ตั้งแต่ ≥1 ปี; ห้ามรับประทานพร้อมผลิตภัณฑ์ที่มีแคลเซียม/แมกนีเซียม/เหล็ก (การดูดซึมลดลง)",
+      "pregnancy": "— (ข้อมูลไม่เพียงพอ)",
+      "breastfeeding": "ข้อมูลไม่เพียงพอ",
+      "controlledDrug": "—"
+    }
+  },
+  "relenza_inh": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Relenza rotadisk",
+    "notes": "ใช้ได้ตั้งแต่ ≥7 ปี; ใช้กับเครื่องพ่นยา Diskhaler; ผู้ป่วยหอบหืด/COPD ใช้ด้วยความระมัดระวัง (อาจกระตุ้นหลอดลมหดเกร็ง)",
+    "frequency": "BID × 5 days",
+    "source": "Lexicomp + คลังข้อมูลยา KMUH",
+    "unit": "blister",
+    "warnings": ["หอบหืด/COPD ใช้ด้วยความระมัดระวัง — เสี่ยงกระตุ้นหลอดลมหดเกร็ง"],
+    "contraindications": [
+      {
+        "severity": "ไม่แนะนำ",
+        "reason": "< 7 ปีไม่แนะนำให้ใช้รูปแบบสูดพ่น Diskhaler"
+      }
+    ],
+    "bands": [
+      {
+        "dose": "<7 ปีไม่แนะนำ"
+      },
+      {
+        "dose": "10 mg (2 blisters) BID × 5 days"
+      }
+    ],
+    "clinical": {
+      "use": "รักษา Influenza A/B (รูปแบบสูดพ่น)",
+      "contraindications": "หอบหืด, COPD, แพ้แลคโตส",
+      "adverseEffects": "หลอดลมหดเกร็ง (ในผู้ป่วยหอบหืด), ปวดศีรษะ, ไอ",
+      "warnings": "ใช้ได้ตั้งแต่ ≥7 ปี; ในผู้ป่วยหอบหืดอาจกระตุ้น bronchospasm ให้ใช้ bronchodilator ก่อนใช้ยานี้",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  }
+}
