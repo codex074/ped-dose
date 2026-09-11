@@ -2,6 +2,8 @@ import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, test } from 'vitest';
 import { translate } from '@/i18n';
+import { drugsEn, drugsTh } from '@/i18n/drugs';
+import { localizeDrug } from '@/i18n/useDrugText';
 import { SelectedDrugPanel } from '@/components/SelectedDrugPanel';
 import { renderWithProviders, realDataset } from '../utils';
 
@@ -69,17 +71,26 @@ describe('SelectedDrugPanel', () => {
   });
 
   test('a grouped selection with differing sources renders one reference-info per member', () => {
-    // nac group: actein_granule cites 高醫速算表; acc_effervescent cites 高醫藥品庫 + Lexicomp.
-    // A merged/deduplicated reference block would lose which source backs which form's dosing,
-    // so ReferenceInfo must render once per drug, each with its own translated source.
+    // nac group: actein_granule cites 高醫速算表; acc_effervescent cites 高醫藥品庫 + Lexicomp
+    // (canonical). A merged/deduplicated reference block would lose which source backs which
+    // form's dosing, so ReferenceInfo must render once per drug, each with only its own source.
+    // Assertions go through `localizeDrug` (the same localizer the component uses) rather than
+    // the canonical `Drug.source` string, so this test doesn't care whether Phase 6 translation
+    // data exists for these two drugs' `source` field or not.
     const group = realDataset.drugs.filter((d) => d.group_id === 'nac');
     const actein = group.find((d) => d.id === 'actein_granule')!;
     const acc = group.find((d) => d.id === 'acc_effervescent')!;
-    expect(actein.source).not.toBe(acc.source);
     expect(group.length).toBe(2);
 
+    const lang = 'en';
+    const acteinSource = localizeDrug(actein, lang, drugsTh, drugsEn).source;
+    const accSource = localizeDrug(acc, lang, drugsTh, drugsEn).source;
+    expect(acteinSource).toBeTruthy();
+    expect(accSource).toBeTruthy();
+    expect(acteinSource).not.toBe(accSource);
+
     renderWithProviders(<SelectedDrugPanel />, {
-      lang: 'en',
+      lang,
       calculator: {
         weight: 20,
         weightInput: '20',
@@ -102,8 +113,11 @@ describe('SelectedDrugPanel', () => {
       '[data-testid="reference-info"]',
     );
     const accReference = accCard.parentElement!.querySelector('[data-testid="reference-info"]');
-    expect(acteinReference).toHaveTextContent(actein.source);
-    expect(accReference).toHaveTextContent(acc.source);
+    expect(acteinReference).toHaveTextContent(acteinSource!);
+    expect(accReference).toHaveTextContent(accSource!);
+    // Belt-and-braces: the two rendered blocks' full text must differ from each other too, not
+    // just contain their respective expected source substring.
+    expect(acteinReference?.textContent).not.toBe(accReference?.textContent);
   });
 
   test('clinical info accordion toggles aria-expanded on click', async () => {
