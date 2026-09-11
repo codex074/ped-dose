@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "status": "draft",
+    "generatedFrom": "2.5"
+  },
+  "se": {
+    "title": "Pediatric Convulsive Status Epilepticus",
+    "subtitle": "AES 2016 · Glauser et al · Epilepsy Currents 16(1):48-61",
+    "time_stages": [
+      {
+        "minutes": "0–5",
+        "phase": "Stabilization",
+        "actions": [
+          "ABCD: airway / breathing / circulation / disability (including neurologic exam)",
+          "Time seizure onset + monitor vital signs",
+          "Oxygen via NC / mask; consider intubation if respiratory status unstable",
+          "Initiate ECG monitoring",
+          "Fingerstick glucose; if < 60 mg/dL → age ≥2 yr: 2 mL/kg D25W IV | age <2 yr: 4 mL/kg D12.5W IV",
+          "IV access + electrolytes / CBC / tox screen / ASM levels"
+        ]
+      },
+      {
+        "minutes": "5–20",
+        "phase": "Initial therapy — first-line BZD",
+        "level": "Level A",
+        "subtitle": "Choose one (IM midazolam / IV lorazepam / IV diazepam)",
+        "actions": [
+          "IM Midazolam (preferred when no IV access): 13–40 kg → 5 mg; >40 kg → 10 mg (single dose)",
+          "IV Lorazepam: 0.1 mg/kg/dose (max 4 mg/dose; may repeat x1)",
+          "IV Diazepam: 0.15–0.2 mg/kg/dose (max 10 mg/dose; may repeat x1)",
+          "If none of the above are available: IV Phenobarbital 15 mg/kg (Level A, in-house code 2PHENO) / Rectal Diazepam 0.2–0.5 mg/kg, max 20 mg (Level B) / IN or buccal Midazolam (Level B)"
+        ]
+      },
+      {
+        "minutes": "20–40",
+        "phase": "Second therapy — second-line ASM",
+        "level": "Level U (three drugs equivalent)",
+        "subtitle": "Choose one, single dose",
+        "actions": [
+          "IV Fosphenytoin 20 mg PE/kg (max 1500 mg PE) — not stocked in-house; substitute IV Phenytoin 20 mg/kg (Aleviatin, code 2DPH; rate ≤ 1 mg/kg/min)",
+          "IV Valproic acid 40 mg/kg (max 3000 mg/dose)",
+          "IV Levetiracetam 60 mg/kg (max 4500 mg/dose)",
+          "If none of the above are available and not yet given: IV Phenobarbital 15 mg/kg (Level B)"
+        ]
+      },
+      {
+        "minutes": "40–60",
+        "phase": "Third therapy — refractory SE",
+        "level": "Level U (no clear evidence)",
+        "actions": [
+          "Repeat second-line therapy; or",
+          "Anesthetic-dose: thiopental / midazolam / pentobarbital / propofol",
+          "All require continuous EEG monitoring + intubation + ICU"
+        ]
+      }
+    ],
+    "decision_label": "Does Seizure Continue? — If yes → proceed to next stage; if stopped → symptomatic care",
+    "citation": "Glauser T, Shinnar S, Gloss D, et al. Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults. Epilepsy Currents 2016;16(1):48-61.",
+    "figure_label": "AES Algorithm Diagram"
+  }
+}
