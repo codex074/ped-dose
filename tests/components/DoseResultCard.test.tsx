@@ -33,12 +33,11 @@ describe('DoseResultCard', () => {
       calculator: { weight: 10, weightInput: '10', age: 2, ageInput: '2' },
     });
     // Only the label/unit text differs by language; strip everything but digits/./- to compare
-    // the numeric portion.
+    // the numeric portion (this also covers any digits inside the mg row's rule sub-text, e.g.
+    // a "max 1000 mg/dose" notice, since the underlying numbers must match too).
     const numeric = (s: string | null) => (s ?? '').replace(/[^0-9.\-]/g, '');
     expect(numeric(screen.getByTestId('dose-row-ml').textContent)).toBe(numeric(thMl));
-    expect(numeric(screen.getByTestId('dose-row-mg').textContent).startsWith('100-150')).toBe(
-      numeric(thMg).startsWith('100-150'),
-    );
+    expect(numeric(screen.getByTestId('dose-row-mg').textContent)).toBe(numeric(thMg));
   });
 
   test('the mL row is emphasized (larger, bold value) while the mg row is not', () => {
@@ -61,6 +60,18 @@ describe('DoseResultCard', () => {
     });
     expect(screen.getByText('Acetaminophen')).toBeInTheDocument();
     expect(screen.getByText('PO')).toBeInTheDocument();
+  });
+
+  test('per-indication frequency is rendered (not dropped)', () => {
+    const prednisolone = realDataset.drugs.find((d) => d.id === 'prednisolone_tab')!;
+    expect(prednisolone.indications?.[0]?.frequency).toBe('ST × 1 dose');
+
+    renderWithProviders(<DoseResultCard drug={prednisolone} />, {
+      lang: 'en',
+      calculator: { weight: 20, weightInput: '20', age: 5, ageInput: '5' },
+    });
+
+    expect(screen.getByText(/ST × 1 dose/)).toBeInTheDocument();
   });
 
   test('a grouped selection renders a card for every member sharing group_id', () => {

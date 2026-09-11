@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react';
 import { CLINICAL_KEY_ORDER, type ClinicalKey } from '@/i18n/clinicalKeys';
 import { useT } from '@/i18n';
 import { useCalculator } from '@/state/CalculatorProvider';
@@ -12,6 +13,12 @@ export interface ClinicalInfoAccordionProps {
  * Collapsed-by-default accordion over the drug's `kmuh_detail` fields (in `CLINICAL_KEY_ORDER`)
  * plus `monitoring` when present. Expanded state lives in `CalculatorProvider.expandedDetails`,
  * keyed by drug id, so it survives re-renders (e.g. language switch) without local state.
+ *
+ * The panel animates via `max-height` (binding constraint: motion only via
+ * transform/opacity/max-height), measured from the content's actual `scrollHeight` rather than a
+ * fixed cap — several `kmuh_detail` fields (adverse effects, warnings...) run long in Thai, and a
+ * fixed cap risks silently clipping contraindication/warning text in a dosing app. Re-measures on
+ * every render so a language switch (different text length) keeps the expanded height correct.
  */
 export function ClinicalInfoAccordion({
   drugId,
@@ -21,6 +28,16 @@ export function ClinicalInfoAccordion({
   const t = useT();
   const { expandedDetails, toggleDetail } = useCalculator();
   const expanded = expandedDetails.has(drugId);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = useState(0);
+
+  // `clinical`/`monitoring` are fresh object/string references on every render (the caller
+  // re-localizes the drug each render, uncached), so this effectively re-measures whenever the
+  // rendered content could have changed size — including a language switch, which also changes
+  // `t`/`expanded`.
+  useLayoutEffect(() => {
+    if (contentRef.current) setContentHeight(contentRef.current.scrollHeight);
+  }, [clinical, monitoring, t, expanded]);
 
   const fields = CLINICAL_KEY_ORDER.filter((key) => clinical[key]);
   if (fields.length === 0 && !monitoring) return null;
@@ -53,28 +70,30 @@ export function ClinicalInfoAccordion({
         id={panelId}
         role="region"
         aria-labelledby={buttonId}
-        className={`overflow-hidden transition-[max-height] duration-slow ease-out ${
-          expanded ? 'max-h-[1000px]' : 'max-h-0'
-        }`}
+        aria-hidden={!expanded}
+        style={{ maxHeight: expanded ? contentHeight : 0 }}
+        className="overflow-hidden transition-[max-height] duration-slow ease-out"
       >
-        <dl className="thai-safe space-y-3 px-4 pb-4 text-sm">
-          {fields.map((key) => (
-            <div key={key}>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
-                {t(`clinical.${key}`)}
-              </dt>
-              <dd className="mt-0.5 text-ink">{clinical[key]}</dd>
-            </div>
-          ))}
-          {monitoring && (
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
-                {t('clinical.monitoring')}
-              </dt>
-              <dd className="mt-0.5 text-ink">{monitoring}</dd>
-            </div>
-          )}
-        </dl>
+        <div ref={contentRef}>
+          <dl className="thai-safe space-y-3 px-4 pb-4 text-sm">
+            {fields.map((key) => (
+              <div key={key}>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
+                  {t(`clinical.${key}`)}
+                </dt>
+                <dd className="mt-0.5 text-ink">{clinical[key]}</dd>
+              </div>
+            ))}
+            {monitoring && (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
+                  {t('clinical.monitoring')}
+                </dt>
+                <dd className="mt-0.5 text-ink">{monitoring}</dd>
+              </div>
+            )}
+          </dl>
+        </div>
       </div>
     </div>
   );

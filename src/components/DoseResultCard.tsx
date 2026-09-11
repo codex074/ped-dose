@@ -60,8 +60,12 @@ function IndicationBlock({
 }) {
   const result = useDoseResult(drug, canonicalIndication.calc);
   const rows = doseRows(drug, result, t, { frequency: localizedIndication.frequency });
+  // Brief order: label / route / frequency / onset / duration / notes. `doseRows`'s `frequency`
+  // option is currently unused by the frozen formatDose.ts (Task 11), so frequency is rendered
+  // here explicitly rather than relying on it to appear inside a row.
   const meta = [
     localizedIndication.route,
+    localizedIndication.frequency,
     localizedIndication.onset,
     localizedIndication.duration,
   ].filter((v): v is string => !!v);
@@ -85,10 +89,11 @@ function IndicationBlock({
 }
 
 /**
- * The most important card in the app: drug name → brand → route/frequency chips → dose rows
- * (DESIGN.md §16). Takes the *canonical* `Drug` (calc math always runs on canonical data —
- * see `useDoseResult`/`doseRows`/`checkContraindication` contracts) and localizes display text
- * internally.
+ * The most important card in the app: drug name → brand → dose rows → frequency/route chips →
+ * (rule sub-text lives inside the mg/mcg row itself) (DESIGN.md §16.3: name, calculated dose,
+ * mL/tablet amount, frequency, max dose, notes, reference). Takes the *canonical* `Drug` (calc
+ * math always runs on canonical data — see `useDoseResult`/`doseRows`/`checkContraindication`
+ * contracts) and localizes display text internally.
  */
 export function DoseResultCard({ drug }: { drug: Drug }) {
   const t = useT();
@@ -104,12 +109,6 @@ export function DoseResultCard({ drug }: { drug: Drug }) {
     >
       <h3 className="thai-safe text-xl font-semibold text-ink">{drug.generic}</h3>
       {localized.brand && <p className="thai-safe text-sm text-ink-muted">{localized.brand}</p>}
-      {(drug.route || localized.frequency) && (
-        <div className="mt-2 flex flex-wrap gap-2">
-          {drug.route && <span className={CHIP}>{drug.route}</span>}
-          {localized.frequency && <span className={CHIP}>{localized.frequency}</span>}
-        </div>
-      )}
       <div className="mt-4 space-y-3">
         {hasIndications
           ? drug.indications!.map((canonicalIndication, i) => (
@@ -131,6 +130,15 @@ export function DoseResultCard({ drug }: { drug: Drug }) {
               />
             )}
       </div>
+      {/* Drug-level route/frequency chips: only meaningful when the card isn't already showing
+          per-indication route/frequency above (a drug with `indications` carries that info per
+          block instead). */}
+      {!hasIndications && (drug.route || localized.frequency) && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {drug.route && <span className={CHIP}>{drug.route}</span>}
+          {localized.frequency && <span className={CHIP}>{localized.frequency}</span>}
+        </div>
+      )}
     </div>
   );
 }
