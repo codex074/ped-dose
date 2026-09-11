@@ -1,0 +1,550 @@
+{
+  "_meta": {
+    "status": "draft",
+    "range": "46-67",
+    "generatedFrom": "2.5"
+  },
+  "midazolam_dormicum": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Dormicum 5 mg/mL",
+    "source": "Lexicomp + ตารางคำนวณเร็ว KMUH + Yaodan",
+    "package": "3 mL/Amp = 15 mg/Amp",
+    "warnings": ["กดการหายใจ (โดยเฉพาะเมื่อใช้ร่วมกับ opioid)", "พบได้น้อย paradoxical agitation"],
+    "indications": [
+      {
+        "label": "IM (status epilepticus)",
+        "notes": "RAMPART trial: IM midaz ≥ IV lorazepam in efficacy",
+        "onset": "5-10 min",
+        "route": "IM"
+      },
+      {
+        "label": "Procedural sedation (IV)",
+        "frequency": "Slow IV push ให้ซ้ำได้หลัง 2-3 min",
+        "onset": "1-3 min",
+        "duration": "30-60 min",
+        "route": "IV"
+      },
+      {
+        "label": "Intranasal (anxiolysis/seizure)",
+        "notes": "ใช้ความเข้มข้น 5 mg/mL แบ่งพ่นสองรูจมูก ใช้ในที่เกิดเหตุกรณีชักได้",
+        "onset": "5-10 min",
+        "route": "IN"
+      }
+    ],
+    "clinical": {
+      "use": "Procedural sedation, anxiolysis, status epilepticus",
+      "contraindications": "Myasthenia gravis, acute angle-closure glaucoma, ภาวะหายใจล้มเหลว",
+      "adverseEffects": "กดการหายใจ (โดยเฉพาะเมื่อใช้ร่วมกับ opioid), ง่วงซึม, พบได้น้อย paradoxical agitation",
+      "warnings": "เตรียม flumazenil ไว้ IM/IN เป็นทางเลือกที่ดีในที่เกิดเหตุสำหรับอาการชักในทารกแรกเกิด (RAMPART)",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "ยาควบคุมพิเศษ ระดับ 4"
+    }
+  },
+  "lorazepam_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Anxicam (Lorazepam) 2 mg/mL",
+    "notes": "จดจำง่าย ๆ: 20 kg ให้หนึ่งแอมพูล (2 mg); first-line for status epilepticus",
+    "frequency": "Slow IV push (over 2-5 min) ให้ซ้ำได้หลัง 5-10 min",
+    "source": "Lexicomp + Yaodan",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Status epilepticus first-line, anxiolysis",
+      "contraindications": "Myasthenia gravis, acute angle-closure glaucoma",
+      "adverseEffects": "กดการหายใจ, ง่วงซึม, พบได้น้อย paradoxical agitation",
+      "warnings": "Slow IV push over 2-5 min; เตรียม flumazenil ไว้; max 4 mg/dose",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "ยาควบคุมพิเศษ ระดับ 4"
+    }
+  },
+  "diazepam_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Diazepam 5 mg/mL",
+    "notes": "ยาทางเลือกสำหรับ Status epilepticus (ตัวเลือกแรกคือ lorazepam)",
+    "frequency": "Slow IV push (over 2-3 min) ให้ซ้ำได้หลัง 5 min",
+    "source": "Lexicomp",
+    "package": "2 mL/Amp = 10 mg/Amp",
+    "clinical": {
+      "use": "Status epilepticus second-line, anxiolysis, muscle spasm",
+      "contraindications": "Myasthenia gravis, ภาวะหายใจล้มเหลวรุนแรง",
+      "adverseEffects": "กดการหายใจ, ง่วงซึม, หลอดเลือดดำอักเสบ (IV)",
+      "warnings": "Slow IV push over 2-3 min; max 10 mg/dose; ตัวเลือกแรกยังคงเป็น lorazepam",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "ยาควบคุมพิเศษ ระดับ 4"
+    }
+  },
+  "diazepam_pr": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Stesolid ชนิดสอดทวารหนัก 10 mg/2.5 mL/Tube",
+    "notes": "นิยมใช้สำหรับอาการชักจากไข้ก่อนถึงโรงพยาบาล/ที่บ้าน สะดวกเมื่อไม่มี IV access ทางคลินิกมักให้ตามจำนวนหลอด (หนึ่งหลอด = 10 mg) ปริมาณ mL ไว้อ้างอิง",
+    "frequency": "ST ให้ซ้ำได้อีกครั้งหลัง 5-10 min",
+    "source": "Lexicomp + Yaodan",
+    "package": "10 mg / 2.5 mL/Tube",
+    "concentration_note": "5 mg/2.5 mL/หลอด หรือ 10 mg/2.5 mL/หลอด (เลือกตามอายุ)",
+    "clinical": {
+      "use": "อาการชักจากไข้ก่อนถึงโรงพยาบาล/ที่บ้าน, status epilepticus (ไม่มี IV access)",
+      "contraindications": "Myasthenia gravis, รอยฉีกขาดที่ทวารหนัก",
+      "adverseEffects": "กดการหายใจ, ง่วงซึม",
+      "warnings": "0.5 mg/kg PR; max 20 mg/dose; ให้ซ้ำได้อีกครั้งหลัง 5-10 min",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "ยาควบคุมพิเศษ ระดับ 4"
+    }
+  },
+  "keppra_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra ยาน้ำสำหรับรับประทาน (Oral Solution)",
+    "notes": "ใช้สำหรับเด็กหรือผู้ที่กลืนเม็ดยาไม่ได้",
+    "frequency": "BID (ขนาดยาต่อเนื่องแบบรับประทาน)",
+    "source": "Lexicomp",
+    "package": "300 mL/Bot",
+    "urgency_label": "💊 รับประทานต่อเนื่อง",
+    "clinical": {
+      "use": "รักษาต่อเนื่องโรคลมชัก (รับประทาน)",
+      "contraindications": "แพ้ยา Levetiracetam",
+      "adverseEffects": "ง่วงซึม, กระสับกระส่าย, พฤติกรรมเปลี่ยนแปลง (ในเด็ก)",
+      "warnings": "เริ่มต้น 20 mg/kg/day → ปรับเพิ่มถึง 40-60 mg/kg/day; BID",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "keppra_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra 500 mg tab (เม็ดเคลือบฟิล์ม)",
+    "notes": "สำหรับ status เฉียบพลันใช้ IV loading หลัง ROSC หรือรักษาต่อเนื่องแบบผู้ป่วยนอกเปลี่ยนเป็นรับประทาน เริ่มต้น 20 mg/kg/day → ปรับตามการควบคุมอาการชักจนถึง 40-60 mg/kg/day",
+    "frequency": "BID (ขนาดยาต่อเนื่องแบบรับประทาน)",
+    "source": "Lexicomp",
+    "unit": "เม็ด",
+    "urgency_label": "💊 รับประทานต่อเนื่อง",
+    "clinical": {
+      "use": "รักษาต่อเนื่องโรคลมชัก (รับประทาน)",
+      "contraindications": "แพ้ยา Levetiracetam",
+      "adverseEffects": "ง่วงซึม, กระสับกระส่าย",
+      "warnings": "Max 3000 mg/day; ปรับขนาดยาในผู้ป่วยไตบกพร่อง",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "keppra_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra 500 mg/5 mL/Vial (ยาฉีด)",
+    "notes": "ESETT 2019: 60 mg/kg over 10 min ประสิทธิภาพใกล้เคียงกับ fosphenytoin และ valproate เจือจาง 1 vial (500 mg) ให้ได้ 50-100 mL N/S",
+    "frequency": "IV loading over 5-15 min × 1 (status epilepticus)",
+    "source": "Lexicomp / ESETT trial 2019",
+    "package": "500 mg / 5 mL/Vial",
+    "unit": "Vial",
+    "urgency_label": "🚨 Loading เฉียบพลัน",
+    "clinical": {
+      "use": "Status epilepticus second-line (loading)",
+      "contraindications": "แพ้ยา Levetiracetam",
+      "adverseEffects": "ง่วงซึม, กระสับกระส่าย, พบได้น้อยอาการทางจิต (aggression / depression)",
+      "warnings": "ESETT 2019: 60 mg/kg over 10 min; ต้องลดขนาดยาในภาวะไตบกพร่อง (Renal impairment)",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine syrup 200 mg/mL (ยาน้ำ)",
+    "notes": "เริ่มต้น 10-15 mg/kg/day → ปรับตามการควบคุมอาการชัก ระดับยาในเลือดเป้าหมาย 50-100 µg/mL",
+    "frequency": "BID (ขนาดยาต่อเนื่อง ปรับเพิ่มได้ถึง 60 mg/kg/day)",
+    "source": "Lexicomp",
+    "package": "40 mL/Bot",
+    "urgency_label": "💊 รับประทานต่อเนื่อง",
+    "warnings": ["ห้ามใช้ในโรคตับและโรคไมโตคอนเดรีย", "POMC encephalopathy"],
+    "clinical": {
+      "use": "รักษาต่อเนื่องโรคลมชัก (รับประทาน)",
+      "contraindications": "โรคตับ, โรคไมโตคอนเดรีย, urea cycle disorder",
+      "adverseEffects": "พิษต่อตับ, น้ำหนักเพิ่มขึ้น (↑), อาการสั่น, ผมร่วง",
+      "warnings": "เฝ้าระวัง LFT, CBC; ระดับยาในเลือดเป้าหมาย 50-100 µg/mL; ความเสี่ยงพิษต่อตับสูงในเด็กอายุ < 2 ปี",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine 200 mg tab",
+    "notes": "≥ 30 kg เหมาะสำหรับรูปแบบเม็ด; < 30 kg ใช้ syrup",
+    "frequency": "BID (ขนาดยาต่อเนื่อง)",
+    "source": "Lexicomp",
+    "unit": "เม็ด",
+    "urgency_label": "💊 รับประทานต่อเนื่อง",
+    "warnings": ["ห้ามใช้ในโรคตับและโรคไมโตคอนเดรีย"],
+    "clinical": {
+      "use": "รักษาต่อเนื่องโรคลมชัก (รับประทาน)",
+      "contraindications": "โรคตับ, โรคไมโตคอนเดรีย, urea cycle disorder",
+      "adverseEffects": "พิษต่อตับ, น้ำหนักเพิ่มขึ้น (↑), อาการสั่น",
+      "warnings": "≥30 kg เหมาะสำหรับรูปแบบเม็ด; ความเสี่ยงพิษต่อตับสูงเมื่ออายุ < 2 ปี",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine 400 mg/Vial (ยาฉีด ละลายคืนสภาพเป็น 100 mg/mL)",
+    "notes": "ESETT 2019: 40 mg/kg over 10 min; เจือจาง 1 vial (400 mg) ให้ได้ 50 mL N/S; rate 1.5-3 mg/kg/min",
+    "frequency": "IV loading over 10 min (status epilepticus)",
+    "source": "Lexicomp / ESETT trial 2019",
+    "package": "400 mg/Vial (100 mg/mL หลังละลายคืนสภาพ)",
+    "unit": "vial",
+    "urgency_label": "🚨 Loading เฉียบพลัน",
+    "warnings": ["ห้ามใช้ในโรคตับและโรคไมโตคอนเดรีย", "POMC encephalopathy"],
+    "clinical": {
+      "use": "Status epilepticus second-line (loading)",
+      "contraindications": "โรคตับ, โรคไมโตคอนเดรีย, urea cycle disorder, หญิงตั้งครรภ์",
+      "adverseEffects": "พิษต่อตับ, ตับอ่อนอักเสบ, เกล็ดเลือดลดลง (↓), แอมโมเนียในเลือดสูง",
+      "warnings": "ESETT 2019: 40 mg/kg over 10 min; rate 1.5-3 mg/kg/min",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "phenobarbital_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Phenobital 100 mg/mL/Amp",
+    "notes": "ขนาด loading สำหรับ SE; IV rate ≤ 30 mg/min (เด็ก ≤ 1 mg/kg/min); กดการหายใจได้ง่ายหากให้หลัง BZD",
+    "frequency": "Single dose (SE loading)",
+    "source": "AES 2016 + ตำรับยาของโรงพยาบาล",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Status Epilepticus ทางเลือก first-line (เมื่อไม่มี BZD) / second-line (เมื่อไม่มี ASM อื่น); ตัวเลือกแรกสำหรับอาการชักในทารกแรกเกิด",
+      "contraindications": "ตับทำงานบกพร่องรุนแรง, acute intermittent porphyria, แพ้ยากลุ่ม barbiturate",
+      "adverseEffects": "กดการหายใจ (โดยเฉพาะเมื่อใช้ร่วมกับ BZD), ความดันโลหิตต่ำ, ง่วงซึมมากเกินไป, พฤติกรรมเปลี่ยนแปลง",
+      "warnings": "ให้ช้า ๆ ทาง IV ≤ 30 mg/min; เตรียมการใส่ท่อช่วยหายใจ/ยากระตุ้นความดันไว้; ขนาดยาในทารกแรกเกิด 20 mg/kg",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "อาจผ่านเข้าน้ำนม, ทำให้ง่วงซึม — ใช้ระยะสั้นได้ ควรประเมินหากใช้ระยะยาว",
+      "controlledDrug": "ยาควบคุม ประเภท 4"
+    }
+  },
+  "phenytoin_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Aleviatin 250 mg/5mL/Amp",
+    "notes": "SE loading (ใช้แทน fosphenytoin เมื่อโรงพยาบาลไม่มี fosphenytoin); IV rate ≤ 1 mg/kg/min (เด็ก max 50 mg/min); เจือจางด้วย NS (D5W จะตกตะกอน) ให้ผ่าน filter",
+    "frequency": "Single dose (SE loading)",
+    "source": "AES 2016 + ตำรับยาของโรงพยาบาล",
+    "package": "5 mL/Amp",
+    "clinical": {
+      "use": "Status Epilepticus second-line; การควบคุมโรคลมชักระยะยาว",
+      "contraindications": "Sinus bradycardia, SA block, AV block, Adams-Stokes syndrome, แพ้ยากลุ่ม hydantoin",
+      "adverseEffects": "หัวใจเต้นผิดจังหวะ, ความดันโลหิตต่ำ, purple glove syndrome (การรั่วออกนอกหลอดเลือด), Stevens-Johnson syndrome, เหงือกโต (ใช้ระยะยาว)",
+      "warnings": "เฝ้าระวัง ECG + BP; เจือจางด้วย NS ห้ามใช้ D5W (จะตกตะกอน); ใช้ in-line filter; หากรั่วออกนอกหลอดเลือด → purple glove syndrome อาจทำให้เนื้อเยื่อตาย",
+      "pregnancy": "AU TGA: D (teratogenic — fetal hydantoin syndrome)",
+      "breastfeeding": "ผ่านเข้าน้ำนมเพียงเล็กน้อย ส่วนใหญ่สามารถให้นมบุตรได้",
+      "controlledDrug": "—"
+    }
+  },
+  "ketamine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Ketalar 50 mg/mL",
+    "source": "ตำรับยาของโรงพยาบาล + Lexicomp + ACEP 2011",
+    "package": "10 mL/vial = 500 mg/Vial",
+    "monitoring": "SpO2, ETCO2, HR, BP; เตรียม O2, Ambu bag, suction, atropine, midazolam ไว้",
+    "warnings": [
+      "ผลข้างเคียง: BP↑, ICP↑, IOP↑, arrhythmias, apnea, laryngospasm, delirium, N/V, nystagmus",
+      "Barbiturates และ ketamine ห้ามใช้ syringe ร่วมกัน (จะ precipitate)",
+      "แนวคิดดั้งเดิมเรื่อง ICP สูงขึ้นถูกท้าทายโดยงานวิจัยล่าสุด (ปลอดภัยในผู้ป่วย TBI ส่วนใหญ่)",
+      "Hypersalivation — การให้ atropine 0.01 mg/kg ล่วงหน้าไม่ใช่แนวทางปกติอีกต่อไป (ACEP 2011)",
+      "Emergence reactions — ให้ midazolam 0.05 mg/kg ล่วงหน้า; ความเสี่ยงสูงในเด็กวัยเรียน",
+      "ข้อห้ามใช้: อายุ <3 เดือน (ความเสี่ยง laryngospasm), active psychosis, HTN ที่ควบคุมไม่ได้, thyrotoxicosis, global eyeball injury"
+    ],
+    "contraindications": [
+      {
+        "severity": "ห้ามใช้",
+        "reason": "ความเสี่ยง laryngospasm สูงเมื่ออายุ < 3 เดือน"
+      }
+    ],
+    "indications": [
+      {
+        "label": "IM (induction / procedural sedation)",
+        "notes": "Anesthesia induction 4-6 mg/kg; procedural sedation 4-5 mg/kg",
+        "frequency": "ST × 1 (induction); สำหรับ procedural sedation หากจำเป็นให้ซ้ำ 2-5 mg/kg หลัง 5-10 min",
+        "onset": "3-5 min",
+        "duration": "12-25 min (recovery 90-150 min)",
+        "route": "IM"
+      },
+      {
+        "label": "IV (induction / procedural sedation)",
+        "notes": "Induction 0.5-2 mg/kg; procedural sedation 1-2 mg/kg Hemodynamically stable เหมาะสำหรับ hypotension/shock",
+        "frequency": "Slow push 30-60 sec; สำหรับ procedural sedation หากจำเป็นให้ซ้ำ 0.5-1 mg/kg q5-10 min",
+        "onset": "30-60 sec",
+        "duration": "5-10 min",
+        "route": "IV"
+      },
+      {
+        "label": "IV maintenance (anesthesia)",
+        "notes": "Maintenance สำหรับการดมยาสลบทั้งตัว (ใช้ใน OR พบน้อยใน ED)",
+        "frequency": "Bolus ตามด้วย continuous infusion สูงสุด 1 mg/kg/hr",
+        "route": "IV"
+      },
+      {
+        "label": "IV sub-dissociative analgesia",
+        "notes": "อาการปวดเฉียบพลัน, opioid-sparing; สามารถให้เป็น IV drip 0.1-0.3 mg/kg/hr",
+        "frequency": "Slow IV over 10 min; ให้ซ้ำได้ q15-30 min",
+        "onset": "1-2 min",
+        "duration": "5-15 min",
+        "route": "IV"
+      }
+    ],
+    "clinical": {
+      "use": "Procedural sedation, RSI induction, อาการปวดเฉียบพลันแบบ sub-dissociative",
+      "contraindications": "<3 เดือน, active psychosis, HTN ที่ควบคุมไม่ได้, global eyeball injury, thyrotoxicosis",
+      "adverseEffects": "BP↑, ICP↑, IOP↑, laryngospasm (พบน้อย ~0.4%), emergence reaction, N/V, nystagmus, hypersalivation",
+      "warnings": "Barbiturates ห้ามใช้ syringe ร่วมกัน (precipitate); เตรียม atropine + midazolam ไว้จัดการ emergence reaction; hemodynamically stable เหมาะสำหรับ hypotension/shock",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "ยาควบคุมพิเศษ ระดับ 3"
+    }
+  },
+  "citosol": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Citosol",
+    "notes": "ใช้เพื่อให้ยาระงับประสาทสำหรับการตรวจภาพ (CT/MRI); ให้ซ้ำได้จนกว่าจะหลับ; ปริมาณรวมไม่ควรเกินน้ำหนักตัวเป็น mL",
+    "source": "Yaodan",
+    "concentration_note": "0.5 amp เติม N/S จนครบ 20 mL; เริ่มต้นที่ 1/3-1/4 ของน้ำหนักตัวเป็น mL",
+    "warnings": ["กดการหายใจ", "ความดันโลหิตต่ำ"],
+    "clinical": {
+      "use": "Anesthesia induction, procedural sedation",
+      "contraindications": "Porphyria, หืดรุนแรง (severe asthma), status asthmaticus",
+      "adverseEffects": "กดการหายใจ, ความดันโลหิตต่ำ, myocardial depression",
+      "warnings": "Slow IV titrate; เตรียมอุปกรณ์ทางเดินหายใจไว้; ลดขนาดยาในผู้สูงอายุ / ภาวะหัวใจล้มเหลว",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "ยาควบคุมพิเศษ ระดับ 4"
+    }
+  },
+  "chloral_hydrate": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Clodrin 10% solution",
+    "notes": "Procedural sedation (การตรวจภาพ, EEG, AS); onset 30-60 min, duration 1-2 hr 10% solution = 100 mg/mL ดังนั้น 0.5 mL/kg = 50 mg/kg",
+    "frequency": "ST ให้ซ้ำได้หลัง 30 min หากจำเป็น",
+    "source": "Lexicomp + เอกสาร PDF ของ TCVGH",
+    "package": "30 mL/bot",
+    "warnings": [
+      "กดการหายใจ",
+      "หัวใจเต้นผิดจังหวะ (ขนาดสูง)",
+      "แนวทางฉบับเก่าจำกัดที่ 50 mg/kg; Lexicomp ฉบับใหม่ยอมรับ 25-100 mg/kg/dose"
+    ],
+    "clinical": {
+      "use": "Procedural sedation (การตรวจภาพ / EEG)",
+      "contraindications": "ตับ/ไตวายรุนแรง, หัวใจเต้นผิดจังหวะรุนแรง",
+      "adverseEffects": "กดการหายใจ (ขนาดสูง), GI upset, พบได้น้อย arrhythmia",
+      "warnings": "หยุดผลิตในยุโรป/สหรัฐฯ ในช่วงหลังเนื่องจากข้อกังวลด้านความปลอดภัย; max 100 mg/kg or 2 g ต่อครั้ง (per procedure)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "vena_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Vena 10 mg tab",
+    "notes": "รับประทานสำหรับอาการแพ้/เพื่อระงับประสาท; max 5 mg/kg/day หรือ 300 mg/day",
+    "frequency": "Q6H PRN",
+    "source": "Lexicomp + ฐานข้อมูลยา KMUH",
+    "unit": "เม็ด",
+    "warnings": ["ควรใช้ด้วยความระมัดระวังในเด็กอายุต่ำกว่า 3 ปี"],
+    "clinical": {
+      "use": "อาการแพ้, บรรเทาอาการคัน, ระงับประสาทเล็กน้อย",
+      "contraindications": "<3 เดือน, glaucoma, BPH",
+      "adverseEffects": "ง่วงซึม, ปากแห้ง",
+      "warnings": "ควรใช้ด้วยความระมัดระวังเมื่ออายุ <3 ปี; max 5 mg/kg/day or 300 mg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "vena_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Vena 30 mg/mL/Amp",
+    "notes": "First-line สำหรับอาการแพ้; มักใช้ร่วมกับ metoclopramide เพื่อป้องกัน EPS",
+    "frequency": "Q6H PRN",
+    "source": "ตารางคำนวณเร็ว KMUH + Lexicomp",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "อาการแพ้เฉียบพลัน, adjunct สำหรับ anaphylaxis, EPS reversal",
+      "contraindications": "<3 เดือน, ระยะเฉียบพลันของ asthma (acute asthma)",
+      "adverseEffects": "ง่วงซึม, ปากแห้ง, ปัสสาวะคั่ง, พบได้น้อย paradoxical agitation",
+      "warnings": "Anaphylaxis ยังคงใช้ epinephrine เป็นหลัก; สำหรับ EPS ใช้ 1-2 mg/kg IV",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "epinephrine_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bosmin / Adrenalin (arrest ใช้ความเข้มข้น 1:10000 = 0.1 mg/mL)",
+    "notes": "Cardiac arrest / severe bradycardia; ปริมาณ mL = 0.1 mL/kg ของ 0.1 mg/mL (1:10000) หลัง push ตามด้วย flush 5 mL N/S",
+    "frequency": "Q3-5 min ระหว่าง arrest",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "สารละลายเข้มข้นเดิม 1 mg/mL/Amp",
+    "concentration_note": "Arrest ใช้ความเข้มข้น 0.1 mg/mL = 1:10000 (เจือจาง 1 amp ของสารละลายเข้มข้น 1 mg/mL กับ N/S 9 mL ให้ได้ 10 mL)",
+    "warnings": ["ห้ามฉีดผ่าน IV line เดียวกับ NaHCO3 (จะ inactivate)"],
+    "clinical": {
+      "use": "Cardiac arrest, anaphylaxis, severe bradycardia, croup (IH)",
+      "contraindications": "— (ไม่มีข้อห้ามใช้แบบเด็ดขาดในสถานการณ์ฉุกเฉิน)",
+      "adverseEffects": "อัตราการเต้นหัวใจเพิ่มขึ้น (↑), HTN, อาการสั่น, ปอดบวมน้ำ (เกินขนาด)",
+      "warnings": "Arrest ใช้ 1:10000 (0.1 mg/mL) IV/IO 0.01 mg/kg; ห้ามใช้ IV line ร่วมกับ NaHCO3 (inactivate)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "amiodarone_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cordarone 50 mg/mL",
+    "notes": "Refractory VF/pVT; ให้แบบ push (rapid) ระหว่าง arrest; กรณี wide-QRS tachycardia ที่ไม่ใช่ arrest ควรให้ IV over 20-60 min",
+    "frequency": "Bolus ระหว่าง arrest ให้ซ้ำได้สูงสุด 3 ครั้ง (ครั้งถัดไป max 150 mg/dose)",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "150 mg / 3 mL/Amp",
+    "warnings": ["ห้าม rapid push นอกภาวะ arrest (hypotension)"],
+    "clinical": {
+      "use": "Refractory VF/pVT, wide-QRS tachycardia",
+      "contraindications": "Sinus bradycardia รุนแรง, SA/AV block (ไม่มี pacemaker), แพ้ iodine",
+      "adverseEffects": "Hypotension (rapid push), QT prolongation, พังผืดในปอด (ใช้ระยะยาว), ความผิดปกติของตับ/ต่อมไทรอยด์",
+      "warnings": "ระหว่าง arrest สามารถ rapid push ได้; นอกภาวะ arrest ให้ IV over 20-60 min; max 300 mg first dose, 150 mg subsequent",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ควรหลีกเลี่ยง",
+      "controlledDrug": "—"
+    }
+  },
+  "lidocaine_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Xylocaine 2% (20 mg/mL)",
+    "notes": "ยาทางเลือกแทน Amiodarone; เป็นหนึ่งใน second-line options สำหรับ refractory VF/pVT",
+    "frequency": "Bolus ระหว่าง arrest; maintenance 20-50 mcg/kg/min หลัง ROSC",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "5 mL/Amp",
+    "clinical": {
+      "use": "ยาทางเลือกสำหรับ Refractory VF/pVT (เมื่อไม่มี amiodarone)",
+      "contraindications": "SA/AV block รุนแรง, Adams-Stokes syndrome",
+      "adverseEffects": "ผลต่อ CNS (drowsiness, seizure ที่ขนาดสูง), bradycardia, BP ต่ำ",
+      "warnings": "Bolus 1 mg/kg; maintenance 20-50 µg/kg/min หลัง ROSC; max total 3 mg/kg",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "atropine_brady": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Atropine 0.5 mg/mL/Amp",
+    "notes": "ใช้สำหรับ symptomatic bradycardia ที่เกิดจาก vagal tone เพิ่มขึ้น หรือ primary AV block กรณี bradycardia ทั่วไป epinephrine ยังคงเป็นตัวเลือกแรก Min dose 0.1 mg (หลีกเลี่ยง paradoxical bradycardia)",
+    "frequency": "ให้ซ้ำได้ 1 ครั้ง (single dose max 0.5 mg)",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "1 mL/Amp = 0.5 mg",
+    "warnings": ["Min 0.1 mg มิฉะนั้นอาจทำให้หัวใจเต้นช้าลงแบบ paradoxical"],
+    "clinical": {
+      "use": "Symptomatic bradycardia (vagal tone↑ หรือ primary AV block), organophosphate poisoning",
+      "contraindications": "Glaucoma (angle-closure), myasthenia gravis, tachyarrhythmia",
+      "adverseEffects": "ปากแห้ง, ตาพร่ามัว, อัตราการเต้นหัวใจเพิ่มขึ้น (↑), ปัสสาวะคั่ง",
+      "warnings": "Min 0.1 mg (หลีกเลี่ยง paradoxical bradycardia); max 0.5 mg single dose; ให้ซ้ำได้ 1 ครั้ง",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "adenosine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Adenosine (Adenocor) 3 mg/mL",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "2 mL/Vial = 6 mg",
+    "warnings": [
+      "ควรทราบว่า asystole / heart block ชั่วคราวเป็นปฏิกิริยาที่คาดไว้ (half-life <10 วินาที)",
+      "อาจกระตุ้นให้เกิด bronchospasm ในผู้ป่วยหืด (asthma)"
+    ],
+    "indications": [
+      {
+        "label": "1st dose (SVT)",
+        "notes": "ใช้ IV line ที่ใกล้ที่สุด (ยิ่งใกล้หัวใจยิ่งดี); พิมพ์ rhythm strip หลังให้ยา",
+        "frequency": "Rapid push + flush ด้วย N/S 5-10 mL ทันที (ใช้ stopcock ฉีดพร้อมกันด้วยเข็มสองอัน)",
+        "route": "IV/IO"
+      },
+      {
+        "label": "2nd dose (if no response in 1-2 min)",
+        "notes": "ให้ซ้ำได้อีกครั้ง (max single dose 12 mg)",
+        "frequency": "Rapid push + flush",
+        "route": "IV/IO"
+      }
+    ],
+    "clinical": {
+      "use": "ยุติภาวะ SVT (SVT termination)",
+      "contraindications": "2nd/3rd degree AV block (ไม่มี pacemaker), sick sinus syndrome, หืดรุนแรง (severe asthma)",
+      "adverseEffects": "Asystole / heart block ชั่วคราว (ปฏิกิริยาที่คาดไว้), flushing, แน่นหน้าอก, พบได้น้อย bronchospasm",
+      "warnings": "Rapid push + flush ทันที (ใช้ stopcock กับเข็มสองอัน หรือ IV line ที่ใกล้ที่สุด); half-life <10 sec; เปิดบันทึก ECG ก่อนให้ยา",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  }
+}
