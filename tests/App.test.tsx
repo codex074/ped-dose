@@ -46,7 +46,9 @@ describe('Layout (via renderWithProviders, real dataset)', () => {
     expect(screen.getByTestId('stub-drug-search')).toBeInTheDocument();
     expect(screen.getByTestId('stub-category-chips')).toBeInTheDocument();
     expect(screen.getByTestId('stub-drug-list')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-selected-drug-panel')).toBeInTheDocument();
+    // SelectedDrugPanel is implemented (Task 18): with no drug selected it renders its empty
+    // state rather than the old stub.
+    expect(screen.getByTestId('selected-drug-panel-empty')).toBeInTheDocument();
     expect(screen.getByTestId('stub-app-footer')).toBeInTheDocument();
     expect(screen.queryByTestId('stub-pals-view')).not.toBeInTheDocument();
   });
@@ -71,6 +73,6 @@ describe('Layout (via renderWithProviders, real dataset)', () => {
     await user.click(screen.getByRole('radio', { name: 'EN' }));
     expect(document.documentElement.lang).toBe('en');
     expect(screen.getByTestId('stub-drug-list')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-selected-drug-panel')).toBeInTheDocument();
+    expect(screen.getByTestId('selected-drug-panel-empty')).toBeInTheDocument();
   });
 });
