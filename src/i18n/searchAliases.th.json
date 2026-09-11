@@ -1,4 +1,31 @@
 {
-  "_meta": { "status": "draft" },
-  "aliases": {}
+  "_meta": {
+    "status": "draft",
+    "review": [
+      "zithromax_susp/zithromax_tab: alias spelled อะซิโทรมัยซิน (ท); อะซิโธรมัยซิน (ธ) also seen in the wild — confirm against a Thai FDA/MIMS reference before promoting to reviewed."
+    ]
+  },
+  "aliases": {
+    "antiphen_syrup": ["พาราเซตามอล"],
+    "acetaminophen_tab": ["พาราเซตามอล"],
+    "idefen_syrup": ["ไอบูโพรเฟน"],
+    "amoxicillin_susp": ["อะม็อกซีซิลลิน"],
+    "amoxicillin_cap": ["อะม็อกซีซิลลิน"],
+    "zithromax_susp": ["อะซิโทรมัยซิน"],
+    "zithromax_tab": ["อะซิโทรมัยซิน"],
+    "cetirizine_syrup": ["เซทิริซีน"],
+    "voren_supp": ["ไดโคลฟีแนค"],
+    "prednisolone_tab": ["เพรดนิโซโลน"],
+    "tamiflu": ["โอเซลทามิเวียร์"],
+    "diazepam_iv": ["ไดอาซีแพม"],
+    "diazepam_pr": ["ไดอาซีแพม"],
+    "midazolam_dormicum": ["มิดาโซแลม"],
+    "ketamine": ["คีตามีน"],
+    "morphine_inj": ["มอร์ฟีน"],
+    "epinephrine_inh_croup": ["อะดรีนาลีน"],
+    "epinephrine_arrest": ["อะดรีนาลีน"],
+    "atropine_brady": ["อะโทรปีน"],
+    "phenobarbital_iv": ["ฟีโนบาร์บิทัล"],
+    "phenytoin_iv": ["ฟีนิโทอิน"]
+  }
 }
