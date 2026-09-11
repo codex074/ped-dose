@@ -26,6 +26,7 @@ License: MIT (preserved in ./LICENSE)
 | Stray leading space in 抗生素 tab label | not replicated |
 | `monitoring` field | displayed in clinical info if present |
 | Accessibility | improved |
+| PALS "Reversible Causes" H-count sub-label | upstream hardcodes "5H" under a "6H + 5T" title even though `reversible_causes.h` has 6 entries; we derive `${h.length}H` / `${t.length}T` from the actual array lengths instead |
 
 ## Update procedure
 See AGENTS.md §40.

@@ -9,8 +9,12 @@ import { useDataset } from '@/state/DatasetProvider';
  * One drug's dose summary inside a PALS/SE section, mirroring upstream `renderDrugMini()`.
  * Multi-indication drugs (e.g. adenosine, midazolam) render one row per indication with the
  * translated indication label — upstream shows ALL indications, not just a route-matched one.
- * Below the row(s), when the drug's top-level `calc.max_dose_mg` exists, the upstream rule note
- * (mg/kg range, max/min suffixes, frequency) is rendered — never omitted.
+ * Below the row(s), when the drug's top-level calc is `mg_per_kg_per_dose` and `max_dose_mg`
+ * exists, the upstream rule note (mg/kg range, max/min suffixes, frequency) is rendered — never
+ * omitted. Every current PALS/SE drug is `mg_per_kg_per_dose` (see
+ * docs/upstream-analysis/calculation-engine.md §7), but the note's wording only makes sense for
+ * that kind, so it's derived from `drug.calc.type` and skipped for any other kind rather than
+ * hardcoded.
  */
 export function DrugMiniRow({ drugId }: { drugId: string }) {
   const dataset = useDataset();
@@ -25,9 +29,9 @@ export function DrugMiniRow({ drugId }: { drugId: string }) {
   const generic = (drug.generic.split('—')[0] ?? drug.generic).trim();
 
   let ruleNote: string | null = null;
-  if (drug.calc?.max_dose_mg !== undefined) {
+  if (drug.calc?.type === 'mg_per_kg_per_dose' && drug.calc.max_dose_mg !== undefined) {
     const rule: RuleDescriptor = {
-      kind: 'mg_per_kg_per_dose',
+      kind: drug.calc.type,
       low: drug.calc.low ?? 0,
       high: drug.calc.high ?? 0,
       ...(drug.calc.min_dose_mg !== undefined ? { minMg: drug.calc.min_dose_mg } : {}),

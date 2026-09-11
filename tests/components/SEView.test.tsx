@@ -1,8 +1,21 @@
 import { screen, within } from '@testing-library/react';
 import { beforeEach, describe, expect, test } from 'vitest';
+import { translate } from '@/i18n';
+import { localizeSe } from '@/i18n/useAlgorithmText';
 import { SEView } from '@/components/se/SEView';
-import { renderWithProviders } from '../utils';
+import { realDataset, renderWithProviders } from '../utils';
 
+/** Escapes regex-special characters so translated text can be used as a substring matcher. */
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Assertions in this file derive their expected strings from the same localization functions
+ * the components use (`translate`, `localizeSe`) rather than hardcoding translated text, so they
+ * stay correct as drug/algorithm translations (src/i18n/drugs/, src/i18n/algorithms/) are filled
+ * in over time.
+ */
 describe('SEView', () => {
   beforeEach(() => {
     localStorage.clear();
@@ -16,7 +29,8 @@ describe('SEView', () => {
 
   test('renders a decision divider between stages (3 dividers for 4 stages)', () => {
     renderWithProviders(<SEView />);
-    expect(screen.getAllByText(/ยังชักอยู่หรือไม่/)).toHaveLength(3);
+    const decisionText = translate('th', 'se.decision');
+    expect(screen.getAllByText(new RegExp(escapeRegExp(decisionText)))).toHaveLength(3);
   });
 
   test('with weight 20, stage 2 (Initial Therapy) shows lorazepam as 2 mg (1 mL)', () => {
@@ -34,7 +48,7 @@ describe('SEView', () => {
     const stages = screen.getAllByTestId('se-stage');
     const stage2 = stages[1]!;
     const row = within(stage2).getByTestId('drug-mini-lorazepam_inj');
-    expect(row).toHaveTextContent('กรอกน้ำหนักเพื่อคำนวณ');
+    expect(row).toHaveTextContent(translate('th', 'dose.needsWeight'));
   });
 
   test('stage 2 (Initial Therapy) shows all midazolam indications, not just one route (do-not-fix parity)', () => {
@@ -57,19 +71,20 @@ describe('SEView', () => {
     const link = within(view).getByRole('link');
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
-    expect(view).toHaveTextContent('Glauser');
+    const localized = localizeSe(realDataset.se_algorithm, 'th');
+    expect(view).toHaveTextContent(localized.citation);
   });
 
-  // NOTE: src/i18n/algorithms/{th,en}/ currently hold only `.gitkeep` (no translation JSON has
-  // landed yet for pals_algorithms/se_algorithm), so `localizeSe`/`localizePals` fall back to the
-  // canonical (Chinese-English mixed) dataset text for algorithm-authored strings regardless of
-  // `lang` -- a pre-existing gap outside this task's scope (see report). The UI-chrome strings
-  // (from ui.th.json/ui.en.json, e.g. `se.decision`, `se.minutes`) DO switch with `lang` and are
-  // what this test exercises.
+  // UI-chrome strings (from ui.th.json/ui.en.json, e.g. `se.decision`, `se.minutes`) are driven
+  // by `translate()`, independent of the drug/algorithm translation dictionaries in
+  // src/i18n/drugs/ and src/i18n/algorithms/ (Task 24/25) -- this test exercises those, derived
+  // the same way the component derives them, so it doesn't hardcode wording that could drift.
   test('localizes UI-chrome strings to English when lang=en', () => {
     renderWithProviders(<SEView />, { lang: 'en' });
-    expect(screen.getAllByText(/Does the seizure continue/)).toHaveLength(3);
-    expect(screen.getAllByText(/minutes/).length).toBeGreaterThan(0);
+    const decisionText = translate('en', 'se.decision');
+    expect(screen.getAllByText(new RegExp(escapeRegExp(decisionText)))).toHaveLength(3);
+    const minutesText = translate('en', 'se.minutes');
+    expect(screen.getAllByText(new RegExp(escapeRegExp(minutesText))).length).toBeGreaterThan(0);
   });
 
   test('shows the empty state when the SE dataset has no algorithm data (undefined _meta)', () => {
