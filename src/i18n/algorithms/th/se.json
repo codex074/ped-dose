@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "status": "draft",
+    "generatedFrom": "2.5"
+  },
+  "se": {
+    "title": "ภาวะชักต่อเนื่องในเด็ก (Convulsive Status Epilepticus)",
+    "subtitle": "AES 2016 · Glauser et al · Epilepsy Currents 16(1):48-61",
+    "time_stages": [
+      {
+        "minutes": "0–5",
+        "phase": "ระยะทำให้เสถียร (Stabilization)",
+        "actions": [
+          "ABCD: airway / breathing / circulation / disability (รวมการตรวจระบบประสาท)",
+          "จับเวลาเริ่มชัก + ติดตาม vital signs",
+          "ให้ออกซิเจนทาง NC / mask; หากหายใจไม่คงที่ พิจารณาใส่ท่อช่วยหายใจ",
+          "เริ่มติดตามคลื่นไฟฟ้าหัวใจ (ECG)",
+          "ตรวจน้ำตาลปลายนิ้ว (Fingerstick glucose); หาก < 60 mg/dL → อายุ ≥2 ปี: 2 mL/kg D25W IV | อายุ <2 ปี: 4 mL/kg D12.5W IV",
+          "เปิดเส้น IV + ตรวจ electrolytes / CBC / tox screen / ASM levels"
+        ]
+      },
+      {
+        "minutes": "5–20",
+        "phase": "การรักษาเริ่มต้น — BZD ลำดับแรก",
+        "level": "Level A",
+        "subtitle": "เลือกหนึ่งข้อ (IM midazolam / IV lorazepam / IV diazepam)",
+        "actions": [
+          "IM Midazolam (ตัวเลือกแรกเมื่อไม่มี IV): 13–40 kg → 5 mg; >40 kg → 10 mg (ให้ครั้งเดียว)",
+          "IV Lorazepam: 0.1 mg/kg/dose (สูงสุด 4 mg/dose; ให้ซ้ำได้ 1 ครั้ง)",
+          "IV Diazepam: 0.15–0.2 mg/kg/dose (สูงสุด 10 mg/dose; ให้ซ้ำได้ 1 ครั้ง)",
+          "หากทั้งหมดข้างต้นไม่สามารถใช้ได้: IV Phenobarbital 15 mg/kg (Level A, รหัสในโรงพยาบาล 2PHENO) / Rectal Diazepam 0.2–0.5 mg/kg, สูงสุด 20 mg (Level B) / IN หรือ buccal Midazolam (Level B)"
+        ]
+      },
+      {
+        "minutes": "20–40",
+        "phase": "การรักษาลำดับที่สอง — ASM ลำดับที่สอง",
+        "level": "Level U (ยาสามตัวเทียบเท่ากัน)",
+        "subtitle": "เลือกหนึ่งข้อ ให้ครั้งเดียว (single dose)",
+        "actions": [
+          "IV Fosphenytoin 20 mg PE/kg (สูงสุด 1500 mg PE) — ไม่มีในโรงพยาบาล ใช้ IV Phenytoin 20 mg/kg แทน (Aleviatin รหัส 2DPH, อัตรา ≤ 1 mg/kg/min)",
+          "IV Valproic acid 40 mg/kg (สูงสุด 3000 mg/dose)",
+          "IV Levetiracetam 60 mg/kg (สูงสุด 4500 mg/dose)",
+          "หากทั้งหมดข้างต้นไม่สามารถใช้ได้และยังไม่เคยให้: IV Phenobarbital 15 mg/kg (Level B)"
+        ]
+      },
+      {
+        "minutes": "40–60",
+        "phase": "การรักษาลำดับที่สาม — SE ดื้อต่อการรักษา",
+        "level": "Level U (ไม่มีหลักฐานชัดเจน)",
+        "actions": [
+          "ทำซ้ำการรักษาลำดับที่สอง (second line therapy); หรือ",
+          "ขนาดยาระดับดมยาสลบ (anesthetic dose): thiopental / midazolam / pentobarbital / propofol",
+          "ทุกกรณีต้องมี continuous EEG monitoring + ใส่ท่อช่วยหายใจ + ICU"
+        ]
+      }
+    ],
+    "decision_label": "อาการชักยังคงอยู่หรือไม่? — หากยังชักต่อ → ไปยังระยะถัดไป; หากหยุดแล้ว → การดูแลตามอาการ (symptomatic care)",
+    "citation": "Glauser T, Shinnar S, Gloss D, et al. Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults. Epilepsy Currents 2016;16(1):48-61.",
+    "figure_label": "แผนผังขั้นตอนของ AES"
+  }
+}

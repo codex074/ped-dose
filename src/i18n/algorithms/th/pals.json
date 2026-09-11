@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "status": "draft",
+    "generatedFrom": "2.5"
+  },
+  "pals": {
+    "cardiac_arrest": {
+      "title": "หัวใจหยุดเต้นในเด็ก (Cardiac Arrest)",
+      "subtitle": "AHA/AAP 2025 PALS Figure 2",
+      "steps_initial": ["เริ่ม CPR + BMV + O2", "ติดเครื่อง monitor / defibrillator"],
+      "decision_tree": {
+        "question": "จังหวะหัวใจ shockable หรือไม่?",
+        "yes": {
+          "label": "VF / pulseless VT",
+          "actions": [
+            "ช็อกไฟฟ้า (ครั้งที่ 1: 2 J/kg)",
+            "CPR 2 min + เปิดเส้น IV/IO",
+            "จังหวะหัวใจ shockable หรือไม่? ใช่ (YES) → ช็อกไฟฟ้า (ครั้งที่ 2: 4 J/kg)",
+            "CPR 2 min + Epinephrine q3-5 min + พิจารณา advanced airway + capnography",
+            "จังหวะหัวใจ shockable หรือไม่? ใช่ (YES) → ช็อกไฟฟ้า (≥4 J/kg, สูงสุด 10 J/kg หรือขนาดผู้ใหญ่)",
+            "CPR 2 min + Amiodarone หรือ Lidocaine + รักษาสาเหตุที่แก้ไขได้",
+            "มี ROSC หรือไม่? → Post-Cardiac Arrest Care; ไม่มี ROSC → ทำซ้ำ shock-CPR-drug cycle"
+          ]
+        },
+        "no": {
+          "label": "Asystole / PEA",
+          "actions": [
+            "ให้ Epinephrine โดยเร็วที่สุด (ASAP)",
+            "CPR 2 min + เปิดเส้น IV/IO + Epi q3-5 min + พิจารณา advanced airway + capnography",
+            "จังหวะหัวใจ shockable หรือไม่? ใช่ (YES) → เข้าสู่ shockable pathway (ช็อกไฟฟ้าโดยเร็วที่สุด)",
+            "จังหวะหัวใจยังไม่ shockable → CPR 2 min + รักษาสาเหตุที่แก้ไขได้",
+            "ตรวจจังหวะหัวใจซ้ำ shockable หรือไม่? ใช่ (YES) → ช็อกไฟฟ้าโดยเร็วที่สุด; ไม่ใช่ (NO) → ทำต่อ nonshockable cycle",
+            "มี ROSC หรือไม่? → Post-Cardiac Arrest Care; ไม่มี ROSC → ทำซ้ำ"
+          ]
+        }
+      },
+      "energy_doses": [
+        {
+          "label": "การช็อกไฟฟ้าครั้งที่ 1 (Defibrillation)"
+        },
+        {
+          "label": "การช็อกไฟฟ้าครั้งที่ 2 (Defibrillation)"
+        },
+        {
+          "label": "การช็อกไฟฟ้าครั้งที่ 3 ขึ้นไป (Defibrillation)",
+          "note": "≥4 J/kg, สูงสุด 10 J/kg หรือขนาดผู้ใหญ่"
+        }
+      ],
+      "high_quality_cpr": [
+        "กดแรง: ≥1/3 ของเส้นผ่านศูนย์กลาง AP (AP diameter)",
+        "กดเร็ว: 100-120/min",
+        "ปล่อยให้ทรวงอกคืนตัวเต็มที่",
+        "ลดการหยุดชะงักให้น้อยที่สุด",
+        "สลับผู้กดหน้าอกทุก q2 min",
+        "C:V ratio: 15:2 (ผู้ช่วยชีวิต 2 คน, ก่อนวัยเจริญพันธุ์); 30:2 (ผู้ช่วยชีวิต 2 คน, หลังวัยเจริญพันธุ์ หรือผู้ช่วยชีวิต 1 คน ทุกวัย)",
+        "หากมี advanced airway → กดหน้าอกต่อเนื่อง + ช่วยหายใจ 1 ครั้ง ทุก q2-3 sec",
+        "ติดตาม ETCO2, invasive diastolic BP (หากทำได้)"
+      ],
+      "reversible_causes": {
+        "title": "สาเหตุที่แก้ไขได้ — 6H + 5T",
+        "h": [
+          "Hypovolemia (ปริมาตรเลือดต่ำ)",
+          "Hypoxia (ออกซิเจนต่ำ)",
+          "Hydrogen ion (ภาวะเลือดเป็นกรด)",
+          "Hypoglycemia (น้ำตาลในเลือดต่ำ)",
+          "Hypo-/Hyper-kalemia (โพแทสเซียมในเลือดต่ำ/สูง)",
+          "Hypothermia (อุณหภูมิกายต่ำ)"
+        ],
+        "t": [
+          "Tension pneumothorax (ภาวะลมในช่องเยื่อหุ้มปอดชนิดมีแรงดัน)",
+          "Tamponade (cardiac) (ภาวะหัวใจถูกบีบรัด)",
+          "Toxins (สารพิษ)",
+          "Thrombosis (pulmonary) (ลิ่มเลือดอุดตันปอด)",
+          "Thrombosis (coronary) (ลิ่มเลือดอุดตันหลอดเลือดหัวใจ)"
+        ]
+      },
+      "figure_label": "ดูภาพต้นฉบับ AHA Figure 2 →"
+    },
+    "tachy_pulse": {
+      "title": "หัวใจเต้นเร็วผิดปกติในเด็กที่มีชีพจร (Tachyarrhythmia With Pulse)",
+      "subtitle": "AHA/AAP 2025 PALS Figure 7",
+      "steps_initial": [
+        "ดูแลทางเดินหายใจ; PPV + O2 PRN",
+        "ต่อ cardiopulmonary monitor + เปิดเส้น IV/IO",
+        "ตรวจ 12-lead ECG หากทำได้"
+      ],
+      "decision_tree": {
+        "question": "มีภาวะ cardiopulmonary compromise หรือไม่? (altered MS / shock / hypotension)",
+        "yes": {
+          "label": "ใช่ (YES) — การจัดการเร่งด่วน",
+          "branches": [
+            {
+              "qrs": "แคบ (≤0.09 sec)",
+              "label": "น่าจะเป็น SVT (Probable SVT)",
+              "action": "IV/IO Adenosine (หากเปิดเส้นได้แล้ว) หรือ Synchronized cardioversion"
+            },
+            {
+              "qrs": "กว้าง (>0.09 sec)",
+              "label": "อาจเป็น VT (Possible VT)",
+              "action": "Synchronized cardioversion; ปรึกษาผู้เชี่ยวชาญก่อนให้ยาลำดับถัดไป"
+            }
+          ]
+        },
+        "no": {
+          "label": "ไม่ใช่ (NO) — การจัดการแบบไม่เร่งด่วน",
+          "branches": [
+            {
+              "qrs": "แคบ (≤0.09 sec)",
+              "label": "น่าจะเป็น SVT (Probable SVT)",
+              "action": "Vagal maneuvers → IV/IO Adenosine"
+            },
+            {
+              "qrs": "กว้าง (>0.09 sec)",
+              "label": "อาจเป็น VT หรือ SVT with aberrancy",
+              "action": "แนะนำให้ปรึกษาผู้เชี่ยวชาญ; หากเป็น regular + monomorphic อาจพิจารณาให้ Adenosine"
+            }
+          ]
+        }
+      },
+      "energy_doses": [
+        {
+          "label": "Synchronized cardioversion ครั้งที่ 1"
+        },
+        {
+          "label": "Synchronized cardioversion ครั้งที่ 2",
+          "note": "หาก 0.5-1 J/kg ไม่ได้ผล เพิ่มเป็น 2 J/kg; ให้ยาระงับประสาทหากจำเป็น แต่ห้ามทำให้ cardioversion ล่าช้า"
+        }
+      ],
+      "differentiation": {
+        "title": "Sinus Tach vs SVT",
+        "sinus_tach": {
+          "label": "น่าจะเป็น Sinus Tach (Probable Sinus Tach)",
+          "criteria": [
+            "มี P wave / ปกติ",
+            "RR ไม่คงที่ (variable)",
+            "ทารก <220/min",
+            "เด็กโต <180/min"
+          ],
+          "action": "ค้นหาและรักษาสาเหตุ"
+        },
+        "svt": {
+          "label": "น่าจะเป็น SVT (Probable SVT)",
+          "criteria": [
+            "ไม่มี P wave / ผิดปกติ",
+            "RR คงที่ (not variable)",
+            "ทารก ≥220/min",
+            "เด็กโต ≥180/min",
+            "เริ่มเป็นแบบทันทีทันใด"
+          ]
+        }
+      },
+      "refractory_note": "SVT ดื้อต่อการรักษา (มี cardiopulmonary compromise + vagal / adenosine / synchronized cardioversion ไม่ได้ผลทั้งหมด) และ **ไม่สามารถปรึกษาผู้เชี่ยวชาญได้ (expert consultation unavailable)** อาจพิจารณาให้ IV procainamide, amiodarone หรือ sotalol",
+      "figure_label": "ดูภาพต้นฉบับ AHA Figure 7 →"
+    },
+    "brady_pulse": {
+      "title": "หัวใจเต้นช้าในเด็กที่มีชีพจร (Bradycardia With Pulse)",
+      "subtitle": "AHA/AAP 2025 PALS Figure 6",
+      "steps_initial": ["ประเมิน cardiopulmonary compromise (altered MS / shock / hypotension)"],
+      "decision_tree": {
+        "question": "มีภาวะ cardiopulmonary compromise หรือไม่?",
+        "yes": {
+          "label": "ใช่ (YES)",
+          "actions": [
+            "ดูแลทางเดินหายใจ + O2; PPV PRN",
+            "ต่อ cardiopulmonary monitor; ติดตามชีพจรอย่างต่อเนื่อง",
+            "Bradycardia ยังคงอยู่และยังมี compromise หรือไม่?",
+            "↳ ไม่ใช่ (NO) → ระบุและรักษาสาเหตุที่แท้จริง; ช่วยพยุง ABCs; พิจารณา O2 / 12-lead; เฝ้าสังเกตอาการ",
+            "↳ ใช่ (YES): HR <60 → เริ่ม CPR; IV/IO + Epinephrine; Atropine (ใช้เฉพาะเมื่อ vagal tone สูงขึ้น หรือมี primary AV block เท่านั้น)",
+            "ระบุและรักษาสาเหตุที่แท้จริง; พิจารณา transthoracic / transvenous pacing",
+            "ตรวจชีพจรทุก 2 min",
+            "↳ มีชีพจร → กลับไปที่ \"Bradycardia ยังคงอยู่และยังมี compromise หรือไม่?\"",
+            "↳ ไม่มีชีพจร → ไปที่ Cardiac Arrest Algorithm"
+          ]
+        },
+        "no": {
+          "label": "ไม่ใช่ (NO)",
+          "actions": [
+            "ระบุและรักษาสาเหตุที่แท้จริง",
+            "ช่วยพยุง ABCs; พิจารณา O2, 12-lead ECG",
+            "เฝ้าสังเกตอาการ"
+          ]
+        }
+      },
+      "possible_causes": [
+        "Hypothermia (อุณหภูมิกายต่ำ)",
+        "Hypoxia (ออกซิเจนต่ำ)",
+        "สารพิษ / ยา (Toxins / medications)",
+        "ความดันในกะโหลกศีรษะสูง (Increased ICP)",
+        "Vagal tone เพิ่มขึ้น (Increased vagal tone)",
+        "Heart block (ภาวะหัวใจนำสัญญาณผิดปกติ)",
+        "เป็นไปตามสรีรวิทยา / เหมาะสม (Physiologic / appropriate)"
+      ],
+      "figure_label": "ดูภาพต้นฉบับ AHA Figure 6 →"
+    }
+  }
+}

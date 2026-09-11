@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "status": "draft",
+    "generatedFrom": "2.5"
+  },
+  "pals": {
+    "cardiac_arrest": {
+      "title": "Pediatric Cardiac Arrest",
+      "subtitle": "AHA/AAP 2025 PALS Figure 2",
+      "steps_initial": ["Start CPR + BMV + O2", "Attach monitor / defibrillator"],
+      "decision_tree": {
+        "question": "Rhythm shockable?",
+        "yes": {
+          "label": "VF / pulseless VT",
+          "actions": [
+            "Shock (1st, 2 J/kg)",
+            "CPR 2 min + IV/IO access",
+            "Rhythm shockable? YES → Shock (2nd, 4 J/kg)",
+            "CPR 2 min + Epinephrine q3-5 min + consider advanced airway + capnography",
+            "Rhythm shockable? YES → Shock (≥4 J/kg, max 10 J/kg or adult)",
+            "CPR 2 min + Amiodarone OR Lidocaine + treat reversible causes",
+            "ROSC? → Post-Cardiac Arrest Care; no ROSC → repeat shock-CPR-drug cycle"
+          ]
+        },
+        "no": {
+          "label": "Asystole / PEA",
+          "actions": [
+            "Epinephrine ASAP",
+            "CPR 2 min + IV/IO access + Epi q3-5 min + consider advanced airway + capnography",
+            "Rhythm shockable? YES → switch to shockable pathway (Shock ASAP)",
+            "Rhythm still not shockable → CPR 2 min + treat reversible causes",
+            "Recheck rhythm shockable? YES → Shock ASAP; NO → continue nonshockable cycle",
+            "ROSC? → Post-Cardiac Arrest Care; no ROSC → repeat"
+          ]
+        }
+      },
+      "energy_doses": [
+        {
+          "label": "Defibrillation 1st"
+        },
+        {
+          "label": "Defibrillation 2nd"
+        },
+        {
+          "label": "Defibrillation 3rd+",
+          "note": "≥4 J/kg, max 10 J/kg or adult dose"
+        }
+      ],
+      "high_quality_cpr": [
+        "Push hard: ≥1/3 AP diameter",
+        "Push fast: 100-120/min",
+        "Allow complete chest recoil",
+        "Minimize interruptions",
+        "Change compressor q2 min",
+        "C:V ratio: 15:2 (2 rescuers, prepuberty); 30:2 (2 rescuers, postpuberty or 1 rescuer any age)",
+        "Advanced airway → continuous compressions + 1 breath q2-3 sec",
+        "Monitor ETCO2, invasive diastolic BP (if available)"
+      ],
+      "reversible_causes": {
+        "title": "Reversible Causes — 6H + 5T",
+        "h": [
+          "Hypovolemia",
+          "Hypoxia",
+          "Hydrogen ion (acidosis)",
+          "Hypoglycemia",
+          "Hypo-/Hyper-kalemia",
+          "Hypothermia"
+        ],
+        "t": [
+          "Tension pneumothorax",
+          "Tamponade (cardiac)",
+          "Toxins",
+          "Thrombosis (pulmonary)",
+          "Thrombosis (coronary)"
+        ]
+      },
+      "figure_label": "View original AHA Figure 2 →"
+    },
+    "tachy_pulse": {
+      "title": "Pediatric Tachyarrhythmia With Pulse",
+      "subtitle": "AHA/AAP 2025 PALS Figure 7",
+      "steps_initial": [
+        "Maintain airway; PPV + O2 PRN",
+        "Cardiopulmonary monitor + IV/IO",
+        "12-lead ECG if available"
+      ],
+      "decision_tree": {
+        "question": "Cardiopulmonary compromise? (altered MS / shock / hypotension)",
+        "yes": {
+          "label": "YES — urgent management",
+          "branches": [
+            {
+              "qrs": "Narrow (≤0.09 sec)",
+              "label": "Probable SVT",
+              "action": "IV/IO Adenosine (if access established) OR Synchronized cardioversion"
+            },
+            {
+              "qrs": "Wide (>0.09 sec)",
+              "label": "Possible VT",
+              "action": "Synchronized cardioversion; consult expert before further medications"
+            }
+          ]
+        },
+        "no": {
+          "label": "NO — non-urgent management",
+          "branches": [
+            {
+              "qrs": "Narrow (≤0.09 sec)",
+              "label": "Probable SVT",
+              "action": "Vagal maneuvers → IV/IO Adenosine"
+            },
+            {
+              "qrs": "Wide (>0.09 sec)",
+              "label": "Possible VT or SVT with aberrancy",
+              "action": "Expert consultation recommended; if regular + monomorphic, may consider Adenosine"
+            }
+          ]
+        }
+      },
+      "energy_doses": [
+        {
+          "label": "Synchronized cardioversion 1st"
+        },
+        {
+          "label": "Synchronized cardioversion 2nd",
+          "note": "If 0.5-1 J/kg ineffective, increase to 2 J/kg; sedate if needed, do not delay cardioversion"
+        }
+      ],
+      "differentiation": {
+        "title": "Sinus Tach vs SVT",
+        "sinus_tach": {
+          "label": "Probable Sinus Tach",
+          "criteria": [
+            "P waves present / normal",
+            "RR variable",
+            "Infant <220/min",
+            "Child <180/min"
+          ],
+          "action": "Search for and treat cause"
+        },
+        "svt": {
+          "label": "Probable SVT",
+          "criteria": [
+            "P waves absent / abnormal",
+            "RR not variable",
+            "Infant ≥220/min",
+            "Child ≥180/min",
+            "Abrupt onset"
+          ]
+        }
+      },
+      "refractory_note": "Refractory SVT (cardiopulmonary compromise + vagal / adenosine / synchronized cardioversion all ineffective) and **expert consultation unavailable**, may consider IV procainamide, amiodarone, or sotalol",
+      "figure_label": "View original AHA Figure 7 →"
+    },
+    "brady_pulse": {
+      "title": "Pediatric Bradycardia With Pulse",
+      "subtitle": "AHA/AAP 2025 PALS Figure 6",
+      "steps_initial": ["Assess cardiopulmonary compromise (altered MS / shock / hypotension)"],
+      "decision_tree": {
+        "question": "Cardiopulmonary compromise?",
+        "yes": {
+          "label": "YES",
+          "actions": [
+            "Maintain airway + O2; PPV PRN",
+            "Cardiopulmonary monitor; continuously monitor pulse",
+            "Bradycardia persists with ongoing compromise?",
+            "↳ NO → Identify and treat underlying causes; support ABCs; consider O2 / 12-lead; observe",
+            "↳ YES: HR <60 → Start CPR; IV/IO + Epinephrine; Atropine (use only for increased vagal tone or primary AV block)",
+            "Identify and treat underlying causes; consider transthoracic / transvenous pacing",
+            "Check pulse every 2 min",
+            "↳ Pulse present → return to \"Bradycardia persists with ongoing compromise?\"",
+            "↳ No pulse → go to Cardiac Arrest Algorithm"
+          ]
+        },
+        "no": {
+          "label": "NO",
+          "actions": [
+            "Identify and treat underlying causes",
+            "Support ABCs; consider O2, 12-lead ECG",
+            "Observe"
+          ]
+        }
+      },
+      "possible_causes": [
+        "Hypothermia",
+        "Hypoxia",
+        "Toxins / medications",
+        "Increased ICP",
+        "Increased vagal tone",
+        "Heart block",
+        "Physiologic / appropriate"
+      ],
+      "figure_label": "View original AHA Figure 6 →"
+    }
+  }
+}
