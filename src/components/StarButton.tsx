@@ -3,7 +3,7 @@ import { useT } from '@/i18n';
 export interface StarButtonProps {
   /** Whether this specific drug id is currently starred. */
   starred: boolean;
-  /** Canonical generic name (never translated), appended to the aria-label per upstream's `pin/{generic}` convention. */
+  /** Brand (preferred) or generic name, appended to the aria-label so multi-star groups are distinguishable. */
   name: string;
   onToggle: () => void;
 }

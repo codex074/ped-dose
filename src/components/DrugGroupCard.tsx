@@ -1,6 +1,7 @@
 import type { KeyboardEvent } from 'react';
 import type { Drug } from '@/clinical/types';
 import { useT } from '@/i18n';
+import { useDrugText } from '@/i18n/useDrugText';
 import { DrugFormSection } from './DrugFormSection';
 import { StarButton } from './StarButton';
 import { TagPills } from './TagPills';
@@ -28,6 +29,7 @@ export function DrugGroupCard({
   onSelect,
 }: DrugGroupCardProps) {
   const t = useT();
+  const drugText = useDrugText();
   const first = group[0]!;
   const allTags = [...new Set(group.flatMap((d) => d.tags ?? []))];
   const isStarred = group.some((d) => starred.has(d.id));
@@ -71,14 +73,17 @@ export function DrugGroupCard({
           )}
         </div>
         <div className="flex shrink-0 gap-1">
-          {group.map((d) => (
-            <StarButton
-              key={d.id}
-              starred={starred.has(d.id)}
-              name={d.generic}
-              onToggle={() => onToggleStar(d.id)}
-            />
-          ))}
+          {group.map((d) => {
+            const localized = drugText(d);
+            return (
+              <StarButton
+                key={d.id}
+                starred={starred.has(d.id)}
+                name={localized.brand || d.generic}
+                onToggle={() => onToggleStar(d.id)}
+              />
+            );
+          })}
         </div>
       </div>
       <div className="mt-1 flex flex-col divide-y divide-line">

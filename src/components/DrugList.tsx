@@ -14,9 +14,11 @@ import { EmptyState } from './EmptyState';
 const SEARCH_ALIASES = (searchAliasesTh as { aliases: Record<string, string[]> }).aliases;
 
 /**
- * Renders one group block (a `group_id`-merged block of 1+ drugs) as either a `DrugGroupCard`
- * (more than one member, or a single member that still carries a `group_id`) or a `DrugCard`.
- * Mirrors upstream `renderDrugList`'s per-block dispatch.
+ * Renders one group block (a `group_id`-merged block of 1+ drugs, per `groupForDisplay`) as
+ * either a `DrugGroupCard` (2+ members actually present in this filtered/searched list) or a
+ * `DrugCard` (exactly one member — including a drug that carries a `group_id` but whose sibling
+ * was filtered/searched out of the current list). Mirrors upstream `renderDrugList`'s per-block
+ * dispatch: a lone surviving member renders as a single card, not a one-member "group".
  */
 function DrugBlock({
   group,
@@ -33,8 +35,7 @@ function DrugBlock({
 }) {
   const first = group[0];
   if (!first) return null;
-  const isGroupCard = group.length > 1 || Boolean(first.group_id);
-  if (isGroupCard) {
+  if (group.length > 1) {
     return (
       <DrugGroupCard
         group={group}

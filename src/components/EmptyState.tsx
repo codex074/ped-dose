@@ -28,6 +28,15 @@ export function EmptyState() {
           strokeWidth="2"
           strokeLinejoin="round"
         />
+        <circle cx="27" cy="29" r="1.6" fill="currentColor" />
+        <circle cx="37" cy="29" r="1.6" fill="currentColor" />
+        <path
+          d="M26 34q6 5 12 0"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          fill="none"
+        />
         <path
           d="M50 12l1.6 3.6L55 17l-3.4 1.4L50 22l-1.6-3.6L45 17l3.4-1.4L50 12Z"
           fill="currentColor"

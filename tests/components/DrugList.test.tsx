@@ -24,7 +24,12 @@ describe('DrugList', () => {
 
     const card = screen.getByTestId('drug-group-card-acetaminophen');
     expect(within(card).getByText('Acetaminophen')).toBeInTheDocument();
-    expect(within(card).getAllByRole('button', { name: /ปักหมุด/ })).toHaveLength(2);
+    const starButtons = within(card).getAllByRole('button', { name: /ปักหมุด/ });
+    expect(starButtons).toHaveLength(2);
+    // Each member's star button must have a distinct accessible name (brand-disambiguated) so
+    // AT users can tell them apart — both buttons sharing the group's generic name would be an
+    // a11y regression.
+    expect(starButtons[0]).not.toHaveAccessibleName(starButtons[1]!.getAttribute('aria-label')!);
     // Both forms' bodies are present under the one card.
     expect(within(card).getByTestId('drug-form-antiphen_syrup')).toBeInTheDocument();
     expect(within(card).getByTestId('drug-form-acetaminophen_tab')).toBeInTheDocument();
@@ -74,12 +79,23 @@ describe('DrugList', () => {
   });
 
   test('list cards render no clinical accordion or warnings/notes text', () => {
-    renderWithProviders(<DrugList />, { calculator: { view: 'antipyretic' } });
+    const { container } = renderWithProviders(<DrugList />, {
+      calculator: { view: 'antipyretic' },
+    });
 
     // These strings only ever appear in the full clinical detail (kmuh_detail) / notes, which
-    // list cards deliberately never render (that lives in SelectedDrugPanel, Task 18).
+    // list cards deliberately never render (that lives in SelectedDrugPanel, Task 18). This check
+    // is translation-agnostic: whatever language antiphenSyrup's `副作用` renders in (canonical
+    // zh, since it currently has no TH/EN override, or a future translation), the clinical
+    // accordion the text would appear in simply doesn't exist in list-card markup.
     expect(screen.queryByText(antiphenSyrup.notes!)).not.toBeInTheDocument();
     expect(screen.queryByText(antiphenSyrup.kmuh_detail['副作用']!)).not.toBeInTheDocument();
+    // Structural guard: list cards never render a `<dl>`/`<details>` accordion at all (upstream's
+    // `renderKmuhDetail` uses a `<dl>`; this repo has nothing else that would legitimately render
+    // one in the drug list), independent of whether any particular clinical field happens to have
+    // a translation yet.
+    expect(container.querySelector('dl')).toBeNull();
+    expect(container.querySelector('details')).toBeNull();
   });
 
   test('starring an unstarred drug moves it into the starred section', async () => {
@@ -88,7 +104,8 @@ describe('DrugList', () => {
 
     expect(screen.queryByRole('heading', { name: /รายการโปรด/ })).not.toBeInTheDocument();
 
-    const starButton = screen.getByRole('button', { name: `ปักหมุด ${voren.generic}` });
+    const vorenCard = screen.getByTestId(`drug-card-${voren.id}`);
+    const starButton = within(vorenCard).getByRole('button', { name: /^ปักหมุด/ });
     await user.click(starButton);
 
     const heading = screen.getByRole('heading', { name: /รายการโปรด/ });

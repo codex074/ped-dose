@@ -1,6 +1,7 @@
 import type { KeyboardEvent } from 'react';
 import type { Drug } from '@/clinical/types';
 import { useT } from '@/i18n';
+import { useDrugText } from '@/i18n/useDrugText';
 import { DrugFormSection } from './DrugFormSection';
 import { StarButton } from './StarButton';
 import { TagPills } from './TagPills';
@@ -20,6 +21,8 @@ export interface DrugCardProps {
  */
 export function DrugCard({ drug, starred, onToggleStar, selected, onSelect }: DrugCardProps) {
   const t = useT();
+  const drugText = useDrugText();
+  const localized = drugText(drug);
   const isStarred = starred.has(drug.id);
   const isEmergency = (drug.tags ?? []).some((tag) => tag === 'emergency' || tag === 'rsi');
 
@@ -60,7 +63,7 @@ export function DrugCard({ drug, starred, onToggleStar, selected, onSelect }: Dr
         </div>
         <StarButton
           starred={isStarred}
-          name={drug.generic}
+          name={localized.brand || drug.generic}
           onToggle={() => onToggleStar(drug.id)}
         />
       </div>
