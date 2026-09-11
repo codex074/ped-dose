@@ -40,4 +40,11 @@ describe('DrugSearch', () => {
     renderWithProviders(<DrugSearch />, { lang: 'en' });
     expect(screen.getByRole('searchbox', { name: 'Drug name / brand / scenario' })).toBeVisible();
   });
+
+  test('clear button meets the 44px minimum touch target', () => {
+    renderWithProviders(<DrugSearch />, { calculator: { search: 'ibuprofen' } });
+    const clearButton = screen.getByRole('button', { name: 'ล้างการค้นหา' });
+    expect(clearButton.className).toMatch(/h-11/);
+    expect(clearButton.className).toMatch(/w-11/);
+  });
 });
