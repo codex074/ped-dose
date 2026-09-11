@@ -43,8 +43,8 @@ describe('Layout (via renderWithProviders, real dataset)', () => {
     renderWithProviders(<Layout />);
     expect(screen.getByTestId('stub-patient-input')).toBeInTheDocument();
     expect(screen.getByTestId('stub-patient-summary-banner')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-drug-search')).toBeInTheDocument();
-    expect(screen.getByTestId('stub-category-chips')).toBeInTheDocument();
+    expect(screen.getByRole('searchbox')).toBeInTheDocument();
+    expect(screen.getByRole('tablist')).toBeInTheDocument();
     expect(screen.getByTestId('stub-drug-list')).toBeInTheDocument();
     expect(screen.getByTestId('stub-selected-drug-panel')).toBeInTheDocument();
     expect(screen.getByTestId('stub-app-footer')).toBeInTheDocument();
@@ -54,14 +54,14 @@ describe('Layout (via renderWithProviders, real dataset)', () => {
   test('shows the PALSView stub (and hides search/list) when view=pals', () => {
     renderWithProviders(<Layout />, { calculator: { view: 'pals' } });
     expect(screen.getByTestId('stub-pals-view')).toBeInTheDocument();
-    expect(screen.queryByTestId('stub-drug-search')).not.toBeInTheDocument();
+    expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
     expect(screen.queryByTestId('stub-drug-list')).not.toBeInTheDocument();
   });
 
   test('shows the SEView stub (and hides search/list) when view=se', () => {
     renderWithProviders(<Layout />, { calculator: { view: 'se' } });
     expect(screen.getByTestId('stub-se-view')).toBeInTheDocument();
-    expect(screen.queryByTestId('stub-drug-search')).not.toBeInTheDocument();
+    expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
     expect(screen.queryByTestId('stub-drug-list')).not.toBeInTheDocument();
   });
 
