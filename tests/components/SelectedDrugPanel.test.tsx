@@ -68,6 +68,44 @@ describe('SelectedDrugPanel', () => {
     expect(screen.getAllByTestId('dose-result-card')).toHaveLength(group.length);
   });
 
+  test('a grouped selection with differing sources renders one reference-info per member', () => {
+    // nac group: actein_granule cites 高醫速算表; acc_effervescent cites 高醫藥品庫 + Lexicomp.
+    // A merged/deduplicated reference block would lose which source backs which form's dosing,
+    // so ReferenceInfo must render once per drug, each with its own translated source.
+    const group = realDataset.drugs.filter((d) => d.group_id === 'nac');
+    const actein = group.find((d) => d.id === 'actein_granule')!;
+    const acc = group.find((d) => d.id === 'acc_effervescent')!;
+    expect(actein.source).not.toBe(acc.source);
+    expect(group.length).toBe(2);
+
+    renderWithProviders(<SelectedDrugPanel />, {
+      lang: 'en',
+      calculator: {
+        weight: 20,
+        weightInput: '20',
+        age: 8,
+        ageInput: '8',
+        selectedDrugId: 'actein_granule',
+      },
+    });
+
+    const referenceBlocks = screen.getAllByTestId('reference-info');
+    expect(referenceBlocks).toHaveLength(2);
+
+    const acteinCard = document.querySelector('[data-drug-id="actein_granule"]') as HTMLElement;
+    const accCard = document.querySelector('[data-drug-id="acc_effervescent"]') as HTMLElement;
+    expect(acteinCard).toBeTruthy();
+    expect(accCard).toBeTruthy();
+
+    // Each card's own reference block is the sibling that follows it, not a shared one.
+    const acteinReference = acteinCard.parentElement!.querySelector(
+      '[data-testid="reference-info"]',
+    );
+    const accReference = accCard.parentElement!.querySelector('[data-testid="reference-info"]');
+    expect(acteinReference).toHaveTextContent(actein.source);
+    expect(accReference).toHaveTextContent(acc.source);
+  });
+
   test('clinical info accordion toggles aria-expanded on click', async () => {
     const user = userEvent.setup();
     renderWithProviders(<SelectedDrugPanel />, {

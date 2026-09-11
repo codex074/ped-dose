@@ -20,8 +20,11 @@ function prefersReducedMotion(): boolean {
 
 /**
  * The only place full clinical content renders: the selected drug plus every other member of
- * its `group_id` (dataset order), each with its dose card, contraindication alert, notes,
- * warnings and clinical-info accordion — then one shared reference block for the whole group.
+ * its `group_id` (dataset order), each with its own dose card, contraindication alert, notes,
+ * warnings, clinical-info accordion, and reference block. `ReferenceInfo` is rendered per member
+ * (not once for the whole group): group members frequently cite different sources (e.g. the
+ * `nac` group's `actein_granule` cites 高醫速算表 while `acc_effervescent` cites 高醫藥品庫 +
+ * Lexicomp), so a merged/deduplicated list would lose which source backs which form's dosing.
  * `App.tsx` places this in a `lg:sticky` aside; on mobile it smooth-scrolls into view whenever
  * the selection changes.
  */
@@ -68,9 +71,6 @@ export function SelectedDrugPanel() {
 
   const headingId = 'selected-drug-panel-heading';
   const localizedSelected = localizeDrug(selected);
-  const sources = Array.from(
-    new Set(group.map((d) => localizeDrug(d).source).filter((s): s is string => !!s)),
-  );
 
   return (
     <section ref={sectionRef} aria-labelledby={headingId} className="flex flex-col gap-4">
@@ -109,10 +109,10 @@ export function SelectedDrugPanel() {
               clinical={localized.clinical}
               monitoring={localized.monitoring}
             />
+            <ReferenceInfo sources={localized.source ? [localized.source] : []} />
           </div>
         );
       })}
-      <ReferenceInfo sources={sources} />
     </section>
   );
 }
