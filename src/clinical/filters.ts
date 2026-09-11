@@ -166,6 +166,9 @@ export function groupForDisplay(
   }
 
   const order = new Map<string, number>();
+  // Upstream uses `c.order || i` (index.html:1447), not `??`. This differs only when `order` is
+  // falsy-but-defined (e.g. 0); no category in the dataset has `order: 0`, so `??` is equivalent
+  // here. Kept as `??` because it is the more correct operator in general.
   categories.forEach((c, i) => order.set(c.id, c.order ?? i));
   const catIds = [...byCat.keys()].sort((a, b) => (order.get(a) ?? 999) - (order.get(b) ?? 999));
 

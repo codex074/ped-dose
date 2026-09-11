@@ -3,10 +3,12 @@ import type { Lang } from './types';
 
 const NUMBER_RE = /\d+(?:\.\d+)?/g;
 const OPERATOR_RE = /[<>≤≥÷]/g;
-// Note: `\b%\b` only matches when `%` is flanked by word characters on both sides (e.g.
-// "50%off"), which real dosing text rarely does ("50%", "50 %") — a known limitation of the
-// upstream-specified pattern, kept verbatim rather than "fixed".
-const UNIT_RE = /\b(mg|mcg|g|mL|L|kg|J|min|hr|h|sec|%|PE)\b/gi;
+// `%` has no word characters on either side, so `\b%\b` never matches (`\b` requires a
+// word/non-word transition on each side, and `%` is non-word on both sides in real dosing text
+// like "50%" or "50 %"). Match the word-bounded units and `%` separately, then merge their counts
+// into one multiset so `%` is preserved just like the other units.
+const UNIT_WORD_RE = /\b(mg|mcg|g|mL|L|kg|J|min|hr|h|sec|PE)\b/gi;
+const PERCENT_RE = /%/g;
 // Deliberately case-sensitive: with an `i` flag, English words like "in"/"ac"/"pc"/"hs" would
 // match and produce false preservation failures against Thai text that drops the abbreviation.
 const ROUTE_RE = /\b(PO|IV|IO|IM|PR|IN|SC|SL|Q\d+(?:-\d+)?H|QD|BID|TID|QID|PRN|STAT|HS|AC|PC)\b/g;
@@ -60,8 +62,11 @@ export function checkNumericPreservation(
     ),
     ...diffMultisets(
       'unit',
-      toMultiset(extract(UNIT_RE, source, true)),
-      toMultiset(extract(UNIT_RE, translated, true)),
+      toMultiset([...extract(UNIT_WORD_RE, source, true), ...extract(PERCENT_RE, source, true)]),
+      toMultiset([
+        ...extract(UNIT_WORD_RE, translated, true),
+        ...extract(PERCENT_RE, translated, true),
+      ]),
     ),
     ...diffMultisets(
       'route/frequency',

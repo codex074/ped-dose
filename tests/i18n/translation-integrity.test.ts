@@ -5,27 +5,35 @@ import { checkNumericPreservation, checkSeverity, SEVERITY_MAP } from '@/i18n/nu
 import { mergeTranslationFiles } from '@/i18n/mergeTranslationFiles';
 import { localizeDrug } from '@/i18n/useDrugText';
 import { localizePalsWith, localizeSeWith } from '@/i18n/useAlgorithmText';
-import type { Drug, PalsAlgorithm, SeAlgorithm } from '@/clinical/types';
+import { reportProblems } from '@/i18n/translationReport';
+import type { Drug, DrugDataset, PalsAlgorithm, SeAlgorithm } from '@/clinical/types';
 import type { DrugTranslation } from '@/i18n/drugs/types';
 import dataset from '../../public/data/peds_drugs.json';
 
-test('every translated drug id exists canonically and arrays align', () => {
-  const ids = new Set(dataset.drugs.map((d) => d.id));
-  for (const file of [th, en])
-    for (const [id, tr] of Object.entries(file)) {
-      expect(ids.has(id), id).toBe(true);
-      const d = dataset.drugs.find((x) => x.id === id)!;
-      if (tr.warnings) expect(tr.warnings.length).toBe(d.warnings?.length ?? 0);
-    }
+// Phase-agnostic: `reportProblems` walks the SAME leaf list the skeleton generator and CLI use
+// (src/i18n/translationLeaves.ts), so this passes whether the translation range directories are
+// empty (merged maps `{}`, today) or filled in with real files (Phase 6) — it never hard-codes a
+// specific coverage state, and becomes the real integrity gate once translations land.
+test('the app-loaded translation maps produce no report problems', () => {
+  const problems = reportProblems(
+    dataset as unknown as DrugDataset,
+    th,
+    en,
+    { pals: palsTh, se: seTh },
+    { pals: palsEn, se: seEn },
+  );
+  expect(problems).toEqual([]);
 });
 
-test('with no translation files present, merged maps are {}', () => {
-  expect(th).toEqual({});
-  expect(en).toEqual({});
-  expect(palsTh).toEqual({});
-  expect(palsEn).toEqual({});
-  expect(seTh).toBeUndefined();
-  expect(seEn).toBeUndefined();
+test('every translated drug/PALS id exists canonically', () => {
+  const drugIds = new Set(dataset.drugs.map((d) => d.id));
+  for (const file of [th, en]) {
+    for (const id of Object.keys(file)) expect(drugIds.has(id), id).toBe(true);
+  }
+  const palsIds = new Set(dataset.pals_algorithms.map((a) => a.id));
+  for (const file of [palsTh, palsEn]) {
+    for (const id of Object.keys(file)) expect(palsIds.has(id), id).toBe(true);
+  }
 });
 
 describe('mergeTranslationFiles', () => {
@@ -69,6 +77,10 @@ describe('checkNumericPreservation', () => {
   });
   test('unit comparison is case-insensitive', () => {
     expect(checkNumericPreservation('5 mg', '5 MG').ok).toBe(true);
+  });
+  test('% is preserved as a unit (no \\b required)', () => {
+    expect(checkNumericPreservation('50%', '50').ok).toBe(false);
+    expect(checkNumericPreservation('50%', '50 %').ok).toBe(true);
   });
 });
 
