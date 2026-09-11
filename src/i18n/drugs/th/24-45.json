@@ -197,7 +197,7 @@
     "warnings": ["EPS"],
     "contraindications": [
       {
-        "severity": "ระมัดระวัง",
+        "severity": "ควรใช้ด้วยความระมัดระวัง",
         "reason": "อายุ < 1 ปี เสี่ยงเกิด EPS สูง"
       }
     ],
@@ -243,7 +243,7 @@
     "warnings": ["EPS — มักใช้ร่วมกับ diphenhydramine (Vena)"],
     "contraindications": [
       {
-        "severity": "ระมัดระวัง",
+        "severity": "ควรใช้ด้วยความระมัดระวัง",
         "reason": "อายุ < 1 ปี เสี่ยงเกิด EPS สูง"
       }
     ],
@@ -335,7 +335,7 @@
       "use": "ช่วยรักษาภาวะกระเพาะลำไส้อักเสบเฉียบพลัน, ป้องกันท้องเสียจากยาปฏิชีวนะ",
       "contraindications": "ภูมิคุ้มกันต่ำ / มีสายสวนหลอดเลือดดำกลาง (เสี่ยง sepsis พบได้น้อย)",
       "adverseEffects": "ท้องอืด (ชั่วคราว)",
-      "warnings": "ผู้ป่วยภูมิคุ้มกันบกพร่องพบ bacteremia ได้น้อย; ใช้ด้วยความระมัดระวังในทารกคลอดก่อนกำหนด",
+      "warnings": "ผู้ป่วยภูมิคุ้มกันบกพร่องพบ bacteremia ได้น้อย; ควรใช้ด้วยความระมัดระวังในทารกคลอดก่อนกำหนด",
       "pregnancy": "—",
       "breastfeeding": "เข้ากันได้",
       "controlledDrug": "—"
@@ -391,7 +391,8 @@
       "pregnancy": "—",
       "breastfeeding": "เข้ากันได้",
       "controlledDrug": "—"
-    }
+    },
+    "_review": "brand: source '甘油球久仁浣腸液' contains '久仁', a possible manufacturer/brand component with no confirmed Latin form; translated brand substitutes a generic descriptive name (ยาสวนทวารกลีเซอรีน) instead of guessing a proper-noun translation."
   },
   "smecta": {
     "_meta": {
@@ -461,7 +462,7 @@
       "use": "สารน้ำ maintenance ในเด็ก (มีกลูโคสมากกว่า)",
       "contraindications": "น้ำตาลในเลือดสูง, โซเดียมสูง/ต่ำรุนแรง",
       "adverseEffects": "น้ำตาลในเลือดสูง, หลอดเลือดดำอักเสบ (จากน้ำตาลสูง)",
-      "warnings": "มีน้ำตาลสูง บริเวณที่ให้ IV เจ็บง่าย; ระมัดระวังในผู้ป่วยเบาหวานหรือภาวะ stress hyperglycemia",
+      "warnings": "มีน้ำตาลสูง บริเวณที่ให้ IV เจ็บง่าย; ควรใช้ด้วยความระมัดระวังในผู้ป่วยเบาหวานหรือภาวะ stress hyperglycemia",
       "pregnancy": "—",
       "breastfeeding": "—",
       "controlledDrug": "—"
@@ -480,7 +481,7 @@
     "warnings": ["ภาวะกดการหายใจ", "ยาเสพติดให้โทษ"],
     "contraindications": [
       {
-        "severity": "ระมัดระวัง",
+        "severity": "ควรใช้ด้วยความระมัดระวัง",
         "reason": "ทารกแรกเกิดเสี่ยงกดการหายใจสูง ให้ลดขนาดลงครึ่งหนึ่ง"
       }
     ],

@@ -393,7 +393,8 @@
       "pregnancy": "—",
       "breastfeeding": "compatible",
       "controlledDrug": "—"
-    }
+    },
+    "_review": "brand: source '甘油球久仁浣腸液' contains '久仁', a possible manufacturer/brand component with no confirmed Latin form; translated brand substitutes a generic descriptive name (Glycerin enema) instead of guessing a proper-noun translation."
   },
   "smecta": {
     "_meta": {
