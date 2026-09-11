@@ -217,7 +217,8 @@
     "contraindications": [
       {
         "severity": "Not recommended",
-        "reason": "Avoid < 1 year (compound glycyrrhiza component)"
+        "reason": "Avoid < 1 year (compound glycyrrhiza component)",
+        "_review": "Source is internally inconsistent: contraindications[0].severity is 不建議 (not recommended / moderate) but warnings[0] uses 禁用 (contraindicated / severe) wording for <1 year. Both are translated faithfully as-is without reconciling them — clinical reviewer to confirm the correct severity."
       }
     ],
     "clinical": {
