@@ -46,7 +46,7 @@ export function DrugSearch() {
           type="button"
           aria-label={t('search.clear')}
           onClick={handleClear}
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-fast hover:bg-sky-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-deep"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink-muted transition-colors duration-fast hover:bg-sky-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-deep"
         >
           <span aria-hidden="true">✕</span>
         </button>
