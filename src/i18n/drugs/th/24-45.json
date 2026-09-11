@@ -1,0 +1,550 @@
+{
+  "_meta": {
+    "status": "draft",
+    "range": "24-45",
+    "generatedFrom": "2.5"
+  },
+  "epinephrine_inh_croup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bosmin / Adrenalin 1 mg/mL/Amp",
+    "notes": "Croup: 0.5 mL/kg ของยาความเข้มข้น 1:1000 (1 mg/mL) ≤4 ปี ขนาดสูงสุด 2.5 mL, >4 ปี ขนาดสูงสุด 5 mL สังเกตอาการ 2-4 ชม. เพื่อดู rebound",
+    "frequency": "ST (ครั้งเดียว)",
+    "source": "ตารางอ้างอิงด่วนของ KMUH + Lexicomp",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Croup (ทางเดินหายใจอุดกั้นระดับปานกลางถึงรุนแรง)",
+      "contraindications": "— (ไม่มีข้อห้ามใช้เด็ดขาดในสถานการณ์ฉุกเฉิน)",
+      "adverseEffects": "หัวใจเต้นเร็ว, สั่น, ความดันโลหิตสูง (ชั่วคราว)",
+      "warnings": "หลังให้ยาสังเกตอาการ 2-4 hr ดูว่ามี rebound หรือไม่; ให้ steroid ร่วมช่วยลดโอกาส admit",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "terbutaline_neb": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bricanyl 2.5 mg/mL/Amp",
+    "frequency": "ST",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "package": "2 mL/Amp",
+    "bands": [
+      {
+        "dose": "0.5 amp/dose"
+      },
+      {
+        "dose": "1 amp/dose"
+      }
+    ],
+    "clinical": {
+      "use": "หอบหืด, ขยายหลอดลมใน bronchiolitis",
+      "contraindications": "หัวใจเต้นผิดจังหวะชนิดเร็วที่รุนแรง",
+      "adverseEffects": "หัวใจเต้นเร็ว, สั่น, โพแทสเซียมต่ำ (ขนาดสูง)",
+      "warnings": "ใช้ซ้ำต้องระวังโพแทสเซียม (K+); ใช้ร่วมกับ ipratropium ในหอบหืดกำเริบเฉียบพลัน",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "ipratropium_neb": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Atrovent 0.25 mg/mL",
+    "frequency": "ST",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "package": "2 mL/Amp",
+    "bands": [
+      {
+        "dose": "0.5 amp/dose"
+      },
+      {
+        "dose": "1 amp/dose"
+      }
+    ],
+    "clinical": {
+      "use": "หอบหืดกำเริบเฉียบพลัน (ใช้ร่วมกับ β-agonist)",
+      "contraindications": "แพ้ atropine, ต้อหิน",
+      "adverseEffects": "ปากแห้ง, ไอ, พบได้น้อย: ต้อหินมุมปิดเฉียบพลัน (จากการสัมผัสดวงตา)",
+      "warnings": "ใช้ร่วมกับ β-agonist ภายใน 24 hr แรกของการกำเริบ; ห้ามใช้เดี่ยวๆ ในอาการกำเริบเฉียบพลัน",
+      "pregnancy": "AU TGA: B1",
+      "breastfeeding": "ข้อมูลไม่เพียงพอ",
+      "controlledDrug": "—"
+    }
+  },
+  "exdila_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Exdila / Meptin liquid 5 mcg/mL",
+    "frequency": "BID PC",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "package": "60 mL/bot",
+    "clinical": {
+      "use": "หอบหืด maintenance / หลอดลมตีบเล็กน้อย",
+      "contraindications": "หัวใจเต้นผิดจังหวะชนิดเร็ว",
+      "adverseEffects": "ใจสั่น, สั่น, ปากแห้ง",
+      "warnings": "แนะนำในเด็กอายุ ≥6 ปี; ไม่เหมาะกับอาการกำเริบเฉียบพลัน (ออกฤทธิ์ช้า)",
+      "pregnancy": "—",
+      "breastfeeding": "ข้อมูลไม่เพียงพอ",
+      "controlledDrug": "—"
+    }
+  },
+  "meptin_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Meptin 25 mcg tab",
+    "notes": "แบ่งขนาดตามน้ำหนักตัว; อายุ <6 ปี แนะนำใช้ Meptin liquid",
+    "frequency": "BID PC",
+    "source": "Lexicomp + คลังข้อมูลยาของ KMUH",
+    "unit": "เม็ด",
+    "bands": [
+      {
+        "dose": "0.5 # BID"
+      },
+      {
+        "dose": "1 # BID"
+      },
+      {
+        "dose": "1-2 # BID"
+      }
+    ],
+    "clinical": {
+      "use": "หอบหืด maintenance",
+      "contraindications": "หัวใจเต้นผิดจังหวะชนิดเร็วที่รุนแรง",
+      "adverseEffects": "ใจสั่น, สั่น",
+      "warnings": "เป็นรูปแบบออกฤทธิ์ยาว; หอบหืดกำเริบเฉียบพลันให้ใช้การพ่นยา (nebulization)",
+      "pregnancy": "—",
+      "breastfeeding": "ข้อมูลไม่เพียงพอ",
+      "controlledDrug": "—"
+    }
+  },
+  "prednisolone_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Prednisolone 5 mg tab",
+    "source": "ตารางอ้างอิงด่วนของ KMUH + Lexicomp",
+    "unit": "เม็ด",
+    "indications": [
+      {
+        "label": "Croup (ให้ครั้งเดียว)",
+        "frequency": "ST × 1 dose"
+      },
+      {
+        "label": "Asthma loading",
+        "frequency": "Loading × 1, คงระดับ (maintain) 2 mg/kg/day (loading ที่ รพ., ให้ยากลับบ้าน 3 วัน)"
+      }
+    ],
+    "clinical": {
+      "use": "Croup, หอบหืด, ผื่นแพ้ผิวหนัง, โรคภูมิต้านทานตนเอง",
+      "contraindications": "การติดเชื้อระบบทั่วร่างกายที่กำลังดำเนินอยู่, วัคซีนเชื้อเป็นภายใน 24 hr",
+      "adverseEffects": "ระยะสั้น: น้ำตาลในเลือดสูง, อารมณ์แปรปรวน; ระยะยาว: การกดการทำงานต่อมหมวกไต, ลักษณะคล้าย Cushing, กระดูกพรุน",
+      "warnings": "Croup/หอบหืด ใช้ระยะสั้นมักไม่เกิน 3 วัน; ไม่ต้องค่อยๆ ลดขนาด (taper) หากใช้ <14 วัน",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "เข้ากันได้",
+      "controlledDrug": "—"
+    }
+  },
+  "methylpred_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Solu-Medrol 40 mg/Vial",
+    "notes": "ขนาดยาเทียบเท่า: methylpred ≈ 4× dexamethasone",
+    "source": "ตารางอ้างอิงด่วนของ KMUH + Lexicomp",
+    "unit": "Vial",
+    "indications": [
+      {
+        "label": "Croup (ให้ครั้งเดียว, เทียบเท่า dexamethasone 0.6 mg/kg)",
+        "frequency": "ST × 1 dose"
+      },
+      {
+        "label": "Asthma loading",
+        "frequency": "ST, คงระดับ (maintain) ในขนาดเดิม แบ่งให้ทุก q6h"
+      }
+    ],
+    "clinical": {
+      "use": "Croup, หอบหืดกำเริบเฉียบพลัน, anaphylaxis",
+      "contraindications": "วัคซีนเชื้อเป็นภายใน 24 hr, การติดเชื้อราทั่วร่างกาย",
+      "adverseEffects": "ระยะสั้น: น้ำตาลในเลือดสูง, ความดันโลหิตสูง; ระยะยาวเหมือนผลข้างเคียงของ corticosteroid ทั่วร่างกาย",
+      "warnings": "ตัวเลือกแรกในอาการกำเริบเฉียบพลันทาง IV/IM; มักให้เพียงครั้งเดียวหรือ ≤72 hr",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "เข้ากันได้",
+      "controlledDrug": "—"
+    }
+  },
+  "aswell_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Aswell syrup",
+    "notes": "ระวังผลข้างเคียง EPS อาจให้ diphenhydramine ร่วมเพื่อป้องกันได้",
+    "frequency": "TID PC PRN",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "warnings": ["EPS"],
+    "contraindications": [
+      {
+        "severity": "ระมัดระวัง",
+        "reason": "อายุ < 1 ปี เสี่ยงเกิด EPS สูง"
+      }
+    ],
+    "clinical": {
+      "use": "คลื่นไส้ / อาเจียน / กรดไหลย้อน (GERD)",
+      "contraindications": "ทางเดินอาหารอุดตัน / ทะลุ, pheochromocytoma, ประวัติ tardive dyskinesia",
+      "adverseEffects": "ง่วงซึม, กระสับกระส่าย, EPS (เสี่ยงสูงในเด็กเล็ก)",
+      "warnings": "อายุ <1 ปี เสี่ยง EPS สูง; ให้ diphenhydramine ร่วมเพื่อป้องกัน EPS; ใช้ได้สูงสุด 5 วัน",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ได้ (ปริมาณน้อย)",
+      "controlledDrug": "—"
+    }
+  },
+  "promeran_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Promeran 3.84 mg tab",
+    "frequency": "TID PC PRN",
+    "source": "Lexicomp + คลังข้อมูลยาของ KMUH",
+    "unit": "เม็ด",
+    "warnings": ["ผลข้างเคียง EPS — เด็กมีความเสี่ยงสูง อาจให้ diphenhydramine ร่วมเพื่อป้องกัน"],
+    "clinical": {
+      "use": "คลื่นไส้ / อาเจียน",
+      "contraindications": "ทางเดินอาหารอุดตัน / ทะลุ, ประวัติ tardive dyskinesia",
+      "adverseEffects": "ง่วงซึม, EPS, พบได้น้อย: NMS",
+      "warnings": "ใช้ได้สูงสุด 5 วัน; หากเกิด EPS เฉียบพลันรักษาด้วย diphenhydramine",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ได้",
+      "controlledDrug": "—"
+    }
+  },
+  "primperan_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Primperan 5 mg/mL/Amp",
+    "frequency": "Q6-8H PRN",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "package": "2 mL/Amp",
+    "warnings": ["EPS — มักใช้ร่วมกับ diphenhydramine (Vena)"],
+    "contraindications": [
+      {
+        "severity": "ระมัดระวัง",
+        "reason": "อายุ < 1 ปี เสี่ยงเกิด EPS สูง"
+      }
+    ],
+    "clinical": {
+      "use": "คลื่นไส้ / อาเจียน (ออกฤทธิ์เร็วในภาวะฉุกเฉิน)",
+      "contraindications": "ทางเดินอาหารอุดตัน / ทะลุ, pheochromocytoma",
+      "adverseEffects": "EPS (โดยเฉพาะเด็กเล็ก), ง่วงซึม, พบได้น้อย: NMS",
+      "warnings": "ฉีด IV ช้าๆ (<2 min); ให้ diphenhydramine ร่วมเพื่อป้องกัน EPS",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ได้",
+      "controlledDrug": "—"
+    }
+  },
+  "novamin_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Novamin 5 mg/Amp",
+    "notes": "เกิด EPS ได้น้อยกว่า",
+    "frequency": "Q6-8H PRN",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "unit": "Amp",
+    "contraindications": [
+      {
+        "severity": "ห้ามใช้",
+        "reason": "ห้ามใช้ในอายุ < 2 ปี (เสี่ยงกดการหายใจ + EPS)"
+      }
+    ],
+    "clinical": {
+      "use": "คลื่นไส้ / อาเจียน (IM ฤทธิ์แรง)",
+      "contraindications": "อายุ <2 ปี, ภาวะกดสมองส่วนกลางรุนแรง, ทางเดินอาหารอุดตัน",
+      "adverseEffects": "EPS, อาการซึม, ความดันโลหิตต่ำจากการเปลี่ยนท่า",
+      "warnings": "ห้ามใช้ในอายุ <2 ปี; เสี่ยง EPS ต่ำกว่า metoclopramide",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  },
+  "kascoal_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Kascoal 40 mg tab",
+    "frequency": "QID PC",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "unit": "เม็ด",
+    "bands": [
+      {
+        "dose": "0.5 # QID"
+      },
+      {
+        "dose": "1 # QID"
+      },
+      {
+        "dose": "1-3 # QID"
+      }
+    ],
+    "clinical": {
+      "use": "ท้องอืด, อาหารไม่ย่อย",
+      "contraindications": "—",
+      "adverseEffects": "พบได้น้อย: ผื่นแพ้",
+      "warnings": "Simethicone ไม่ถูกดูดซึม ปลอดภัยสูงมาก",
+      "pregnancy": "—",
+      "breastfeeding": "เข้ากันได้",
+      "controlledDrug": "—"
+    }
+  },
+  "lgg_pack": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "LGG 10 mg/g/sac",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "bands": [
+      {
+        "dose": "0.3-0.5 ซอง TID"
+      },
+      {
+        "dose": "0.5-1 ซอง TID"
+      },
+      {
+        "dose": "ขนาดผู้ใหญ่"
+      }
+    ],
+    "clinical": {
+      "use": "ช่วยรักษาภาวะกระเพาะลำไส้อักเสบเฉียบพลัน, ป้องกันท้องเสียจากยาปฏิชีวนะ",
+      "contraindications": "ภูมิคุ้มกันต่ำ / มีสายสวนหลอดเลือดดำกลาง (เสี่ยง sepsis พบได้น้อย)",
+      "adverseEffects": "ท้องอืด (ชั่วคราว)",
+      "warnings": "ผู้ป่วยภูมิคุ้มกันบกพร่องพบ bacteremia ได้น้อย; ใช้ด้วยความระมัดระวังในทารกคลอดก่อนกำหนด",
+      "pregnancy": "—",
+      "breastfeeding": "เข้ากันได้",
+      "controlledDrug": "—"
+    }
+  },
+  "mgo_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "MgO 250 mg tab",
+    "frequency": "TID-QID PC",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "unit": "เม็ด",
+    "max_per_day_note": "ขนาดสูงสุด 2.1 g/day",
+    "bands": [
+      {
+        "dose": "BW÷20 # TID-QID"
+      },
+      {
+        "dose": "0.5-1 # TID-QID"
+      },
+      {
+        "dose": "1-2 # TID-QID"
+      },
+      {
+        "dose": "2 # TID-QID"
+      }
+    ],
+    "clinical": {
+      "use": "ท้องผูก, อาหารไม่ย่อย (ลดกรด)",
+      "contraindications": "ไตวายรุนแรง, ลำไส้อุดตัน",
+      "adverseEffects": "ท้องเสีย, พบได้น้อย: แมกนีเซียมในเลือดสูง (ผู้ป่วยไตวาย)",
+      "warnings": "ห้ามใช้ในผู้ป่วยไตวาย; ขนาดสูงสุด 2.1 g/day",
+      "pregnancy": "—",
+      "breastfeeding": "เข้ากันได้",
+      "controlledDrug": "—"
+    }
+  },
+  "glycerin_supp": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "ยาสวนทวารกลีเซอรีน",
+    "frequency": "ST PRN",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "clinical": {
+      "use": "ท้องผูก (ทางทวารหนัก PR)",
+      "contraindications": "แผลฉีกขาดที่ทวารหนัก / ริดสีดวงทวารรุนแรง",
+      "adverseEffects": "ระคายเคืองทวารหนัก",
+      "warnings": "ใช้ระยะสั้น; ห้ามใช้ร่วมกับยาระบายกระตุ้นชนิดอื่น",
+      "pregnancy": "—",
+      "breastfeeding": "เข้ากันได้",
+      "controlledDrug": "—"
+    }
+  },
+  "smecta": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Smecta 3 g/sac",
+    "notes": "อายุต่ำกว่า 1 ปี 1 ซอง/วัน, 1-2 ปี 2 ซอง/วัน, >2 ปี 3 ซอง/วัน หากรับประทานร่วมกับยาอื่นต้องเว้นระยะ 1 ชั่วโมง",
+    "frequency": "TID PC",
+    "source": "高醫速算表 + 藥丹",
+    "clinical": {
+      "use": "ท้องเสียเฉียบพลัน (ชนิดดูดซับ)",
+      "contraindications": "ลำไส้อุดตัน",
+      "adverseEffects": "ท้องผูก",
+      "warnings": "รับประทานห่างจากยาชนิดอื่นทางปาก 1-2 hr (ดูดซับยาอื่นได้)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "เข้ากันได้",
+      "controlledDrug": "—"
+    },
+    "_review": "source: Source resource name '藥丹' (TH/EN) is ambiguous/unverifiable (possibly a typo for 藥典 or a proper-noun reference tool); kept verbatim rather than guessing."
+  },
+  "taita1": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.1 (สารน้ำไทตาหมายเลข 1, D5W)",
+    "notes": "D5W isotonic; ใช้เป็นสารน้ำพื้นฐานในทารกแรกเกิด/ทารกบ่อยครั้ง",
+    "source": "คลังข้อมูลยาของ KMUH",
+    "package": "500 mL/Bag",
+    "clinical": {
+      "use": "สารน้ำพื้นฐาน (D5W) สำหรับทารกแรกเกิด / ทารก",
+      "contraindications": "น้ำตาลในเลือดสูง, โซเดียมต่ำรุนแรง",
+      "adverseEffects": "หากให้สารน้ำเกิน: บวมน้ำ, โซเดียมต่ำจากการเจือจาง",
+      "warnings": "คำนวณ maintenance ตามกฎ 4-2-1; ติดตามระดับน้ำตาลในทารก",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "taita2": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.2",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "clinical": {
+      "use": "สารน้ำ maintenance ในเด็ก (D5 1/3 saline)",
+      "contraindications": "โซเดียมสูง/ต่ำรุนแรง",
+      "adverseEffects": "หากให้สารน้ำเกินเกิดบวมน้ำ; ใช้สารน้ำ hypotonic นานต้องระวังภาวะโซเดียมต่ำ",
+      "warnings": "แนวทางล่าสุดแนะนำสารน้ำ isotonic (เช่น D5NS); หากใช้ hypotonic ต้องติดตามโซเดียม",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "taita5": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Taita No.5 (สารน้ำไทตาหมายเลข 5)",
+    "notes": "มีปริมาณน้ำตาลสูงกว่า ทำให้เจ็บง่าย",
+    "source": "ตารางอ้างอิงด่วนของ KMUH",
+    "clinical": {
+      "use": "สารน้ำ maintenance ในเด็ก (มีกลูโคสมากกว่า)",
+      "contraindications": "น้ำตาลในเลือดสูง, โซเดียมสูง/ต่ำรุนแรง",
+      "adverseEffects": "น้ำตาลในเลือดสูง, หลอดเลือดดำอักเสบ (จากน้ำตาลสูง)",
+      "warnings": "มีน้ำตาลสูง บริเวณที่ให้ IV เจ็บง่าย; ระมัดระวังในผู้ป่วยเบาหวานหรือภาวะ stress hyperglycemia",
+      "pregnancy": "—",
+      "breastfeeding": "—",
+      "controlledDrug": "—"
+    }
+  },
+  "morphine_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Morphine 10 mg/mL/Amp",
+    "notes": "ยาเสพติดให้โทษ; ระวังภาวะกดการหายใจ; ทารกแรกเกิดลดขนาดลงครึ่งหนึ่ง",
+    "frequency": "Q4-8H PRN",
+    "source": "ตารางอ้างอิงด่วนของ KMUH + Lexicomp",
+    "package": "1 mL/Amp",
+    "warnings": ["ภาวะกดการหายใจ", "ยาเสพติดให้โทษ"],
+    "contraindications": [
+      {
+        "severity": "ระมัดระวัง",
+        "reason": "ทารกแรกเกิดเสี่ยงกดการหายใจสูง ให้ลดขนาดลงครึ่งหนึ่ง"
+      }
+    ],
+    "clinical": {
+      "use": "ปวดปานกลางถึงรุนแรง",
+      "contraindications": "ภาวะกดการหายใจที่กำลังดำเนินอยู่, ลำไส้อัมพาต (paralytic ileus), หอบหืดรุนแรงระยะเฉียบพลัน",
+      "adverseEffects": "กดการหายใจ, ง่วงซึม, คลื่นไส้อาเจียน (N/V), ท้องผูก, คัน, การหลั่ง histamine",
+      "warnings": "ทารกแรกเกิดลดขนาดลงครึ่งหนึ่ง; เตรียม naloxone ไว้กรณีกดการหายใจ; ฉีด IV ช้าๆ",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้ (ระวังทารกง่วงซึม)",
+      "controlledDrug": "ยาเสพติดให้โทษ ประเภท 1"
+    }
+  },
+  "fentanyl_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Fentanyl 50 mcg/mL",
+    "notes": "ยาเสพติดให้โทษ; ฉีดเร็วเกินไปเสี่ยงกล้ามเนื้อผนังทรวงอกแข็งเกร็ง (chest wall rigidity); มักใช้ 1 mcg/kg สำหรับ procedural sedation",
+    "frequency": "Q1-2H PRN",
+    "source": "Lexicomp + ตารางอ้างอิงด่วนของ KMUH",
+    "package": "2 mL/Amp = 100 mcg",
+    "warnings": ["ภาวะกดการหายใจ", "กล้ามเนื้อผนังทรวงอกแข็งเกร็ง", "ยาเสพติดให้โทษ"],
+    "clinical": {
+      "use": "ปวดเฉียบพลัน, การระงับปวด/ระงับความรู้สึกสำหรับหัตถการ (procedural sedation analgesia)",
+      "contraindications": "ภาวะกดการหายใจที่กำลังดำเนินอยู่, หอบหืดรุนแรง",
+      "adverseEffects": "กดการหายใจ, ง่วงซึม, กล้ามเนื้อผนังทรวงอกแข็งเกร็ง (ฉีดเร็ว), ความดันโลหิตต่ำ",
+      "warnings": "ฉีดเร็วเกินไปอาจเกิดกล้ามเนื้อผนังทรวงอกแข็งเกร็ง; เตรียม naloxone ไว้; ฉีด IV ช้าๆ นาน 1-2 min",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "ยาเสพติดให้โทษ ประเภท 1"
+    }
+  },
+  "succinylcholine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Relaxin 50 mg/mL",
+    "source": "Lexicomp + ตารางอ้างอิงด่วนของ KMUH",
+    "package": "10 mL/vial",
+    "warnings": [
+      "ภาวะโพแทสเซียมสูง (ห้ามใช้ในผู้ป่วยไฟไหม้ / บาดเจ็บ / โรคกล้ามเนื้อประสาท)",
+      "Malignant hyperthermia"
+    ],
+    "indications": [
+      {
+        "label": "RSI IV",
+        "frequency": "ST"
+      },
+      {
+        "label": "RSI IM",
+        "frequency": "ST"
+      }
+    ],
+    "clinical": {
+      "use": "RSI (คลายกล้ามเนื้ออย่างรวดเร็ว)",
+      "contraindications": "หลังไฟไหม้ 24 hr, การบาดเจ็บของ upper/lower motor neuron, โพแทสเซียมสูงรุนแรง, ประวัติครอบครัวเป็น malignant hyperthermia",
+      "adverseEffects": "โพแทสเซียมสูง, หัวใจเต้นช้า (โดยเฉพาะในเด็ก), ปวดกล้ามเนื้อ (myalgia), พบได้น้อย: malignant hyperthermia",
+      "warnings": "เด็ก IV 1-2 mg/kg / IM 3-4 mg/kg; เตรียม atropine ไว้ป้องกันหัวใจเต้นช้า, dantrolene สำหรับรักษา MH",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "ใช้ระยะสั้นได้",
+      "controlledDrug": "—"
+    }
+  }
+}
