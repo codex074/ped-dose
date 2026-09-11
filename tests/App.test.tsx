@@ -52,19 +52,19 @@ describe('Layout (via renderWithProviders, real dataset)', () => {
     // state rather than the old stub.
     expect(screen.getByTestId('selected-drug-panel-empty')).toBeInTheDocument();
     expect(screen.getByTestId('stub-app-footer')).toBeInTheDocument();
-    expect(screen.queryByTestId('stub-pals-view')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('pals-view')).not.toBeInTheDocument();
   });
 
-  test('shows the PALSView stub (and hides search/list) when view=pals', () => {
+  test('shows the PALSView (and hides search/list) when view=pals', () => {
     renderWithProviders(<Layout />, { calculator: { view: 'pals' } });
-    expect(screen.getByTestId('stub-pals-view')).toBeInTheDocument();
+    expect(screen.getByTestId('pals-view')).toBeInTheDocument();
     expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
     expect(screen.queryByTestId(/^drug-(group-)?card-/)).not.toBeInTheDocument();
   });
 
-  test('shows the SEView stub (and hides search/list) when view=se', () => {
+  test('shows the SEView (and hides search/list) when view=se', () => {
     renderWithProviders(<Layout />, { calculator: { view: 'se' } });
-    expect(screen.getByTestId('stub-se-view')).toBeInTheDocument();
+    expect(screen.getByTestId('se-view')).toBeInTheDocument();
     expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
     expect(screen.queryByTestId(/^drug-(group-)?card-/)).not.toBeInTheDocument();
   });
