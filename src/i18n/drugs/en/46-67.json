@@ -1,0 +1,559 @@
+{
+  "_meta": {
+    "status": "draft",
+    "range": "46-67",
+    "generatedFrom": "2.5"
+  },
+  "midazolam_dormicum": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Dormicum 5 mg/mL",
+    "source": "Lexicomp + KMUH quick-reference table + Yaodan",
+    "package": "3 mL/Amp = 15 mg/Amp",
+    "warnings": [
+      "Respiratory depression (especially with concurrent opioids)",
+      "Rare paradoxical agitation"
+    ],
+    "indications": [
+      {
+        "label": "IM (status epilepticus)",
+        "notes": "RAMPART trial: IM midaz ≥ IV lorazepam in efficacy",
+        "onset": "5-10 min",
+        "route": "IM"
+      },
+      {
+        "label": "Procedural sedation (IV)",
+        "frequency": "Slow IV push, may repeat after 2-3 min",
+        "onset": "1-3 min",
+        "duration": "30-60 min",
+        "route": "IV"
+      },
+      {
+        "label": "Intranasal (anxiolysis/seizure)",
+        "notes": "Use 5 mg/mL concentration, split between both nostrils; usable in the field for seizures",
+        "onset": "5-10 min",
+        "route": "IN"
+      }
+    ],
+    "clinical": {
+      "use": "Procedural sedation, anxiolysis, status epilepticus",
+      "contraindications": "Myasthenia gravis, acute angle-closure glaucoma, respiratory failure",
+      "adverseEffects": "Respiratory depression (especially with opioids), drowsiness, rare paradoxical agitation",
+      "warnings": "Have flumazenil ready; IM/IN is a good field option for neonatal seizures (RAMPART)",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "Schedule 4 controlled drug"
+    }
+  },
+  "lorazepam_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Anxicam (Lorazepam) 2 mg/mL",
+    "notes": "Quick note: 20 kg = one ampoule (2 mg); first-line for status epilepticus",
+    "frequency": "Slow IV push (over 2-5 min), may repeat after 5-10 min",
+    "source": "Lexicomp + Yaodan",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Status epilepticus first-line, anxiolysis",
+      "contraindications": "Myasthenia gravis, acute angle-closure glaucoma",
+      "adverseEffects": "Respiratory depression, drowsiness, rare paradoxical agitation",
+      "warnings": "Slow IV push over 2-5 min; have flumazenil ready; max 4 mg/dose",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "Schedule 4 controlled drug"
+    }
+  },
+  "diazepam_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Diazepam 5 mg/mL",
+    "notes": "Status epilepticus alternative agent (first choice is lorazepam)",
+    "frequency": "Slow IV push (over 2-3 min), may repeat after 5 min",
+    "source": "Lexicomp",
+    "package": "2 mL/Amp = 10 mg/Amp",
+    "clinical": {
+      "use": "Status epilepticus second-line, anxiolysis, muscle spasm",
+      "contraindications": "Myasthenia gravis, severe respiratory failure",
+      "adverseEffects": "Respiratory depression, drowsiness, phlebitis (IV)",
+      "warnings": "Slow IV push over 2-3 min; max 10 mg/dose; lorazepam remains first-line",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "Schedule 4 controlled drug"
+    }
+  },
+  "diazepam_pr": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Stesolid rectal 10 mg/2.5 mL/Tube",
+    "notes": "Commonly used for prehospital/home febrile seizures; convenient when no IV access. Clinically often dosed by number of tubes (one tube = 10 mg); mL conversion is for reference",
+    "frequency": "ST, may repeat once after 5-10 min",
+    "source": "Lexicomp + Yaodan",
+    "package": "10 mg / 2.5 mL/Tube",
+    "concentration_note": "5 mg/2.5 mL/tube or 10 mg/2.5 mL/tube (selected by age)",
+    "clinical": {
+      "use": "Prehospital/home febrile seizures, status epilepticus (no IV access)",
+      "contraindications": "Myasthenia gravis, anal fissure",
+      "adverseEffects": "Respiratory depression, drowsiness",
+      "warnings": "0.5 mg/kg PR; max 20 mg/dose; may give again after 5-10 min",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "Schedule 4 controlled drug"
+    }
+  },
+  "keppra_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra Oral Solution",
+    "notes": "For children or those unable to swallow tablets",
+    "frequency": "BID (oral maintenance dose)",
+    "source": "Lexicomp",
+    "package": "300 mL/Bot",
+    "urgency_label": "💊 Oral maintenance",
+    "clinical": {
+      "use": "Epilepsy maintenance (oral)",
+      "contraindications": "Levetiracetam hypersensitivity",
+      "adverseEffects": "Drowsiness, agitation, behavioral change (children)",
+      "warnings": "Initial 20 mg/kg/day → titrate to 40-60 mg/kg/day; BID",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "keppra_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra 500 mg tab",
+    "notes": "For acute status, use IV loading; after ROSC or for outpatient maintenance, switch to oral. Initial 20 mg/kg/day → titrate to 40-60 mg/kg/day based on seizure control",
+    "frequency": "BID (oral maintenance dose)",
+    "source": "Lexicomp",
+    "unit": "tab",
+    "urgency_label": "💊 Oral maintenance",
+    "clinical": {
+      "use": "Epilepsy maintenance (oral)",
+      "contraindications": "Levetiracetam hypersensitivity",
+      "adverseEffects": "Drowsiness, agitation",
+      "warnings": "Max 3000 mg/day; adjust dose in renal impairment",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "keppra_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Keppra 500 mg/5 mL/Vial",
+    "notes": "ESETT 2019: 60 mg/kg over 10 min, efficacy comparable to fosphenytoin and valproate; dilute 1 vial (500 mg) to 50-100 mL N/S",
+    "frequency": "IV loading over 5-15 min × 1 (status epilepticus)",
+    "source": "Lexicomp / ESETT trial 2019",
+    "package": "500 mg / 5 mL/Vial",
+    "unit": "Vial",
+    "urgency_label": "🚨 Acute loading",
+    "clinical": {
+      "use": "Status epilepticus second-line (loading)",
+      "contraindications": "Levetiracetam hypersensitivity",
+      "adverseEffects": "Drowsiness, agitation, rare psychiatric symptoms (aggression / depression)",
+      "warnings": "ESETT 2019: 60 mg/kg over 10 min; reduce dose in renal impairment",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_syrup": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine syrup 200 mg/mL",
+    "notes": "Initial 10-15 mg/kg/day → titrate based on seizure control; target serum level 50-100 µg/mL",
+    "frequency": "BID (maintenance dose; may titrate up to 60 mg/kg/day)",
+    "source": "Lexicomp",
+    "package": "40 mL/Bot",
+    "urgency_label": "💊 Oral maintenance",
+    "warnings": [
+      "Contraindicated in liver disease and mitochondrial disease",
+      "POMC encephalopathy"
+    ],
+    "clinical": {
+      "use": "Epilepsy maintenance (oral)",
+      "contraindications": "Liver disease, mitochondrial disease, urea cycle disorder",
+      "adverseEffects": "Hepatotoxicity, weight gain (↑), tremor, hair loss",
+      "warnings": "Monitor LFT, CBC; target serum level 50-100 µg/mL; hepatotoxicity risk higher when age < 2 years",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine 200 mg tab",
+    "notes": "≥ 30 kg suitable for tablets; < 30 kg use syrup",
+    "frequency": "BID (maintenance dose)",
+    "source": "Lexicomp",
+    "unit": "tab",
+    "urgency_label": "💊 Oral maintenance",
+    "warnings": ["Contraindicated in liver disease and mitochondrial disease"],
+    "clinical": {
+      "use": "Epilepsy maintenance (oral)",
+      "contraindications": "Liver disease, mitochondrial disease, urea cycle disorder",
+      "adverseEffects": "Hepatotoxicity, weight gain (↑), tremor",
+      "warnings": "≥30 kg suitable for tablets; hepatotoxicity risk higher when age < 2 years",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "depakine_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Depakine 400 mg/Vial (reconstituted to 100 mg/mL)",
+    "notes": "ESETT 2019: 40 mg/kg over 10 min; dilute 1 vial (400 mg) to 50 mL N/S; rate 1.5-3 mg/kg/min",
+    "frequency": "IV loading over 10 min (status epilepticus)",
+    "source": "Lexicomp / ESETT trial 2019",
+    "package": "400 mg/Vial (100 mg/mL after reconstitution)",
+    "unit": "vial",
+    "urgency_label": "🚨 Acute loading",
+    "warnings": [
+      "Contraindicated in liver disease and mitochondrial disease",
+      "POMC encephalopathy"
+    ],
+    "clinical": {
+      "use": "Status epilepticus second-line (loading)",
+      "contraindications": "Liver disease, mitochondrial disease, urea cycle disorder, pregnancy",
+      "adverseEffects": "Hepatotoxicity, pancreatitis, decreased platelets (↓), hyperammonemia",
+      "warnings": "ESETT 2019: 40 mg/kg over 10 min; rate 1.5-3 mg/kg/min",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "phenobarbital_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Phenobital 100 mg/mL/Amp",
+    "notes": "SE loading dose; IV rate ≤ 30 mg/min (children ≤ 1 mg/kg/min); respiratory depression more likely if given after BZD",
+    "frequency": "Single dose (SE loading)",
+    "source": "AES 2016 + institutional formulary",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Status Epilepticus first-line alternative (when no BZD available) / second-line (when other ASMs unavailable); first choice for neonatal seizure",
+      "contraindications": "Severe hepatic insufficiency, acute intermittent porphyria, barbiturate hypersensitivity",
+      "adverseEffects": "Respiratory depression (especially with concurrent BZD), hypotension, excessive sedation, behavioral change",
+      "warnings": "Give slow IV ≤ 30 mg/min; have intubation/vasopressor ready; neonatal dose 20 mg/kg",
+      "pregnancy": "AU TGA: D",
+      "breastfeeding": "May pass into breast milk, drowsiness — short-term use acceptable, evaluate for long-term use",
+      "controlledDrug": "Category 4 controlled drug"
+    }
+  },
+  "phenytoin_iv": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Aleviatin 250 mg/5mL/Amp",
+    "notes": "SE loading (substitute for fosphenytoin when unavailable in-house); IV rate ≤ 1 mg/kg/min (children max 50 mg/min); dilute with NS (D5W will precipitate); administer through a filter",
+    "frequency": "Single dose (SE loading)",
+    "source": "AES 2016 + institutional formulary",
+    "package": "5 mL/Amp",
+    "clinical": {
+      "use": "Status Epilepticus second-line; epilepsy long-term control",
+      "contraindications": "Sinus bradycardia, SA block, AV block, Adams-Stokes syndrome, hydantoin hypersensitivity",
+      "adverseEffects": "Arrhythmia, hypotension, purple glove syndrome (extravasation), Stevens-Johnson syndrome, gingival hyperplasia (long-term)",
+      "warnings": "Monitor ECG + BP; dilute with NS, do not use D5W (will precipitate); use in-line filter; extravasation → purple glove syndrome can cause tissue necrosis",
+      "pregnancy": "AU TGA: D (teratogenic — fetal hydantoin syndrome)",
+      "breastfeeding": "Small amounts pass into breast milk; breastfeeding is generally acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "ketamine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Ketalar 50 mg/mL",
+    "source": "Institutional formulary + Lexicomp + ACEP 2011",
+    "package": "10 mL/vial = 500 mg/Vial",
+    "monitoring": "SpO2, ETCO2, HR, BP; have O2, Ambu bag, suction, atropine, midazolam ready",
+    "warnings": [
+      "Side effects: BP↑, ICP↑, IOP↑, arrhythmias, apnea, laryngospasm, delirium, N/V, nystagmus",
+      "Barbiturates and ketamine must not share a syringe (will precipitate)",
+      "Traditional teaching of increased ICP has been challenged by recent literature (safe in most TBI patients)",
+      "Hypersalivation — pre-treatment with atropine 0.01 mg/kg is no longer routine (ACEP 2011)",
+      "Emergence reactions — give midazolam 0.05 mg/kg beforehand; higher risk in school-age children",
+      "Contraindications: <3 months (laryngospasm risk), active psychosis, uncontrolled HTN, thyrotoxicosis, global eyeball injury"
+    ],
+    "contraindications": [
+      {
+        "severity": "Contraindicated",
+        "reason": "High laryngospasm risk when age < 3 months"
+      }
+    ],
+    "indications": [
+      {
+        "label": "IM (induction / procedural sedation)",
+        "notes": "Anesthesia induction 4-6 mg/kg; procedural sedation 4-5 mg/kg",
+        "frequency": "ST × 1 (induction); for procedural sedation, may repeat 2-5 mg/kg after 5-10 min if needed",
+        "onset": "3-5 min",
+        "duration": "12-25 min (recovery 90-150 min)",
+        "route": "IM"
+      },
+      {
+        "label": "IV (induction / procedural sedation)",
+        "notes": "Induction 0.5-2 mg/kg; procedural sedation 1-2 mg/kg. Hemodynamically stable, suitable for hypotension/shock",
+        "frequency": "Slow push 30-60 sec; for procedural sedation, repeat 0.5-1 mg/kg q5-10 min if needed",
+        "onset": "30-60 sec",
+        "duration": "5-10 min",
+        "route": "IV"
+      },
+      {
+        "label": "IV maintenance (anesthesia)",
+        "notes": "General anesthesia maintenance (used in OR, less common in ED)",
+        "frequency": "Bolus followed by continuous infusion up to 1 mg/kg/hr",
+        "route": "IV"
+      },
+      {
+        "label": "IV sub-dissociative analgesia",
+        "notes": "Acute pain, opioid-sparing; may give as IV drip 0.1-0.3 mg/kg/hr",
+        "frequency": "Slow IV over 10 min; may repeat q15-30 min",
+        "onset": "1-2 min",
+        "duration": "5-15 min",
+        "route": "IV"
+      }
+    ],
+    "clinical": {
+      "use": "Procedural sedation, RSI induction, acute pain sub-dissociative dosing",
+      "contraindications": "<3 months, active psychosis, uncontrolled HTN, global eyeball injury, thyrotoxicosis",
+      "adverseEffects": "BP↑, ICP↑, IOP↑, laryngospasm (rare ~0.4%), emergence reaction, N/V, nystagmus, hypersalivation",
+      "warnings": "Barbiturates must not share a syringe (precipitate); have atropine + midazolam ready for emergence reactions; hemodynamically stable, suitable for hypotension/shock",
+      "pregnancy": "AU TGA: B3",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "Schedule 3 controlled drug"
+    }
+  },
+  "citosol": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Citosol",
+    "notes": "Sedation for imaging studies (CT/MRI); may repeat until asleep; total volume should not exceed the patient's weight in mL",
+    "source": "Yaodan",
+    "concentration_note": "0.5 amp + N/S to 20 mL; start at 1/3-1/4 of body weight in mL",
+    "warnings": ["Respiratory depression", "Hypotension"],
+    "clinical": {
+      "use": "Anesthesia induction, procedural sedation",
+      "contraindications": "Porphyria, severe asthma, status asthmaticus",
+      "adverseEffects": "Respiratory depression, hypotension, myocardial depression",
+      "warnings": "Slow IV titrate; have airway equipment ready; reduce dose in the elderly / heart failure",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "Schedule 4 controlled drug"
+    }
+  },
+  "chloral_hydrate": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Clodrin 10% solution",
+    "notes": "Procedural sedation (imaging, EEG, AS); onset 30-60 min, duration 1-2 hr. 10% solution = 100 mg/mL, so 0.5 mL/kg = 50 mg/kg",
+    "frequency": "ST, may repeat after 30 min if needed",
+    "source": "Lexicomp + TCVGH PDF reference",
+    "package": "30 mL/bot",
+    "warnings": [
+      "Respiratory depression",
+      "Arrhythmia (high dose)",
+      "Older guidelines capped at 50 mg/kg; newer Lexicomp accepts 25-100 mg/kg/dose"
+    ],
+    "clinical": {
+      "use": "Procedural sedation (imaging / EEG)",
+      "contraindications": "Severe hepatic/renal failure, severe arrhythmia",
+      "adverseEffects": "Respiratory depression (high dose), GI upset, rare arrhythmia",
+      "warnings": "Discontinued in Europe/US in recent years due to safety concerns; max 100 mg/kg or 2 g per procedure",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "vena_tab": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Vena 10 mg tab",
+    "notes": "Oral for allergy/sedation; max 5 mg/kg/day or 300 mg/day",
+    "frequency": "Q6H PRN",
+    "source": "Lexicomp + KMUH drug database",
+    "unit": "tab",
+    "warnings": ["Use with caution under 3 years of age"],
+    "clinical": {
+      "use": "Allergy, itch relief, mild sedation",
+      "contraindications": "<3 months, glaucoma, BPH",
+      "adverseEffects": "Drowsiness, dry mouth",
+      "warnings": "Use with caution <3 years; max 5 mg/kg/day or 300 mg/day",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "vena_inj": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Vena 30 mg/mL/Amp",
+    "notes": "First-line for allergic reaction; often combined with metoclopramide to prevent EPS",
+    "frequency": "Q6H PRN",
+    "source": "KMUH quick-reference table + Lexicomp",
+    "package": "1 mL/Amp",
+    "clinical": {
+      "use": "Acute allergic reaction, anaphylaxis adjunct, EPS reversal",
+      "contraindications": "<3 months, acute asthma exacerbation",
+      "adverseEffects": "Drowsiness, dry mouth, urinary retention, rare paradoxical agitation",
+      "warnings": "Epinephrine remains primary treatment for anaphylaxis; for EPS use 1-2 mg/kg IV",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "epinephrine_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Bosmin / Adrenalin (arrest dosing uses 1:10000 = 0.1 mg/mL)",
+    "notes": "Cardiac arrest / severe bradycardia; mL volume = 0.1 mL/kg of 0.1 mg/mL (1:10000). Follow push with a 5 mL N/S flush",
+    "frequency": "Q3-5 min during arrest",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "Stock solution 1 mg/mL/Amp",
+    "concentration_note": "Arrest dosing uses 0.1 mg/mL = 1:10000 (dilute 1 amp of 1 mg/mL stock × with 9 mL N/S to make 10 mL)",
+    "warnings": ["Do not push through the same IV line as NaHCO3 (will inactivate)"],
+    "clinical": {
+      "use": "Cardiac arrest, anaphylaxis, severe bradycardia, croup (IH)",
+      "contraindications": "— (no absolute contraindication in emergencies)",
+      "adverseEffects": "Increased heart rate (↑), HTN, tremor, pulmonary edema (overdose)",
+      "warnings": "Arrest dosing uses 1:10000 (0.1 mg/mL) IV/IO 0.01 mg/kg; do not share an IV line with NaHCO3 (inactivate)",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "amiodarone_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Cordarone 50 mg/mL",
+    "notes": "Refractory VF/pVT; give as rapid push during arrest; for non-arrest wide-QRS tachycardia, give IV over 20-60 min",
+    "frequency": "Bolus during arrest, may repeat up to 3 times (subsequent doses max 150 mg/dose)",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "150 mg / 3 mL/Amp",
+    "warnings": ["Do not give as rapid push outside of arrest (hypotension)"],
+    "clinical": {
+      "use": "Refractory VF/pVT, wide-QRS tachycardia",
+      "contraindications": "Severe sinus bradycardia, SA/AV block (without pacemaker), iodine hypersensitivity",
+      "adverseEffects": "Hypotension (rapid push), QT prolongation, pulmonary fibrosis (long-term), liver/thyroid abnormality",
+      "warnings": "May give as rapid push during arrest; outside arrest give IV over 20-60 min; max 300 mg first dose, 150 mg subsequent",
+      "pregnancy": "AU TGA: C",
+      "breastfeeding": "Avoid",
+      "controlledDrug": "—"
+    }
+  },
+  "lidocaine_arrest": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Xylocaine 2% (20 mg/mL)",
+    "notes": "Amiodarone alternative; one of the second-line options for refractory VF/pVT",
+    "frequency": "Bolus during arrest; maintenance 20-50 mcg/kg/min after ROSC",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "5 mL/Amp",
+    "clinical": {
+      "use": "Refractory VF/pVT alternative (when amiodarone unavailable)",
+      "contraindications": "Severe SA/AV block, Adams-Stokes syndrome",
+      "adverseEffects": "CNS effects (drowsiness, seizure at high dose), bradycardia, low BP",
+      "warnings": "Bolus 1 mg/kg; maintenance 20-50 µg/kg/min after ROSC; max total 3 mg/kg",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "atropine_brady": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Atropine 0.5 mg/mL/Amp",
+    "notes": "Used for symptomatic bradycardia caused by increased vagal tone or primary AV block. For general bradycardia, epinephrine remains first choice. Min dose 0.1 mg (avoid paradoxical bradycardia)",
+    "frequency": "May repeat 1 time (single dose max 0.5 mg)",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "1 mL/Amp = 0.5 mg",
+    "warnings": ["Min 0.1 mg, otherwise may paradoxically slow the heart rate further"],
+    "clinical": {
+      "use": "Symptomatic bradycardia (vagal tone↑ or primary AV block), organophosphate poisoning",
+      "contraindications": "Glaucoma (angle-closure), myasthenia gravis, tachyarrhythmia",
+      "adverseEffects": "Dry mouth, blurred vision, increased heart rate (↑), urinary retention",
+      "warnings": "Min 0.1 mg (avoid paradoxical bradycardia); max 0.5 mg single dose; may repeat 1 time",
+      "pregnancy": "AU TGA: A",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  },
+  "adenosine": {
+    "_meta": {
+      "status": "draft",
+      "reviewedBy": null
+    },
+    "brand": "Adenosine (Adenocor) 3 mg/mL",
+    "source": "AHA/AAP 2025 PALS",
+    "package": "2 mL/Vial = 6 mg",
+    "warnings": [
+      "Note: transient asystole / heart block is an expected response (half-life <10 seconds)",
+      "May trigger bronchospasm in asthma patients"
+    ],
+    "indications": [
+      {
+        "label": "1st dose (SVT)",
+        "notes": "Use the closest IV line (the closer to the heart, the better); print rhythm strip after administration",
+        "frequency": "Rapid push + immediate 5-10 mL N/S flush (use a stopcock to push with two syringes simultaneously)",
+        "route": "IV/IO"
+      },
+      {
+        "label": "2nd dose (if no response in 1-2 min)",
+        "notes": "May repeat once more (max single dose 12 mg)",
+        "frequency": "Rapid push + flush",
+        "route": "IV/IO"
+      }
+    ],
+    "clinical": {
+      "use": "SVT termination",
+      "contraindications": "2nd/3rd degree AV block (without pacemaker), sick sinus syndrome, severe asthma",
+      "adverseEffects": "Transient asystole / heart block (expected response), flushing, chest tightness, rare bronchospasm",
+      "warnings": "Rapid push + immediate flush (use a stopcock with two syringes, or the closest IV line); half-life <10 sec; turn on ECG recording before administration",
+      "pregnancy": "AU TGA: B2",
+      "breastfeeding": "Short-term use acceptable",
+      "controlledDrug": "—"
+    }
+  }
+}
