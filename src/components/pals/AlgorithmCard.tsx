@@ -126,7 +126,9 @@ export function AlgorithmCard({ algo }: { algo: PalsAlgorithm }) {
           <div className={SECTION_HEADING}>{algo.reversible_causes.title}</div>
           <div className="mt-2 grid gap-3 sm:grid-cols-2">
             <div>
-              <div className="text-xs font-semibold text-ink">5H</div>
+              <div className="text-xs font-semibold text-ink">
+                {algo.reversible_causes.h.length}H
+              </div>
               <ul className="mt-1 list-disc space-y-0.5 pl-4 text-sm text-ink">
                 {algo.reversible_causes.h.map((x, i) => (
                   <li key={i} className="thai-safe break-words">
@@ -136,7 +138,9 @@ export function AlgorithmCard({ algo }: { algo: PalsAlgorithm }) {
               </ul>
             </div>
             <div>
-              <div className="text-xs font-semibold text-ink">5T</div>
+              <div className="text-xs font-semibold text-ink">
+                {algo.reversible_causes.t.length}T
+              </div>
               <ul className="mt-1 list-disc space-y-0.5 pl-4 text-sm text-ink">
                 {algo.reversible_causes.t.map((x, i) => (
                   <li key={i} className="thai-safe break-words">

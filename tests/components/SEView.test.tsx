@@ -60,12 +60,14 @@ describe('SEView', () => {
     expect(view).toHaveTextContent('Glauser');
   });
 
-  // NOTE: src/i18n/algorithms/{th,en}/ currently hold only `.gitkeep` (no translation JSON has
-  // landed yet for pals_algorithms/se_algorithm), so `localizeSe`/`localizePals` fall back to the
+  // NOTE: this branch (task/19-20) still has src/i18n/algorithms/{th,en}/ holding only
+  // `.gitkeep` -- Task 25 (i18n: translate PALS/SE algorithms) landed on main after this branch
+  // was cut and hasn't been merged here, so `localizeSe`/`localizePals` fall back to the
   // canonical (Chinese-English mixed) dataset text for algorithm-authored strings regardless of
-  // `lang` -- a pre-existing gap outside this task's scope (see report). The UI-chrome strings
-  // (from ui.th.json/ui.en.json, e.g. `se.decision`, `se.minutes`) DO switch with `lang` and are
-  // what this test exercises.
+  // `lang` in this checkout. The UI-chrome strings (from ui.th.json/ui.en.json, e.g.
+  // `se.decision`, `se.minutes`) DO switch with `lang` independently of that and are what this
+  // test exercises; once this branch merges with Task 25's work, algorithm-authored strings will
+  // localize too.
   test('localizes UI-chrome strings to English when lang=en', () => {
     renderWithProviders(<SEView />, { lang: 'en' });
     expect(screen.getAllByText(/Does the seizure continue/)).toHaveLength(3);

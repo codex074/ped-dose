@@ -62,6 +62,16 @@ describe('PALSView', () => {
     expect(row).toHaveTextContent('กรอกน้ำหนักเพื่อคำนวณ');
   });
 
+  test('reversible-causes sub-labels are derived from array length, not hardcoded "5H"', () => {
+    // reversible_causes.title reads "Reversible Causes — 6H + 5T" (h has 6 entries, t has 5);
+    // the sub-heading above each list must match, not upstream's hardcoded "5H" bug.
+    renderWithProviders(<PALSView />);
+    const card = screen.getByTestId('pals-card-cardiac_arrest');
+    expect(within(card).getByText('6H')).toBeInTheDocument();
+    expect(within(card).getByText('5T')).toBeInTheDocument();
+    expect(within(card).queryByText('5H')).not.toBeInTheDocument();
+  });
+
   test('renders the decision tree question and YES/NO branches for each card', () => {
     renderWithProviders(<PALSView />);
     const card = screen.getByTestId('pals-card-cardiac_arrest');
