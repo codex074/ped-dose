@@ -20,10 +20,7 @@ export function AlgorithmCard({ algo }: { algo: PalsAlgorithm }) {
   const appliedWeight = weight != null ? t('pals.appliedWeight', { weight }) : null;
 
   return (
-    <section
-      className="rounded-3xl bg-white p-5 shadow-soft"
-      data-testid={`pals-card-${algo.id}`}
-    >
+    <section className="rounded-3xl bg-white p-5 shadow-soft" data-testid={`pals-card-${algo.id}`}>
       <h2 className="thai-safe flex items-center gap-2 break-words text-lg font-semibold text-ink">
         <span aria-hidden="true">{algo.icon || '🚨'}</span>
         {algo.title}
